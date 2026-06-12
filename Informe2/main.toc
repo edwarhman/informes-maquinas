@@ -1,0 +1,25 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Objetivos}{3}{section.2}%
+\contentsline {section}{\numberline {3}Marco teórico}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Material Ferromagnético}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Circuito Magnético y Núcleo Ferromagnético}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Núcleo Macizo}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Núcleo Laminado}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Pérdidas de Energía en Núcleos Ferromagnéticos}{5}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Pérdidas por Histéresis ($P_h$)}{5}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Pérdidas por Corrientes de Foucault ($P_e$)}{5}{subsubsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.6}Ciclo de Histéresis}{5}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7} Principio de Funcionamiento del Circuito Integrador}{6}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Factores de Escala del Osciloscopio}{6}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Factor de Escala Vertical ($K_v$)}{6}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}Factor de Escala Horizontal ($K_h$)}{7}{subsubsection.3.8.2}%
+\contentsline {section}{\numberline {4}Equipos e instrumentación}{8}{section.4}%
+\contentsline {section}{\numberline {5}Diagramas de conexiones}{9}{section.5}%
+\contentsline {section}{\numberline {6}Metodología}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Núcleo Macizo}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Núcleo Laminado}{10}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Resultados}{12}{section.7}%
+\contentsline {section}{\numberline {8}Analisis de resultados}{13}{section.8}%
+\contentsline {section}{\numberline {9}Conclusiones}{14}{section.9}%
+\contentsline {section}{\numberline {10}Referencias}{15}{section.10}%

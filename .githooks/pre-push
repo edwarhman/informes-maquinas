@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+cd "$(git rev-parse --show-toplevel)"
+
+MAIN_TEX="Informe2/main.tex"
+
+if [ ! -f "$MAIN_TEX" ]; then
+    exit 0
+fi
+
+echo "Verificando compilacion del proyecto LaTeX..."
+
+if ! latexmk -pdf -cd "$MAIN_TEX" -halt-on-error -interaction=nonstopmode 2>&1; then
+    echo "ERROR: La compilacion de LaTeX fallo. Corrige los errores antes de hacer push."
+    exit 1
+fi
+
+echo "Compilacion exitosa."

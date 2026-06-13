@@ -113,17 +113,20 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
         A = d \cdot e = 9,61 \text{ cm}^2  
     \end{equation}
 
+    Para calcular la resistencia de shunt se usará las especificaciones del fabricante, que indican que para una corriente de 10A se obtiene una caída de tensión de 50mV. Por lo tanto, la resistencia de shunt se calcula como:
+
     \begin{equation}
-        R_s = \frac{V}{I} = \frac{40}{3,8} \approx 10,53 \Omega
-        
+        R_s = \frac{V}{I} = \frac{50mV}{10A} = 5m\Omega
     \end{equation}
 
+    Los demás valores son conocidos: \newline
+    $V_c = 1,8\,\text{mV}$                    \newline
+    $C = 1\,\mu\text{F}$                  \newline
+    $N_2 = 150\ \text{vueltas}$              \newline
 
-    Los demás valores son conocidos:
-    $V_c$ = 1.8mV
-    $C$   = 1$\mu$F
-    $N_2$ = 150 vueltas    
-
+    \begin{equation}
+            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(5\,\text{m}\Omega)}{(150\,\text{vueltas})(9,61\,\text{m}^4)} = 6,24 \times 10^{-11}
+    \end{equation}
          
 
     \item Determinar el factor de escala horizontal $K_H$

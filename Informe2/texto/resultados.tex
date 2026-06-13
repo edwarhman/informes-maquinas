@@ -120,16 +120,18 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
     \end{equation}
 
     Los demás valores son conocidos: \newline
-    $V_c = 1,8\,\text{mV}$                    \newline
-    $C = 1\,\mu\text{F}$                  \newline
-    $N_2 = 150\ \text{vueltas}$              \newline
+    $V_c = 1,8\,\text{mV}$           \newline
+    $C = 1\,\mu\text{F}$             \newline
+    $N_2 = 150\ \text{vueltas}$      \newline
 
     \begin{equation}
-            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(5\,\text{m}\Omega)}{(150\,\text{vueltas})(9,61\,\text{m}^4)} = 6,24 \times 10^{-11}
+            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(5\,\text{m}\Omega)}{(150\,\text{vueltas})(9,61\,\text{m}^4)} = 0,624 p[Tesla/div]
     \end{equation}
          
-
     \item Determinar el factor de escala horizontal $K_H$
+        \begin{equation}
+            K_H = \frac{1}{T}
+        \end{equation}
 
     
 
@@ -201,5 +203,30 @@ A continuación se presenta el ciclo de histéresis visto en el osculoscopio par
 \caption{Ciclo de histéresis obtenido experimentalmente para el núcleo laminado.}
 \label{fig:ciclo_histeresis_laminado}
 \end{figure}
+
+\subsubsection{Cálculos correspondientes al núcleo laminado}
+\begin{itemize}
+    \item Determinar el factor de escala vertical $K_V$
+        \begin{equation}
+            K_V = \frac{V_{c}CR}{N_{2}A}
+        \end{equation}
+    
+    Se calculará el área de la sección transversal del núcleo y $R_s$
+    \begin{equation}
+        A = d \cdot e = 9,0 \text{ cm}^2  
+    \end{equation}
+
+    Los demás valores son conocidos: \newline
+    $V_c = 1,8\,\text{mV}$                    \newline
+    $C = 1\,\mu\text{F}$                  \newline
+    $N_2 = 150\ \text{vueltas}$              \newline
+    $R_s = 5m\Omega$                          \newline
+
+    \begin{equation}
+            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(5\,\text{m}\Omega)}{(150\,\text{vueltas})(9,0\,\text{m}^4)} = 0,667 p[Tesla/div]
+    \end{equation}
+
+    \item Determinar el factor de escala horizontal $K_H$
+\end{itemize}
 
 

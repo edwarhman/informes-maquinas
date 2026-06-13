@@ -54,22 +54,22 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \centering
 \caption{Mediciones experimentales para el ensayo de núcleo macizo (Ciclo de histéresis)}
 \label{tab:nucleo_macizo}
-\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|Y|Y|}
+\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|}
 \hline
-\textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} & \textbf{Altura máx. ciclo ($Y_{\text{max}}$ en div o V)} & \textbf{Ancho máx. ciclo ($X_{\text{max}}$ en div o V)} \\ \hline
-40 & $40 \pm 1$ & $3,8 \pm 0,1$ & $ 23 \pm 1$ & & \\ \hline
-35 & $34 \pm 1$ & $3 \pm 0,1$ & $16 \pm 1$ & & \\ \hline
-30 & $30 \pm 1$ & $2,5 \pm 0,1$ & $11 \pm 1$ & & \\ \hline
-25 & $24 \pm 1$ & $1,9 \pm 0,1$ & $7 \pm 1$ & & \\ \hline
-20 & $18 \pm 1$ & $1,3 \pm 0,1$ & $4 \pm 1$ & & \\ \hline
-15 & $15 \pm 1$ & $1,1 \pm 0,5$ & $3 \pm 1$ & & \\ \hline
-10 & $10 \pm 1$ & $0,8 \pm 0,1$ & $1 \pm 1$ & & \\ \hline
-15 & $15 \pm 1$ & $1,1 \pm 0,1$ & $2 \pm 1$ & & \\ \hline
-20 & $21 \pm 1$ & $1,6 \pm 0,5$ & $5 \pm 1$ & & \\ \hline
-25 & $25 \pm 1$ & $2 \pm 0,1$ & $7 \pm 1$ & & \\ \hline
-30 & $30 \pm 1$ & $2,5 \pm 0,1$ & $11 \pm 1$ & & \\ \hline
-35 & $35 \pm 1$ & $3 \pm 0,1$ & $16 \pm 1$ & & \\ \hline
-40 & $42 \pm 1$ & $3,9 \pm 0,1$ & $25 \pm 1$ & & \\ \hline
+\textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} \\ \hline
+40 & $40 \pm 1$ & $3,8 \pm 0,1$ & $ 23 \pm 1$ \\ \hline
+35 & $34 \pm 1$ & $3 \pm 0,1$ & $16 \pm 1$ \\ \hline
+30 & $30 \pm 1$ & $2,5 \pm 0,1$ & $11 \pm 1$ \\ \hline
+25 & $24 \pm 1$ & $1,9 \pm 0,1$ & $7 \pm 1$ \\ \hline
+20 & $18 \pm 1$ & $1,3 \pm 0,1$ & $4 \pm 1$ \\ \hline
+15 & $15 \pm 1$ & $1,1 \pm 0,5$ & $3 \pm 1$ \\ \hline
+10 & $10 \pm 1$ & $0,8 \pm 0,1$ & $1 \pm 1$ \\ \hline
+15 & $15 \pm 1$ & $1,1 \pm 0,1$ & $2 \pm 1$ \\ \hline
+20 & $21 \pm 1$ & $1,6 \pm 0,5$ & $5 \pm 1$ \\ \hline
+25 & $25 \pm 1$ & $2 \pm 0,1$ & $7 \pm 1$ \\ \hline
+30 & $30 \pm 1$ & $2,5 \pm 0,1$ & $11 \pm 1$ \\ \hline
+35 & $35 \pm 1$ & $3 \pm 0,1$ & $16 \pm 1$ \\ \hline
+40 & $42 \pm 1$ & $3,9 \pm 0,1$ & $25 \pm 1$ \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -156,15 +156,27 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
     W = 4 * K_V * K_H = 4 * 1,87 \times 10^{-3} * 2,829 k = 21,19 J
     \end{equation}
 
-    \item Determinar la potencia disipada por efecto Joule en la bobina
-    
-    
-    
+    \item Determinar la potencia disipada por histéresis
+    \begin{equation}
+        P_h= W * f * A * L
+    \end{equation}
 
-    \end{itemize}
+    Al sustiurir los valores conocidos, se obtiene:
+    $$P_h = 0,39 \text{ W}$$
+
+    \item Determinar la potencia en el núcleo
+    \begin{equation}
+        P_{núcleo} = P_h - P_f
+    \end{equation}
+
+    Conociendo que $P_{núcleo} = 23 W$ y $P_h = 0,39 W$, se puede determinar la potencia disipada por corrientes de Foucault
+
+    \begin{equation}
+        P_f = P_{núcleo} - P_h = 22,61 W
+    \end{equation}
     
-
-
+\end{itemize}
+    
 \vspace{1em}
 
 \subsection{Núcleo laminado}
@@ -192,32 +204,21 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
 \centering
 \caption{Mediciones experimentales para el ensayo de núcleo laminado}
 \label{tab:nucleo_laminado}
-\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|Y|Y|}
+\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|}
 \hline
-\textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} & \textbf{Altura máx. ciclo ($Y_{\text{max}}$ en div o V)} & \textbf{Ancho máx. ciclo ($X_{\text{max}}$ en div o V)} \\ \hline
-110 & $110 \pm 1$ & $3 \pm 0,1$ & $10 \pm 1$ & & \\ \hline
-100 & $100 \pm 1$ & $2 \pm 0,1$ & $6 \pm 1$ & & \\ \hline
-80 & $80 \pm 1$ & $0,9 \pm 0,3$ & $4 \pm 1$ & & \\ \hline
-60 & $60 \pm 1$ & $0,3 \pm 0,1$ & $2 \pm 1$ & & \\ \hline
-40 & $40 \pm 1$ & $0,2 \pm 0,1$ & $1 \pm 1$ & & \\ \hline
-50 & $50 \pm 1$ & $0,2 \pm 0,1$ & $2 \pm 1$ & & \\ \hline
-60 & $65 \pm 1$ & $0,4 \pm 0,1$ & $3 \pm 1$ & & \\ \hline
-80 & $80 \pm 1$ & $0,9 \pm 0,1$ & $4 \pm 1$ & & \\ \hline
-100 & $100 \pm 1$ & $2 \pm 0,1$ & $7 \pm 1$ & & \\ \hline
-120 & $100 \pm 1$ & $3 \pm 0,1$ & $10 \pm 1$ & & \\ \hline
+\textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} \\ \hline
+110 & $110 \pm 1$ & $3 \pm 0,1$ & $10 \pm 1$ \\ \hline
+100 & $100 \pm 1$ & $2 \pm 0,1$ & $6 \pm 1$ \\ \hline
+80 & $80 \pm 1$ & $0,9 \pm 0,3$ & $4 \pm 1$ \\ \hline
+60 & $60 \pm 1$ & $0,3 \pm 0,1$ & $2 \pm 1$ \\ \hline
+40 & $40 \pm 1$ & $0,2 \pm 0,1$ & $1 \pm 1$ \\ \hline
+50 & $50 \pm 1$ & $0,2 \pm 0,1$ & $2 \pm 1$ \\ \hline
+60 & $65 \pm 1$ & $0,4 \pm 0,1$ & $3 \pm 1$ \\ \hline
+80 & $80 \pm 1$ & $0,9 \pm 0,1$ & $4 \pm 1$ \\ \hline
+100 & $100 \pm 1$ & $2 \pm 0,1$ & $7 \pm 1$ \\ \hline
+120 & $100 \pm 1$ & $3 \pm 0,1$ & $10 \pm 1$ \\ \hline
 \end{tabularx}
 \end{table}
-
-Se sabe que la potencia consumida por la bobina se calcula:
-\begin{equation}
-    P_J = I_{\text{RMS}}^2 \cdot R
-\end{equation}
-
-Donde:
-\begin{itemize}
-    \item $I_{\text{RMS}}$ = 3,8 A
-    \item R es la resistencia de la bobina, que se puede calcular a partir de:
-\end{itemize}
 
 \vspace{2em}
 
@@ -243,13 +244,13 @@ A continuación se presenta el ciclo de histéresis visto en el osculoscopio par
     \end{equation}
 
     Los demás valores son conocidos: \newline
-    $V_c = 100\,\text{mV}$                    \newline
+    $V_c = 10\,\text{mV}$                    \newline
     $C = 1\,\mu\text{F}$                  \newline
     $N_2 = 150\ \text{vueltas}$              \newline
     $R = 150 k\Omega$                          \newline
 
     \begin{equation}
-            K_V = \frac{(100\,\text{mV})(1\,\mu\text{F})(150 \times 10^3\,\Omega)}{(150\,\text{vueltas})(9,0 \times 10^{-4}\,\text{m})} = 0,11 [Tesla/div]
+            K_V = \frac{(10\,\text{mV})(1\,\mu\text{F})(150 \times 10^3\,\Omega)}{(150\,\text{vueltas})(9,0 \times 10^{-4}\,\text{m})} = 0,011 [Tesla/div]
     \end{equation}
 
     \item Determinar el factor de escala horizontal $K_H$
@@ -263,7 +264,7 @@ A continuación se presenta el ciclo de histéresis visto en el osculoscopio par
         L = a - 2\frac{d}{2} + 2(c-\frac{b}{2}) + (g-\frac{d}{2}) = 32,8 \text{cm}= 0,328 \text{m}
     \end{equation}
 
-    Lodes más valores son conocidos: \newline
+    Los demás valores son conocidos: \newline
     $N_1 = 300\ \text{ vueltas}$      \newline
     $V_s = 40\ \text{ mV}$            \newline
     $R_s = 5\ \text{ m}\Omega$         \newline
@@ -272,6 +273,33 @@ A continuación se presenta el ciclo de histéresis visto en el osculoscopio par
     \begin{equation}
         K_H = \frac{(300 vueltas)( 40 mV)}{(5 m\Omega)(0,328 m)} = 7,317 k A/m.div
     \end{equation}
+
+    \item Determinar la energía
+    
+    Al observar la figura \ref{fig:ciclo_histeresis_laminado} se puede apreciar el ciclo de histéresis y a partir de las dimensiones y el área del ciclo se puede determinar la energía, en este caso:
+    \begin{equation}
+    W = 4 * K_V * K_H = 4 * 0,011 * 7,317 k = 325,20 J
+    \end{equation}
+
+    \item Determinar la potencia disipada por histéresis
+    \begin{equation}
+        P_h= W * f * A * L
+    \end{equation}
+
+    Al sustiurir los valores conocidos, se obtiene:
+    $$P_h = 5.94 \text{ W}$$
+
+    \item Determinar la potencia en el núcleo
+    \begin{equation}
+        P_{núcleo} = P_h - P_f
+    \end{equation}
+
+    Conociendo que $P_{núcleo} = 10 W$ y $P_h = 5.94 W$, se puede determinar la potencia disipada por corrientes de Foucault
+
+    \begin{equation}
+        P_f = P_{núcleo} - P_h = 4.24 W
+    \end{equation}
+
 
 \end{itemize}
 

@@ -105,7 +105,7 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
 \begin{itemize}
     \item Determinar el factor de escala vertical $K_V$
         \begin{equation}
-            K_V = \frac{V_{c}CR}{N_{2}A}
+            K_V = \frac{V_{c}*C*R}{N_{2}*A}
         \end{equation}
     
     Se calculará el área de la sección transversal del núcleo y $R_s$
@@ -125,15 +125,28 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
     $N_2 = 150\ \text{vueltas}$      \newline
 
     \begin{equation}
-            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(5\,\text{m}\Omega)}{(150\,\text{vueltas})(9,61\,\text{m}^4)} = 0,624 p[Tesla/div]
+            K_V = \frac{(1.8\,\text{mV})(1\,\mu\text{F})(150\times 10^{3}\Omega)}{(150\,\text{vueltas})(9,61\times 10^{-4}\,\text{m}^2)} = 1,873 m[Tesla/div]
     \end{equation}
          
     \item Determinar el factor de escala horizontal $K_H$
         \begin{equation}
-            K_H = \frac{1}{T}
+            K_H = \frac{N_1V_s}{R_sL}
         \end{equation}
 
-    
+    Se va a calcular la longitud media del camino magnético $L$ a partir de las dimensiones del núcleo macizo, utilizando la fórmula:
+    \begin{equation}
+        L = a - 2\frac{d}{2} + 2(c-\frac{b}{2}) + (g-\frac{d}{2}) = 33,93 \text{cm}= 0,3393 \text{m}
+    \end{equation}
+
+    Lodes más valores son conocidos: \newline
+    $N_1 = 300\ \text{vueltas}$      \newline
+    $V_s = 12,5\ \text{V}$            \newline
+    $R_s = 5\ \text{m}\Omega$         \newline
+    $L = 0,3393\ \text{m}$            \newline
+
+    \begin{equation}
+        K_H = \frac{()}{R_sL}
+    \end{equation}
 
     \end{itemize}
     

@@ -121,12 +121,12 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
 
     Los demás valores son conocidos: \newline
     $R = 150 k\Omega$                          \newline
-    $V_c = 4\,\text{ V}$           \newline
+    $V_c = 1,8\,\text{ mV}$           \newline
     $C = 1\,\mu\text{ F}$             \newline
     $N_2 = 150\ \text{ vueltas}$      \newline
 
     \begin{equation}
-        K_V = \frac{(4\,\text{V})(1\,\mu\text{F})(150k\Omega)}{(150\,\text{vueltas})(9,61\times 10^{-4}\,\text{m}^2)} = 4,16 [Tesla/div]
+        K_V = \frac{(1,8\times 10^{-3}\,\text{V})(1\,\mu\text{F})(150k\Omega)}{(150\,\text{vueltas})(9,61\times 10^{-4}\,\text{m}^2)} = 1,87\times 10^{-3} [Tesla/div]
     \end{equation}
          
     \item Determinar el factor de escala horizontal $K_H$
@@ -141,20 +141,25 @@ A continuación se presenta el ciclo de histéresis visto en el osciloscopio par
 
     Los demás valores son conocidos: \newline
     $N_1 = 300\ \text{ vueltas}$      \newline
-    $V_s = 48\ \text{ mV}$            \newline
+    $V_s = 16\ \text{ mV}$            \newline
     $R_s = 5\ \text{ m}\Omega$         \newline
     $L = 0,3393\ \text{ m}$            \newline
 
     \begin{equation}
-        K_H = \frac{(300 vueltas)( 48 mV)}{(5 m\Omega)(0,3393 m)} = 8,488 k A/m.div
+        K_H = \frac{(300 vueltas)( 16\times 10^{-3}\,\text{V})}{(5\times 10^{-3}\Omega)(0,3393\,\text{m})} = 2,829\,\text{k A/m/div}
     \end{equation}
 
-    \item Determinar las pérdidas por histéresis
+    \item Determinar la energía
     
     Al observar la figura \ref{fig:ciclo_histeresis_macizo} se puede apreciar el ciclo de histéresis y a partir de las dimensiones y el área del ciclo se puede determinar la energía, en este caso:
     \begin{equation}
-    W = 4 * K_V * K_H = 4 * 4,16 * 8,488 k = 141,3 W
+    W = 4 * K_V * K_H = 4 * 1,87 \times 10^{-3} * 2,829 k = 21,19 J
     \end{equation}
+
+    \item Determinar la potencia disipada por efecto Joule en la bobina
+    
+    
+    
 
     \end{itemize}
     

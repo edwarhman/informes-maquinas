@@ -14,19 +14,47 @@ Capacitor ($C$) & $1\,\mu\text{F}$ \\ \hline
 Resistencia de Shunt ($R_{\text{shunt}}$) & $10\text{ A} \rightarrow 50\text{ mV}$ \\ \hline
 Sonda de corriente & $1\text{ mV} / 10\text{ mA}$ \\ \hline
 Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
-Dimensiones del núcleo (columnas y ventanas) & $3\text{ cm}$, $3,1\text{ cm}$, $9,5\text{ cm}$ y $10,5\text{ cm}$ \\ \hline
 \end{tabularx}
 \label{tab:parametros_config}
 \end{table}
 
 \vspace{1em}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{imagenes/dimensiones-del-nucleo.png}
+\caption{Dimensiones del núcleo utilizadas en el experimento.}
+\label{fig:dimensiones_nucleo}
+\end{figure}
 
 \begin{table}[H]
 \centering
+\caption{Dimensiones del núcleo macizo}
+\begin{tabularx}{0.8\textwidth}{|X|X|}
+\hline
+ Constante  &   Dimensiones[cm] \\ \hline
+     a      &       10,0 \\ \hline
+     b      &       2,5 \\ \hline
+     c      &       10,5 \\ \hline
+     d      &       3,1 \\ \hline
+     e      &       3,1 \\ \hline
+     f      &       8,0  \\ \hline
+     g      &       10,1 \\ \hline
+     h      &       3,0 \\ \hline
+     i      &       3,1 \\ \hline
+\end{tabularx}
+\label{Dimensiones del núcleo macizo}
+\end{table}
+
+\vspace{1em}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
 \caption{Mediciones experimentales para el ensayo de núcleo macizo (Ciclo de histéresis)}
 \label{tab:nucleo_macizo}
-\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|Y|Y|}
+\begin{tabularx}{0.95\textwidth}{|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
 \hline
 \textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} & \textbf{Altura máx. ciclo ($Y_{\text{max}}$ en div o V)} & \textbf{Ancho máx. ciclo ($X_{\text{max}}$ en div o V)} \\ \hline
 40 & $40 \pm 1$ & $3,8 \pm 0,1$ & $ 23 \pm 1$ & & \\ \hline
@@ -49,9 +77,30 @@ Dimensiones del núcleo (columnas y ventanas) & $3\text{ cm}$, $3,1\text{ cm}$, 
 
 \begin{table}[H]
 \centering
+\caption{Dimensiones del núcleo laminado}
+\begin{tabularx}{0.8\textwidth}{|X|X|}
+\hline
+ Constante  &   Dimensiones[cm] \\ \hline
+     a      &       10,1 \\ \hline
+     b      &       3,0  \\ \hline
+     c      &       10,1 \\ \hline
+     d      &       3,0 \\ \hline
+     e      &       3,0 \\ \hline
+     f      &       8,0  \\ \hline
+     g      &       10,0 \\ \hline
+     h      &       3,0 \\ \hline
+     i      &       3,0 \\ \hline
+\end{tabularx}
+\label{Dimensiones del núcleo laminado}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
 \caption{Mediciones experimentales para el ensayo de núcleo laminado}
 \label{tab:nucleo_laminado}
-\begin{tabularx}{\textwidth}{|Y|Y|Y|Y|Y|Y|}
+\begin{tabularx}{0.95\textwidth}{|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
 \hline
 \textbf{Voltaje nominal del VARIAC (V)} & \textbf{$V_{\text{RMS}}$ medido (V)} & \textbf{$I_{\text{RMS}}$ medida (A)} & \textbf{Potencia Activa $P$ (W)} & \textbf{Altura máx. ciclo ($Y_{\text{max}}$ en div o V)} & \textbf{Ancho máx. ciclo ($X_{\text{max}}$ en div o V)} \\ \hline
 110 & $110 \pm 1$ & $3 \pm 0,1$ & $10 \pm 1$ & & \\ \hline
@@ -75,6 +124,7 @@ Dimensiones del núcleo (columnas y ventanas) & $3\text{ cm}$, $3,1\text{ cm}$, 
 \caption{Ciclo de histéresis obtenido experimentalmente para el núcleo macizo.}
 \label{fig:ciclo_histeresis_macizo}
 \end{figure}
+
 
 \begin{figure}[H]
 \centering

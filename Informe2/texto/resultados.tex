@@ -18,7 +18,6 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \label{tab:parametros_config}
 \end{table}
 
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{imagenes/dimensiones-del-nucleo.png}
@@ -74,7 +73,7 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \end{tabularx}
 \end{table}
 
-
+A continuación se presenta el ciclo de histéresis visto en el osciloscopio para el núcleo macizo, así como las formas de onda del voltaje y la corriente.
 
 \begin{figure}[H]
 \centering
@@ -82,8 +81,6 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \caption{Ciclo de histéresis obtenido experimentalmente para el núcleo macizo.}
 \label{fig:ciclo_histeresis_macizo}
 \end{figure}
-
-
 
 \begin{figure}[H]
 \centering
@@ -103,6 +100,39 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \caption{Formas de onda en el núcleo macizo.}
 \label{fig:formas_onda_macizo}
 \end{figure}
+
+\subsubsection{Cálculos correspondientes al núcleo macizo}
+\begin{itemize}
+    \item Determinar el factor de escala vertical $K_V$
+        \begin{equation}
+            K_V = \frac{V_{c}CR}{N_{2}A}
+        \end{equation}
+    
+    Se calculará el área de la sección transversal del núcleo y $R_s$
+    \begin{equation}
+        A = d \cdot e = 9,61 \text{ cm}^2  
+    \end{equation}
+
+    \begin{equation}
+        R_s = \frac{V}{I} = \frac{40}{3,8} \approx 10,53 \Omega
+        
+    \end{equation}
+
+
+    Los demás valores son conocidos:
+    $V_c$ = 1.8mV
+    $C$   = 1$\mu$F
+    $N_2$ = 150 vueltas    
+
+         
+
+    \item Determinar el factor de escala horizontal $K_H$
+
+    
+
+    \end{itemize}
+    
+
 
 \vspace{1em}
 
@@ -147,9 +177,20 @@ Número de espiras ($N$) & Bobinas de $150$ vueltas \\ \hline
 \end{tabularx}
 \end{table}
 
+Se sabe que la potencia consumida por la bobina se calcula:
+\begin{equation}
+    P_J = I_{\text{RMS}}^2 \cdot R
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $I_{\text{RMS}}$ = 3,8 A
+    \item R es la resistencia de la bobina, que se puede calcular a partir de:
+\end{itemize}
+
 \vspace{2em}
 
-
+A continuación se presenta el ciclo de histéresis visto en el osculoscopio para el núcleo laminado.
 
 \begin{figure}[H]
 \centering

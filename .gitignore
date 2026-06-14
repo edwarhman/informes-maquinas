@@ -19,6 +19,9 @@
 *.ps
 *.thm
 
+## Archivos de error de latexmk/biber
+*-SAVE-ERROR
+
 ## PDFs generados (no fuente)
 *.pdf
 

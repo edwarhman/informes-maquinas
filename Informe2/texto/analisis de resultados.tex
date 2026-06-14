@@ -1,2 +1,22 @@
 \section{Analisis de resultados}
 
+% \subsection{Nucleo macizo}
+
+%De esta etapa del experimento se obtuvo en primer lugar que los valores máximos que se pudieron suministrar al circuito con nucleo macizo fueron de $40 V$ y $3.8 A$, esto se debe a que debemos mantenernos por debajo del valor máximo de corriente que soportan las bobinas del transformador ($4 A$). Por ley de ohm si se aumenta más la tensión aumentaría la corriente, lo cual no es lo deseado ya que pondría en riesgo los componentes. La razón de que el transformador requiera tanta corriente para funcionar se debe a que al ser un nucleo macizo la fuerza magnetomotriz induce corrientes parasitas (o de Foucault) que no son aprovechadas por el circuito. Esto se demuestra al analizar las perdidas en el nucleo. la potencia utilizada fue de $23 W$ de los cuales $0.39 W$ son perdidas por histéresis, mientras que los $22.61 W$ restantes son perdidas debidas al efecto Foucault. 
+%\subsection{Nucleo laminado}
+
+%Para el circuito con nucleo laminado se pudo observar el voltaje máximo que se pudo suministrar fue de $110$ el cual es más del doble que para el nucleo macizo. Esto se debe a que al ser un nucleo laminado se corta el paso de las corrientes de Foucault y se reducen las perdidas producidas por este fenómeno, tal y como se puede observar de los resultados, en los que se obtuvo que las perdidas por efecto Foucault fueron de solo $4.24 W$, en comparación de los $22.51 W$ del nucleo macizo, esto representa una gran ventaja ya que se reduce drasticamente la potencia consumida por el transformador y permite trabajar con tensiones más altas.
+
+\section{Análisis de Resultados}
+
+\subsection{Núcleo Macizo}
+
+# Durante esta etapa del experimento, las magnitudes máximas de operación aplicadas al circuito con núcleo macizo fueron de $40\text{ V}$ y $3.8\text{ A}$. Esta limitación se debe a la necesidad de mantener el régimen de funcionamiento por debajo de la corriente máxima que soportan las bobinas del transformador ($4\text{ A}$). Debido a la naturaleza de la impedancia de la bobina, un incremento adicional en la tensión de alimentación elevaría la corriente a niveles críticos, comprometiendo la integridad de los componentes por sobrecalentamiento. 
+
+La exigencia de una corriente tan elevada a niveles de tensión tan bajos se debe a que, al tratarse de un bloque ferromagnético continuo, la variación del flujo magnético induce intensas corrientes parásitas (o de Foucault) que circulan por la sección transversal del núcleo. Este fenómeno disipa energía en forma de calor y empeora el rendimiento, lo cual se evidencia al calcular las pérdidas en el hierro. De una potencia activa total consumida de $23\text{ W}$, apenas $0,39\text{ W}$ corresponden a pérdidas por histéresis molecular, mientras que los $22,61\text{ W}$ restantes son disipados exclusivamente por el efecto Foucault. Esto demuestra la baja eficiencia que presentan los materiales magnéticos macizos.
+
+\subsection{Núcleo Laminado}
+
+Para el experimento con el núcleo laminado, se logró alcanzar una tensión máxima de $110\text{ V}$ lo que representa casi el triple del valor límite del núcleo macizo manteniendo una corriente RMS significativamente menor ($3.0 \text{ A}$). Este incremento en la capacidad operativa se debe a que el fraccionamiento del núcleo en láminas delgadas aisladas eléctricamente interrumpe los caminos de circulación de las corrientes de Foucault. 
+
+La efectividad del laminado se confirma directamente con los resultados obtenidos: las pérdidas por corrientes parásitas disminuyeron drásticamente a solo $4,24\text{ W}$, en contraste con los $22,61\text{ W}$ registrados en el núcleo macizo. Esta reducción del $81,2\%$ en la potencia disipada por Foucault disminuye sustancialmente el calentamiento térmico del dispositivo, mejora la potencia útil consumida y permite elevar la tensión de magnetización sin saturar prematuramente el material ni arriesgar el aislamiento de las bobinas.

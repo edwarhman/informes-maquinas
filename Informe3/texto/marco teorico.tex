@@ -1,0 +1,140 @@
+\section{Marco Teórico}
+
+\subsection{Contactor}
+El contactor es un aparato electromecánico de maniobra diseñado para establecer, soportar e interrumpir corrientes en condiciones normales del circuito, incluidos los regímenes de sobrecarga en servicio.
+
+Su función esencial es la regulación y conmutación remota de circuitos de alta potencia mediante un circuito de control o mando que opera a niveles significativamente menores de tensión y corriente, facilitando así la automatización segura y la protección de sistemas eléctricos industriales como motores, iluminación y calefacción.
+
+\subsection{Estructura Operativa}
+Estructuralmente, el dispositivo se divide de forma explícita en dos bloques operativos principales:
+
+\begin{enumerate}
+    \item \textbf{Circuito de Magnetización:} Cuyo componente fundamental es la bobina de control, alimentada por una tensión de mando específica y caracterizada por su consumo de potencia aparente expresado en Voltio-Amperios ($\text{V.A.}$).
+    \item \textbf{Circuito de Potencia o Actuador:} Encargado de la conmutación de la carga principal. Está constituido por el núcleo magnético (elemento de tipo estacionario) y la armadura o martillo (elemento móvil). Sobre este conjunto mecánico se disponen los contactos principales de potencia, los contactos auxiliares para la lógica de enclavamiento, y los resortes antagonistas.
+\end{enumerate}
+
+\subsection{Dinámica del Circuito Magnético y sus Estados}
+El circuito actuador funciona como un circuito magnético variable que experimenta dos estados geométricos y eléctricos fundamentales gobernados por la posición de la armadura:
+
+\begin{enumerate}
+    \item \textbf{Estado de Reposo (Desenergizado):} Con la bobina sin excitación, la armadura se encuentra separada del núcleo por la acción de los resortes. En esta condición, el circuito magnético presenta su mayor reluctancia ($\mathcal{R}$) debido a la interposición de un gran entrehierro de aire entre ambas piezas ferromagnéticas.
+    \item \textbf{Estado Energizado o Activado:} Al circular corriente por la bobina, se genera un flujo magnético que ejerce una fuerza de atracción electromagnética sobre la armadura. Al acoplarse mecánicamente la armadura al núcleo, el entrehierro se reduce a un valor mínimo, provocando que el circuito magnético pase a operar en su menor reluctancia ($\mathcal{R}$).
+\end{enumerate}
+
+
+\subsection{Componentes del contactor}
+
+Un contactor electromagnético se compone de subconjuntos mecánicos, magnéticos y eléctricos interdependientes que actúan de manera coordinada para garantizar la maniobra segura de potencia:
+
+\begin{enumerate}  
+    \item\textbf{Bobina de Control:} Inductor arrollado sobre un carrete aislado que actúa como el transductor del sistema, convirtiendo la señal eléctrica de mando en un campo magnético. Se caracteriza técnicamente por su tensión nominal de excitación y su consumo de potencia aparente, cuantificado en Voltio-Amperios ($\text{V.A.}$).
+    
+    \item\textbf{Núcleo Magnético:} Bloque de material ferromagnético fijo (estacionario), típicamente laminado en chapas de silicio para mitigar las pérdidas por corrientes de Foucault. Su propósito es canalizar y concentrar las líneas de flujo magnético generadas por la bobina.
+    
+    \item\textbf{Armadura o Martillo:} Elemento ferromagnético móvil acoplado mecánicamente al soporte de los contactos. Al ser atraído magnéticamente por el núcleo estacionario, vence la fuerza opuesta de los resortes antagonistas y efectúa el cambio de posición de los contactos del circuito.
+    
+    \item\textbf{Contactos Principales de Potencia:} Elementos conductores robustos de aleaciones de plata diseñados para establecer o interrumpir corrientes elevadas en el circuito principal. Deben resistir el arco eléctrico y el desgaste por fricción mecánica.
+    
+    \item\textbf{Contactos Auxiliares:} Contactos de menor sección transversal dimensionados exclusivamente para corrientes bajas de control, señalización luminosa y lógica de enclavamiento. Se dividen en Normales Abiertos (\text{NA}) y Normales Cerrados (\text{NC}).
+    
+    \item\textbf{Entrehierro:} Espacio de aire variable delimitado entre las caras del núcleo y la armadura. Su magnitud física gobierna directamente la reluctancia del circuito magnético, alterando drásticamente la inductancia de la bobina según la posición del martillo.
+    
+    \item\textbf{Espiras de Sombra (Anillos de desfasamiento):} Anillos conductores en cortocircuito embutidos en las caras polares del núcleo fijo. Su propósito en corriente alterna (\text{C.A.}) es desfasar en el tiempo una fracción del flujo magnético total, garantizando que cuando el flujo principal cruce por cero, el flujo secundario mantenga una fuerza de atracción mínima sobre la armadura, erradicando así el zumbido mecánico destructivo.
+    
+    \item\textbf{Carcasa y Sistema de Montaje:} Envolvente polimérica de alta rigidez dieléctrica y térmica que provee aislamiento eléctrico recíproco entre bornes y protección mecánica a los componentes internos frente al medio ambiente.
+    \item\textbf{Corriente de Llamada ($I_{\text{llamada}}$):} Corriente transitoria de gran magnitud que circula por la bobina en el instante inicial de la energización, estando la armadura aún abierta (condición de máxima reluctancia y mínima inductancia). Oscila típicamente entre $6$ y $10$ veces el valor de la corriente de mantenimiento ($6 \cdot I_{\text{mantenimiento}} \le I_{\text{llamada}} \le 10 \cdot I_{\text{mantenimiento}}$). Debido al severo calentamiento óhmico que produce, el ensayo experimental en el laboratorio debe realizarse con extrema rapidez para evitar la destrucción térmica del aislamiento del devanado.
+    
+    \item\textbf{Corriente de Mantenimiento:} Corriente de régimen continuo y estable que se establece una vez que la armadura se ha acoplado por completo al núcleo (condición de mínima reluctancia y máxima inductancia). Corresponde estrictamente al valor nominal de catálogo requerido para sostener el flujo magnético operativo del aparato.
+    
+    \item\textbf{Tensión de Mantenimiento / Caída:} Es el valor mínimo de tensión en bornes de la bobina capaz de sostener el circuito magnético cerrado en oposición a la fuerza mecánica de restitución de los resortes. Si la tensión desciende por debajo de este umbral (evaluado típicamente entre el $80\%$ y $85\%$ de la tensión nominal, $V_n$), la fuerza electromagnética se vuelve insuficiente y el contactor se abre de forma intempestiva.
+\end{enumerate}
+
+\subsection{Clasificación de los contactores}
+
+La naturaleza intrínseca de la carga conectada determina las solicitaciones térmicas y mecánicas que deben soportar los contactos principales durante los transitorios de apertura y cierre. Por consiguiente, normativas como la \textbf{IEC 60947-4} tipifican el uso del dispositivo en categorías rigurosas divididas por el tipo de régimen:
+
+\begin{enumerate}[label=\Alph*., leftmargin=0.6cm, font=\bfseries\color{black!60!black}, itemsep=0.5cm]
+
+    \item\textbf{ En regímenes de Corriente Alterna (C.A.):}
+    \begin{enumerate}[label=\textbf{\color{black}AC-\arabic*}:, leftmargin=1.5cm, itemsep=0.3cm, align=left]
+        
+        \item Modulación de cargas netamente resistivas o con inductancias despreciables, donde el factor de potencia ($\cos \phi$) es igual o superior a $0.95$ (por ejemplo, sistemas de calefacción industrial y redes de distribución puras).
+        
+        \item Destinada al control y arranque de motores de rotor bobinado (anillos rozantes). Al ocurrir el cierre, el dispositivo gestiona corrientes de inserción cercanas a $2.5$ veces la nominal ($I_n$), requiriendo cortar dicha corriente con tensiones similares a la de la red de alimentación al abrirse.
+        
+        \item Categoría estándar para el arranque a tensión plena y desconexión en vacío de motores de inducción con rotor en jaula de ardilla durante su operación normal. En el instante del cierre, los contactos deben conmutar corrientes de arranque severas que oscilan entre $5$ y $7$ veces la corriente nominal, mientras que en la apertura el dispositivo extingue la corriente nominal del motor experimentando caídas de tensión transitorias en la red de aproximadamente un $20\%$. Se encuentra comúnmente en estaciones de bombeo, compresores y elevadores.
+        
+        \item Régimen severo que involucra maniobras intermitentes, marcha a impulsos (``jogging''), inversión de marcha y frenado por contracorriente en motores de jaula de ardilla o anillos rozantes. Exige que el contactor cierre y corte corrientes críticas de hasta $7$ veces la nominal bajo tensiones elevadas de recuperación, acelerando la erosión de las pastillas de contacto. Es típico en grúas pesadas y metalurgia.
+        
+    \end{enumerate}
+
+    \item \textbf{En regímenes de Corriente Continua (C.C.):}
+    \begin{enumerate}[label=\textbf{\color{black}DC-\arabic*}:, leftmargin=1.5cm, itemsep=0.3cm, align=left]
+        
+        \item Maniobra de cargas resistivas o inductivas leves con una constante de tiempo inductiva ($L/R$) restrictiva, menor o igual a $1$~milisegundo.
+        
+        \item Operación asociada a motores de excitación en derivación (\textit{shunt}) en ciclos de arranque, inversión y frenado dinámico, tolerando constantes de tiempo de hasta $2$~ms y sobrecorrientes transitorias de hasta $2.5$ veces la corriente nominal en bornes.
+        
+    \end{enumerate}
+
+\end{enumerate}
+
+\subsection{Normas Internacionales y Nacionales de Regulación}
+
+La selección, los ensayos de laboratorio y el dimensionamiento de los contactores se rigen por los criterios de estandarización de las siguientes agencias americanas y europeas:
+
+\begin{enumerate}
+    
+    \item\textbf{ IEC 947 (International Electrotechnical Commission):}
+    Proporciona la terminología técnica estandarizada y los principios fundamentales para la correcta selección de los aparatos de maniobra según sus características de aislamiento, límites de sobrecorriente tolerables bajo fallas o anomalías de operación, y las pautas para la coordinación y ajuste eficaz con los mecanismos de protección del sistema.
+    
+    \item\textbf{UL (Underwriters Laboratories):}
+    Norma internacional centrada en la seguridad del producto. Certifica que el contactor cumpla con criterios rigurosos para la mitigación de riesgos de cortocircuito, arcos eléctricos e incendios, garantizando la confiabilidad del dispositivo para el consumidor industrial y comercial.
+    
+    \item\textbf{NEMA (National Electrical Manufacturers Association):}
+    Organización que define la nomenclatura, dimensiones constructivas, tamaños físicos fijos (índices NEMA) y los parámetros fundamentales de diseño, garantizando márgenes de seguridad amplios y la intercambiabilidad de los componentes mecánicos y eléctricos en el mercado.
+    
+    \item\textbf{CODELECTRA (CEN FONDONORMA 200:2004):}
+    El marco legal nacional rige estos componentes a través de la \textbf{Sección 430 (Partes VI y VII)} dedicada a \textit{"Motores, Circuitos y Controladores de Motores"}. Establece explícitamente que todo controlador (contactor) utilizado para gobernar un motor debe estar dimensionado con una capacidad nominal en caballos de fuerza ($\text{hp}$) o kilovatios ($\text{kW}$) que no sea inferior a la potencia de la máquina controlada, exigiendo además una adecuada coordinación de protecciones para aislar de forma segura las corrientes de falla.
+    
+\end{enumerate}
+
+
+\subsection{Especificaciones y Categorías de Servicio}
+
+Para indexar el comportamiento del contactor de acuerdo con los poderes de conexión, desconexión y la naturaleza de las cargas, Schneider detalla los siguientes parámetros eléctricos fundamentales:
+
+\begin{enumerate}
+    
+    \item\textbf{Corriente de empleo o de servicio nominal ($I_e$):}
+    Corriente máxima operativa que los contactos principales pueden conmutar de forma continua bajo condiciones normales, variando en función de la tensión asignada, la frecuencia y el tipo de carga instalada.
+    
+    \item\textbf{Corriente térmica nominal ($I_{th}$):}
+    Intensidad máxima que el aparato puede soportar en estado cerrado durante un período de 8 horas sin que el calentamiento óhmico de sus partes conductoras degrade los límites térmicos de sus aislamientos.
+    
+    \item\textbf{Tensión de servicio nominal ($V_e$):}
+    Valor de voltaje efectivo de la red para el cual se ha diseñado el aislamiento general del contactor. Define las prestaciones operativas tanto de la bobina (circuito de control) como de los polos principales (circuito de potencia).
+    
+    \item\textbf{Potencia de servicio nominal ($P_e$):}
+    Capacidad máxima de transferencia de potencia mecánica o eléctrica del contactor, medida en vatios ($\text{W}$), kilovatios ($\text{kW}$) o caballos de fuerza ($\text{hp}$), asociada de forma directa a la tensión de línea y al tipo de receptor conectado.
+    
+    \item\textbf{Tipo de cerramiento:}
+    Clasificación técnica (grados de protección IP o índices NEMA) que describe las características mecánicas de la carcasa para aislar los elementos energizados contra agentes contaminantes externos como el polvo conductivo, la humedad o los impactos mecánicos.
+    
+    \item\textbf{Clase de Servicio:} Parámetro cualitativo y cuantitativo que define la durabilidad y el rendimiento del mecanismo, indicando el número máximo de maniobras mecánicas y eléctricas que el contactor puede realizar por hora bajo carga sin sufrir fatiga estructural.
+
+    \item\textbf{Categorías de servicio y aplicación:} Determinan el nivel de arco eléctrico que deben extinguir los contactos en la apertura y el cierre:
+    \begin{enumerate}[label={\textbf{AC-\arabic*}:}, leftmargin=1.8cm, labelindent=0cm, itemsep=0.4cm, align=left]
+    
+      \item Para cargas no inductivas o débilmente inductivas (resistencias, calefacción). Factor de potencia cercano a la unidad ($\cos \phi \ge 0.95$). El arco eléctrico es mínimo.
+      \item Arranque y frenado de motores de rotor bobinado (anillos rozantes). Transitorios de corriente moderados.
+      \item Arranque y desconexión de motores de jaula de ardilla en condiciones normales (bombas, ventiladores). Al cerrar soporta el pico de arranque (\textbf{5 a 7 veces} $I_n$), pero abre a motor lanzado cortando solo la corriente nominal.
+      \item Régimen severo de operación intermitente (inversión de marcha, marcha a impulsos o ``jogging''). El contactor debe abrir el circuito de forma repetida \textbf{mientras el motor consume la corriente de arranque}, generando arcos eléctricos muy violentos a alta temperatura.
+    
+    \end{enumerate}
+
+\end{enumerate}
+
+
+
+

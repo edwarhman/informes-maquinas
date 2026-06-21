@@ -1,1 +1,15 @@
 \section{Conclusiones}
+
+Tras el análisis de los resultados experimentales y su contraste con los fundamentos teóricos y las especificaciones técnicas del fabricante, se presentan las siguientes conclusiones:
+
+\begin{enumerate}
+    \item Se comprobó de manera directa la fuerte dependencia entre la construcción del circuito magnético y el comportamiento de las variables eléctricas de control. La variación del entrehierro variable produce una alteración drástica en la inductancia de la bobina, justificando que la corriente de llamada sea significativamente mayor a la de mantenimiento (siendo $\num{16,4}$ veces superior en el Contactor 1 y $\num{11,3}$ veces en el Contactor 2), producto de la baja reactancia inductiva inicial en estado abierto.
+    
+    \item El ensayo en régimen permanente para el Contactor 1 (\textbf{LC1 D09 01}) arrojó una potencia aparente de mantenimiento de \qty{2,07}{\volt\ampere}, valor que satisface con creces el límite de \qty{9,5}{\volt\ampere} impuesto por el Grado 3 de la norma de eficiencia energética GB 21518 y se aproxima a los \qty{7}{\volt\ampere} nominales declarados por Schneider Electric, certificando que el circuito magnético cerró de forma hermética y sin pérdidas significativas.
+    
+    \item Se demostró el rol indispensable de las espiras de sombra en bobinas alimentadas con corriente alterna para desfasar los flujos magnéticos y evitar el paso por cero de la fuerza de atracción. Su correcto estado operativo garantiza un funcionamiento silencioso y libre de vibraciones destructivas, tal como ocurrió en el Contactor 1, mientras que las vibraciones registradas en el Contactor 2 evidenciaron los efectos del desgaste o las limitaciones físicas del desfasamiento en circuitos magnéticos de gran masa.
+    
+    \item La medición de la tensión mínima de operación (tensión de caída) de \qty{54}{\volt} para el Contactor 2 demostró la función del entrehierro permanente y los resortes antagonistas al desenergizarse el equipo. La presencia de este espacio de aire residual impide que el magnetismo remanente mantenga retenido el martillo magnético, asegurando una apertura ágil y protegiendo el sistema contra retenciones no deseadas.
+    
+    \item El ensayo con obstáculo en el entrehierro mediante una hoja de papel doblada validó de forma práctica que cualquier obstrucción mecánica incrementa drásticamente la reluctancia del circuito, reduciendo la inductancia. Como consecuencia, la corriente de mantenimiento se disparó hasta \qty{0,40}{\ampere} para intentar sostener el flujo de acoplamiento, lo cual estuvo acompañado de un incremento drástico en las vibraciones al anularse la acción amortiguadora de las espiras de sombra sobre las caras metálicas mal alineadas. Esta condición de operación es sumamente peligrosa, ya que las bobinas de los contactores no están diseñadas para soportar corrientes de mantenimiento elevadas de manera sostenida, lo que puede provocar un sobrecalentamiento destructivo y quemar el devanado.
+\end{enumerate}

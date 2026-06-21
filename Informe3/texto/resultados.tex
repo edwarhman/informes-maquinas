@@ -75,9 +75,22 @@ En la Tabla~\ref{tab:contactor_1} se muestran las mediciones obtenidas para el p
     \end{tabular}
     \begin{flushleft}
         \footnotesize
-        \textsuperscript{*} La corriente de operación nominal se especifica inmediatamente debajo de la primera sección de la hoja de toma de datos. \\
-        \textbf{Nota:} Se incluye una anotación manuscrita en la hoja original que indica: ``Pinza Amperimétrica Ref $\rightarrow$ \num{0,18} / \num{0,014}''.
+        \textsuperscript{*} La corriente de operación nominal se especifica inmediatamente debajo de la primera sección de la hoja de toma de datos.
     \end{flushleft}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Mediciones de referencia tomadas con la pinza amperimétrica para el Contactor 1.}
+    \label{tab:contactor_1_pinza}
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Parámetro} & \textbf{Medición (Referencia)} \\
+        \midrule
+        Corriente de llamada & $\num{0,18} \pm \num{0,01}$ \si{\ampere} \\
+        Corriente de mantenimiento & $\num{0,014} \pm \num{0,01}$ \si{\ampere} \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \subsection{Mediciones del Contactor 2}
@@ -103,7 +116,7 @@ En la Tabla~\ref{tab:contactor_2} se detallan las mediciones y parámetros regis
 En concordancia con los fundamentos teóricos detallados en la Sección~3 (específicamente la Sección~3.4), a continuación se resumen y asocian brevemente los conceptos operativos clave identificados durante la práctica y reflejados en las mediciones:
 
 \begin{itemize}
-    \item \textbf{Espiras de Sombra:} Cuya función y principio físico de desfasamiento se describen en la Sección~3.4 (ítem 7), fueron identificadas visualmente sobre el núcleo magnético fijo (Figura~\ref{fig:espiras_sombra}). Su propósito es mantener una fuerza de atracción mínima continua para evitar la vibración mecánica.
+    \item \textbf{Espiras de Sombra:} Cuya función y principio físico de desfasamiento se describen en la Sección~3.4 (ítem 7), fueron identificadas visualmente sobre el núcleo magnético (Figura~\ref{fig:espiras_sombra}). Su propósito es mantener una fuerza de atracción mínima continua para evitar la vibración mecánica.
     \item \textbf{Entrehierro Permanente:} Su rol para contrarrestar el magnetismo remanente se introdujo en la Sección~3.4 (ítem 6). Físicamente, se identificaron los orificios en las caras de contacto del núcleo y el martillo que garantizan este espacio de aire y aseguran una apertura ágil del contactor al desenergizarse la bobina.
     \item \textbf{Corriente de Llamada ($I_{\text{llamada}}$):} Definida en la Sección~3.4 (ítem 9), representa el pico transitorio inicial debido a la baja inductancia con el circuito magnético abierto. Experimentalmente, se midió un valor de $\num{0,18} \pm \num{0,005}$ \si{\ampere} para el Contactor 1 (unas $\num{16,4}$ veces su corriente de mantenimiento) y un valor de $\num{2,94} \pm \num{0,01}$ \si{\ampere} para el Contactor 2 (unas $\num{11,3}$ veces su corriente de mantenimiento), validando experimentalmente que es de un orden de magnitud sustancialmente mayor al de mantenimiento.
     \item \textbf{Corriente de Mantenimiento ($I_{\text{mantenimiento}}$):} Explicada en la Sección~3.4 (ítem 10), es la corriente de régimen estable con inductancia máxima al cerrarse el entrehierro. Para el Contactor 1 fue de $\num{0,011} \pm \num{0,001}$ \si{\ampere} y para el Contactor 2 fue de $\num{0,26} \pm \num{0,01}$ \si{\ampere}.

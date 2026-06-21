@@ -1,14 +1,13 @@
 \section{Análisis de Resultados}
 
-Al cruzar los datos que medimos en el laboratorio con la teoría y los datos de catálogo del modelo LC1D0901 (Contactor 1), pudimos comprobar de primera mano cómo los aspectos constructivos del equipo afectan directamente su comportamiento eléctrico.
+Al cruzar los datos que medimos en el laboratorio con la teoría y los datos de catálogo del modelo LC1D0901 (Contactor 1), pudimos comprobar de primera mano cómo la construcción del equipo afectan directamente su comportamiento eléctrico.
 
 \subsection{Consumo en Mantenimiento y Eficiencia (Contactor 1)}
 Según la hoja de instrucciones de Schneider Electric, los contactores pequeños de la línea TeSys D (del LC1D09 al LC1D15) cumplen con el Grado 3 de la norma de eficiencia GB 21518, lo que significa que en estado de mantenimiento (con el núcleo ya cerrado) no pueden consumir más de \qty{9,5}{\volt\ampere}.
 
 Con los datos que medimos para el Contactor 1 (\qty{188}{\volt} y \qty{0,011}{\ampere}), calculamos su potencia aparente en régimen estable:
 \[ S_{\text{mto, C1}} = \qty{188}{\volt} \times \qty{0,011}{\ampere} = \qty{2,07}{\volt\ampere} \]
-Este valor (\qty{2,07}{\volt\ampere}) cumple perfectamente con la norma al estar muy por debajo del límite de \qty{9,5}{\volt\ampere}, y se acerca bastante a los \qty{7}{\volt\ampere} típicos que el fabricante declara en sus manuales comerciales para bobinas de corriente alterna. Esto nos demuestra que el circuito magnético de este contactor cerró de forma estanca y sin problemas.
-
+Este valor (\qty{2,07}{\volt\ampere}) cumple perfectamente con la norma al estar muy por debajo del límite de \qty{9,5}{\volt\ampere}, y se acerca bastante a los \qty{7}{\volt\ampere} típicos que el fabricante declara en sus manuales comerciales para bobinas de corriente alterna.
 \subsection{El Efecto del Entrehierro en la Corriente de Llamada y Mantenimiento}
 Una de las observaciones más claras de la práctica fue la enorme diferencia entre la corriente de llamada ($I_{\text{llamada}}$) y la de mantenimiento ($I_{\text{mto}}$). Esto ocurre por la variación en la inductancia de la bobina debido al cambio en el entrehierro variable:
 \begin{itemize}

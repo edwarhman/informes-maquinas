@@ -12,14 +12,22 @@ A continuación, se anexa la ficha técnica del contactor LC1D09 bajo estudio.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[page=1, width=0.9\textwidth]{LC1D09.pdf}
+    \IfFileExists{LC1D09.pdf}{%
+        \includegraphics[page=1, width=0.9\textwidth]{LC1D09.pdf}%
+    }{%
+        \fbox{Ficha técnica LC1D09.pdf no encontrada - añada el PDF en la carpeta del proyecto}%
+    }
     \caption{Ficha técnica (Datasheet) del contactor LC1D09 - Página 1.}
     \label{fig:datasheet_p1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[page=2, width=0.9\textwidth]{LC1D09.pdf}
+    \IfFileExists{LC1D09.pdf}{%
+        \includegraphics[page=2, width=0.9\textwidth]{LC1D09.pdf}%
+    }{%
+        \fbox{Ficha técnica LC1D09.pdf no encontrada - añada el PDF en la carpeta del proyecto}%
+    }
     \caption{Ficha técnica (Datasheet) del contactor LC1D09 - Página 2.}
     \label{fig:datasheet_p2}
 \end{figure}

@@ -22,5 +22,7 @@
 ## Archivos de error de latexmk/biber
 *-SAVE-ERROR
 
+main.pdf
+
 ## Directorio de compilacion (latexmk -outdir)
 _site/

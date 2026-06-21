@@ -7,6 +7,14 @@ Como primera actividad en el laboratorio, se capturaron imágenes detalladas del
 
 La Figura~\ref{fig:contactor_desarmado} muestra las piezas del contactor; de izquierda a derecha se tiene el núcleo magnético, la armadura móvil (o martillo), la carcasa inferior, la bobina de control y el resorte. Adicionalmente, se identificaron las espiras de sombra del contactor, tal como se muestra en la Figura~\ref{fig:espiras_sombra}. Por otra parte, al juntar el núcleo magnético con el martillo se identificaron los orificios que representan el entrehierro.
 
+A partir de la vista de la cara frontal (Figura~\ref{fig:cara_frontal}), se determinó que el modelo del contactor es el \textbf{LC1 D09 01}, el cual presenta las siguientes características:
+\begin{itemize}
+    \item \textbf{LC1:} Contactor simple para un sentido de giro.
+    \item \textbf{D09:} Corriente nominal de empleo de $9$ Amperios en categoría AC-3 (para motores trifásicos). Soporta cargas resistivas (AC-1) de hasta $25$ A (tal como indicaba la placa lateral).
+    \item \textbf{01:} Indica la incorporación de un contacto auxiliar Normalmente Cerrado (NC), que corresponde a los terminales 21 NC y 22 NC que se observan a la derecha del dispositivo.
+\end{itemize}
+Asimismo, se identificaron los $3$ contactos principales Normalmente Abiertos (NA) en el bloque de potencia frontal del contactor.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -90,3 +98,14 @@ En la Tabla~\ref{tab:contactor_2} se detallan las mediciones y parámetros regis
         \bottomrule
     \end{tabular}
 \end{table}
+
+\subsection{Análisis de Parámetros y Conceptos Operativos}
+En concordancia con los fundamentos teóricos detallados en la Sección~3 (específicamente la Sección~3.4), a continuación se resumen y asocian brevemente los conceptos operativos clave identificados durante la práctica y reflejados en las mediciones:
+
+\begin{itemize}
+    \item \textbf{Espiras de Sombra:} Cuya función y principio físico de desfasamiento se describen en la Sección~3.4 (ítem 7), fueron identificadas visualmente sobre el núcleo magnético fijo (Figura~\ref{fig:espiras_sombra}). Su propósito es mantener una fuerza de atracción mínima continua para evitar la vibración mecánica.
+    \item \textbf{Entrehierro Permanente:} Su rol para contrarrestar el magnetismo remanente se introdujo en la Sección~3.4 (ítem 6). Físicamente, se identificaron los orificios en las caras de contacto del núcleo y el martillo que garantizan este espacio de aire y aseguran una apertura ágil del contactor al desenergizarse la bobina.
+    \item \textbf{Corriente de Llamada ($I_{\text{llamada}}$):} Definida en la Sección~3.4 (ítem 9), representa el pico transitorio inicial debido a la baja inductancia con el circuito magnético abierto. Experimentalmente, se midió un valor de $\num{0,18} \pm \num{0,005}$ \si{\ampere} para el Contactor 1 (unas $\num{16,4}$ veces su corriente de mantenimiento) y un valor de $\num{2,94} \pm \num{0,01}$ \si{\ampere} para el Contactor 2 (unas $\num{11,3}$ veces su corriente de mantenimiento), validando experimentalmente que es de un orden de magnitud sustancialmente mayor al de mantenimiento.
+    \item \textbf{Corriente de Mantenimiento ($I_{\text{mantenimiento}}$):} Explicada en la Sección~3.4 (ítem 10), es la corriente de régimen estable con inductancia máxima al cerrarse el entrehierro. Para el Contactor 1 fue de $\num{0,011} \pm \num{0,001}$ \si{\ampere} y para el Contactor 2 fue de $\num{0,26} \pm \num{0,01}$ \si{\ampere}.
+    \item \textbf{Tensión de Mantenimiento ($V_{\text{mantenimiento}}$):} Explicada en la Sección~3.4 (ítem 11), es la tensión mínima para mantener el acople magnético contra el resorte. Se midieron valores de $\num{188} \pm \num{2}$ \si{\volt} (Contactor 1) y $\num{54} \pm \num{2}$ \si{\volt} (Contactor 2).
+\end{itemize}

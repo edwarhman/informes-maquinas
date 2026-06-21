@@ -22,8 +22,5 @@
 ## Archivos de error de latexmk/biber
 *-SAVE-ERROR
 
-## PDFs generados (no fuente)
-*.pdf
-
 ## Directorio de compilacion (latexmk -outdir)
 _site/

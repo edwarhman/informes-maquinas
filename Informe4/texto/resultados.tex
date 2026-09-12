@@ -1,0 +1,166 @@
+\section{Presentación de resultados}
+
+A continuación, se presentan de manera detallada los resultados obtenidos a partir de la realización de la práctica, siguiendo rigurosamente cada uno de los procedimientos y pasos experimentales descritos previamente en el apartado de metodología. Dichos resultados han sido organizados y sistematizados con el fin de facilitar su análisis e interpretación.
+
+\subsection{Medición de resistencia}
+
+Para la medición de la resistencia de los devanados se empleó el método del voltímetro-amperímetro, por ser el más adecuado dado que la corriente nominal de los devanados es superior a 1 A. En el \textbf{Cuadro 7.1} se presentan los valores obtenidos de tensión y corriente, junto con la resistencia calculada y su incertidumbre propagada. El valor de la resistencia se determinó mediante la ley de Ohm, según la ecuación (7.1), mientras que la incertidumbre propagada se calculó a partir de la expresión (7.2).
+
+\begin{equation}
+R = \frac{V}{I} \tag{7.1}
+\end{equation}
+
+\begin{equation}
+\Delta R = R \sqrt{\left(\frac{\Delta V}{V}\right)^2 + \left(\frac{\Delta I}{I}\right)^2} \tag{7.2}
+\end{equation}
+
+
+\begin{table}[H]
+\centering
+\caption{Cálculo de resistencia y propagación de incertidumbre.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Devanado} & \textbf{Pto} & \textbf{$V_{dc} \pm \Delta V$ (V)} & \textbf{$I_{dc} \pm \Delta I$ (A)} & \textbf{$R \pm \Delta R$ ($\Omega$)} \\ 
+\midrule
+Alta Tensión & 1 & $0,7 \pm 0,05$ & $1,1 \pm 0,1$ & $0,636 \pm 0,086$ \\
+& 2 & $0,5 \pm 0,05$ & $0,9 \pm 0,1$ & $0,556 \pm 0,083$ \\
+& 3 & $0,45 \pm 0,05$ & $0,7 \pm 0,1$ & $0,643 \pm 0,105$ \\
+& 4 & $0,35 \pm 0,05$ & $0,6 \pm 0,1$ & $0,583 \pm 0,113$ \\
+& 5 & $0,25 \pm 0,05$ & $0,5 \pm 0,1$ & $0,500 \pm 0,119$ \\
+\midrule
+Baja Tensión & 1 & $0,4 \pm 0,05$ & $2,5 \pm 0,1$ & $0,160 \pm 0,028$ \\
+& 2 & $0,3 \pm 0,05$ & $2,0 \pm 0,1$ & $0,150 \pm 0,030$ \\
+& 3 & $0,25 \pm 0,05$ & $1,7 \pm 0,1$ & $0,147 \pm 0,033$ \\
+& 4 & $0,2 \pm 0,05$ & $1,4 \pm 0,1$ & $0,143 \pm 0,037$ \\
+& 5 & $0,15 \pm 0,05$ & $1,3 \pm 0,1$ & $0,115 \pm 0,038$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Resistencias promedio por devanado.}
+\renewcommand{\arraystretch}{1.3} % Mejora el espacio entre filas
+\begin{tabular}{lc}
+\toprule
+\textbf{Descripción} & \textbf{Valor ($\Omega$)} \\ 
+\midrule
+Resistencia Promedio Alta Tensión & $0,584 \pm 0,053$ \\
+Resistencia Promedio Baja Tensión & $0,143 \pm 0,017$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Para realizar un análisis preciso del comportamiento del transformador, es necesario que los valores de resistencia obtenidos experimentalmente a temperatura ambiente ($T_A$) sean normalizados a una temperatura de referencia común. Esta práctica es fundamental, ya que la resistencia de los devanados de cobre presenta una dependencia directa con la temperatura, según lo estipulado en las normas técnicas \textbf{IEEE C57.12.00} y la normativa local \textbf{COVENIN 539}.
+
+El procedimiento consiste en referir la resistencia medida a la temperatura nominal de operación ($T_O = 75 \, ^\circ\text{C}$), eliminando así cualquier error introducido por las condiciones ambientales del laboratorio. La fórmula usada es la siguiente:
+
+\begin{equation}
+    R_r = R_m \left( \frac{T_O + T_k}{T_A + T_k} \right)
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $R_r$: Resistencia referida a la temperatura de operación ($\Omega$).
+    \item $R_m$: Resistencia medida experimentalmente ($\Omega$).
+    \item $T_O$: Temperatura de operación de referencia ($75 \, ^\circ\text{C}$).
+    \item $T_A$: Temperatura medida durante el ensayo ($25 \, ^\circ\text{C}$).
+    \item $T_k$: Constante del material ($234,5 \, ^\circ\text{C}$ para cobre).
+\end{itemize}
+
+Al aplicar este modelo a nuestros datos experimentales, obtenemos los valores ajustados para cada devanado presentados en la siguiente tabla:
+
+\begin{table}[H]
+\centering
+\caption{Resultados de resistencia ajustados a $75 \, ^\circ\text{C}$.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Devanado} & \textbf{Resistencia Medida ($R_m$)} & \textbf{Resistencia Corregida ($R_r$)} \\ 
+\midrule
+Alta Tensión & $0,584 \pm 0,053 \, \Omega$ & $0,697 \pm 0,063 \, \Omega$ \\
+Baja Tensión & $0,143 \pm 0,017 \, \Omega$ & $0,171 \pm 0,020 \, \Omega$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Medición de relación de transformación}
+
+Para la determinación de la relación de transformación se empleó el método del voltímetro, el cual consiste en medir simultáneamente las tensiones en el devanado de alta tensión y en el de baja tensión, para luego calcular el cociente entre ambas. Con el fin de minimizar los errores sistemáticos de los instrumentos, se realizaron dos arreglos de medición: en el primer arreglo, el voltímetro 1 se conectó al devanado de alta tensión y el voltímetro 2 al de baja tensión; en el segundo arreglo, se intercambiaron los voltímetros, conectando el voltímetro 1 al devanado de baja tensión y el voltímetro 2 al de alta tensión. De esta manera, al promediar los resultados de ambos arreglos, se compensan posibles desviaciones propias de cada instrumento. 
+
+En el \textbf{Cuadro 7.4} se presentan los valores de tensión medidos para cada punto de ensayo en ambos arreglos, junto con la relación de transformación calculada y su incertidumbre propagada. 
+
+
+\begin{table}[H]
+\centering
+\caption{Resultados experimentales de la relación de transformación.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Arreglo} & \textbf{Lectura} & \textbf{$V_p \pm \Delta V_p$ (V)} & \textbf{$V_s \pm \Delta V_s$ (V)} & \textbf{$a \pm \Delta a$} \\ 
+\midrule
+1er Arreglo & 1 & $50 \pm 5$ & $20 \pm 2$ & $2,50 \pm 0,35$ \\
+            & 2 & $75 \pm 5$ & $40 \pm 2$ & $1,88 \pm 0,14$ \\
+            & 3 & $100 \pm 5$ & $60 \pm 2$ & $1,67 \pm 0,09$ \\
+\midrule
+2do Arreglo & 4 & $60 \pm 20$ & $20 \pm 10$ & $3,00 \pm 1,68$ \\
+            & 5 & $80 \pm 20$ & $30 \pm 10$ & $2,67 \pm 1,22$ \\
+            & 6 & $100 \pm 20$ & $50 \pm 10$ & $2,00 \pm 1,12$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En el \textbf{Cuadro 7.5} se resumen los valores promedio obtenidos para cada arreglo por separado. Finalmente, al promediar los resultados de ambos arreglos, se obtiene una relación de transformación global de $a_{global} = 2,29 \pm 0,30$, la cual se toma como el valor representativo del transformador.
+
+
+\begin{table}[H]
+\centering
+\caption{Resumen de la relación de transformación promedio por arreglo y valor global.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lc}
+\toprule
+\textbf{Descripción} & \textbf{Relación Promedio ($a \pm \Delta a$)} \\ 
+\midrule
+1er Arreglo & $2,02 \pm 0,13$ \\
+2do Arreglo & $2,56 \pm 0,73$ \\
+\midrule
+\textbf{Valor Global} & \textbf{$2,29 \pm 0,37$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Verificación de polaridad}
+Para llevar a cabo esta prueba, se conectó el devanado de alta tensión a una fuente de corriente alterna y se unió uno de los terminales de alta con uno de baja, midiendo simultáneamente la tensión en el devanado de alta ($E_p$) y la tensión entre los terminales restantes ($E_x$). En el \textbf{Cuadro 7.6} se presentan los resultados obtenidos.
+
+Dado que $E_x > E_p$ (185 V > 120 V), se cumple la condición:
+\begin{equation}
+E_x \approx E_p + E_s \tag{7.3}
+\end{equation}
+
+Lo que indica que la tensión secundaria se suma a la tensión primaria. Por lo tanto, se concluye que el transformador presenta \textbf{polaridad aditiva}, lo que significa que los terminales H1 y X1 se encuentran diagonalmente opuestos.
+\begin{center}
+    \captionof{table}{Resultados de la verificación de polaridad.}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{lc}
+    \toprule
+    \textbf{Descripción} & \textbf{Valor (V)} \\ 
+    \midrule
+    Tensión Primaria ($E_p$) & $120 \pm 5$ \\
+    Tensión Secundaria ($E_x$) & $185 \pm 5$ \\
+    \bottomrule
+    \end{tabular}
+\end{center}
+
+
+\subsection{Ensayo de relación de las pérdidas debido a las cargas y tensiones de cortocircuito}
+
+\subsection{Ensayo de la medición de las pérdidas y la corriente de vacío}
+
+
+

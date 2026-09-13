@@ -8,13 +8,15 @@ En esta fase inicial, se procedió a identificar las especificaciones técnicas 
 
 Posteriormente, se ajustó la fuente de alimentación y el variac para suministrar los niveles de tensión requeridos en cada ensayo. De igual manera, se inspeccionaron las condiciones de seguridad del montaje, asegurando la protección del equipo mediante el interruptor de prueba y el uso de cables de conexión en buen estado.
 
-Finalmente, previo a la energización del circuito, se solicitó la autorización del profesor encargado. 
+Finalmente, previo a la energización del circuito, se s
+olicitó la autorización del profesor encargado. 
 
 \subsection{Ejecución}
 
 \subsubsection{Medición de resistencia}
 
 Para la medición de la resistencia óhmica de los devanados del transformador se empleó el método del voltímetro-amperímetro, donde el devanado bajo ensayo se conectó en serie con un amperímetro y una resistencia limitadora de corriente, y en paralelo con un voltímetro, alimentado desde una fuente de corriente continua. Se realizaron mediciones independientes para el devanado de alta tensión y para el de baja tensión. Para cada punto de medición se registraron simultáneamente los valores de tensión ($V_{dc}$) y corriente ($I_{dc}$), junto con sus respectivas incertidumbres instrumentales con el fin de medir la resistencia. 
+
 \subsubsection{Medición de relación de transformación}
 
 Para la determinación de la relación de transformación se empleó el método del voltímetro, donde se utilizaron dos voltímetros para medir simultáneamente las tensiones en los devanados de alta y baja tensión, alimentando el circuito desde una fuente de 120 V / 60 Hz a través de un variac. Se realizaron dos arreglos de medición para compensar los errores sistemáticos de los instrumentos: en el primer arreglo, el voltímetro 1 se conectó al devanado de alta tensión y el voltímetro 2 al de baja tensión; en el segundo arreglo, se intercambiaron los voltímetros, conectando el voltímetro 1 al devanado de baja tensión y el voltímetro 2 al de alta tensión. 
@@ -24,7 +26,13 @@ Para cada arreglo, se aplicaron tres niveles distintos de tensión, iniciando co
 \subsubsection{Verificación de polaridad}
 
 Para la verificación de polaridad se empleó el método de corriente alterna, donde se conectó el devanado de alta tensión a una fuente de corriente alterna y se unió uno de los terminales adyacentes de alta y baja tensión entre sí. Se conectó un voltímetro ($E_x$) entre los otros dos terminales adyacentes y otro voltímetro ($E_p$) a través del devanado de alta tensión. Se registraron las lecturas de ambos voltímetros y, con base en la comparación de los valores obtenidos, se determinó si la polaridad es aditiva ($E_x > E_p$) o sustractiva ($E_x < E_p$), lo cual permitió identificar la disposición relativa de los terminales H1 y X1.
+
 \subsubsection{Ensayo de relación de las pérdidas debido a las cargas y tensiones de cortocircuito}
+
+Para realizar el ensayo de cortocircuito, primero se cortocircuitó el devanado de baja tensión. Luego, se aplicó al devanado de alta tensión una tensión sinusoidal a frecuencia nominal, ajustándola hasta que la corriente alcanzara un valor comprendido entre el 75\% y el 100\% de la corriente nominal. En cada punto de operación se registraron la corriente de cortocircuito ($I_{cc}$), la potencia medida ($P_{cc}$) y la tensión de cortocircuito ($V_{cc}$). Posteriormente, la tensión de cortocircuito se corrigió hasta la corriente nominal mediante el factor de corriente $f_{cc}=I_{n}/I_{cc}$. Finalmente, las pérdidas medidas se ajustaron a la corriente nominal aplicando el cuadrado del factor de corriente, de acuerdo con $P_{cc,n}=P_{cc}(f_{cc})^{2}$.
+
 \subsubsection{Ensayo de la medición de las pérdidas y la corriente de vacío}
+
+Para efectuar el ensayo de vacío, se aplicó la tensión de prueba en los bornes del devanado de baja tensión, manteniendo el devanado de alta tensión en circuito abierto. La tensión se incrementó progresivamente desde cero hasta alcanzar el valor de ensayo, sin reducirla durante el procedimiento. Se registraron la corriente, la tensión y la potencia para los niveles de $0.5V_N$, $0.8V_N$, $1.0V_N$ y $1.1V_N$. Con los datos obtenidos se analizaron gráficamente las variaciones de la corriente y la potencia en función de la tensión aplicada y, para la condición nominal, se calculó el factor de potencia en vacío mediante la expresión $\cos\varphi_0 = P_1/(V_1 I_1)$.
 
 

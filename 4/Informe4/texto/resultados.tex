@@ -38,7 +38,6 @@ Baja Tensión & 1 & $0,4 \pm 0,05$ & $2,5 \pm 0,1$ & $0,160 \pm 0,028$ \\
 \end{tabular}
 \end{table}
 
-
 \begin{table}[H]
 \centering
 \caption{Resistencias promedio por devanado.}
@@ -174,7 +173,7 @@ $11 \pm 1$ & $4 \pm 0,1$ & $8 \pm 1$ \\
 \end{table}
 
 Al realizar este ensayo se obtuvo una corriente de $4 A$ pero esto fue debido a que se utiliz\'o un transformador de corriente con relaci\'on $2:1$, por lo tanto,
-la corriente es el doble de lo obtenido y en cuanto ala potencia debido a la conexi\'on, el valor obtenido se debe multiplicar por 10 para obtener el valor de potencia real, por lo que los resultados obtenidos fueron:
+la corriente es el doble de lo obtenido y en cuanto ala potencia debido a la conexi\'on, el valor obtenido se debe multiplicar por 10 para obtener el valor de potencia real, lo cual tambi\'en se aplic\'o para la prueba en vac\'io, por lo que los resultados obtenidos fueron:
 
 \begin{table}[H]
 \centering
@@ -214,7 +213,7 @@ Se tiene que $f_{cc} = 0,96$ y por lo tanto los valores corregidos de tensi\'on 
 \textbf{$V_{cc}$ corregida} & \textbf{Corriente nominal} &  \textbf{$P_{cc}$ corregida} \\
 \textbf{[V]} &\textbf{$(I_n)$ [A]} &  \textbf{[W]} \\
 \midrule
-$ 11,46 \pm 1,60$ & 8,333 &  $86,81 \pm 22,62$ \\
+$ 11,46 \pm 1,60$ & 8,333 &  $86,82 \pm 1,62$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -283,8 +282,61 @@ X_{cc}=0,58\,\Omega
 \toprule
 \textbf{Tensión ($V$)} & \textbf{Corriente ($I$)} & \textbf{Potencia ($P$)} \\
 \midrule
-$120 \pm 1$ & $1,6 \pm 0,1$ & $6 \pm 1$ \\
+$120 \pm 1$ & $1,6 \pm 0,1$ & $60 \pm 1$ \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsubsection*{Cálculo de los Parámetros del Circuito de Excitación}
+
+El factor de potencia en vacío se calcula mediante:
+
+\begin{equation}
+\cos\phi_0=\frac{P_{\text{vacío}}}{V_{\text{vacío}}\,I_{\text{vacío}}}
+\tag{7.10}
+\end{equation}
+
+Para los valores medidos, se obtiene:
+
+\begin{equation}
+\phi_0=\arccos(0,313)\approx 71,8^{\circ}
+\tag{7.11}
+\end{equation}
+
+Las componentes de la corriente de vacío asociadas a las pérdidas en el núcleo ($I_c$) y a la corriente de magnetización ($I_m$) son:
+
+\begin{equation}
+I_c=I_{\text{vacío}}\cos(\phi_0)
+\end{equation}
+
+\begin{equation}
+I_c=1,6\,\mathrm{A}\times\cos(71,8^{\circ})\approx 0,5\,\mathrm{A}
+\end{equation}
+
+\begin{equation}
+I_m=I_{\text{vacío}}\sin(\phi_0)
+\end{equation}
+
+\begin{equation}
+I_m=1,6\,\mathrm{A}\times\sin(71,8^{\circ})\approx 1,5\,\mathrm{A}
+\end{equation}
+
+Con estas corrientes se determinan los valores de $R_c$ y $X_m$, referidos al lado de baja tensión:
+
+\begin{equation}
+R_c=\frac{V_{\text{vacío}}}{I_c}=\frac{120\,\mathrm{V}}{0,5\,\mathrm{A}}=240\,\Omega
+\end{equation}
+
+\begin{equation}
+X_m=\frac{V_{\text{vacío}}}{I_m}=\frac{120\,\mathrm{V}}{1,5\,\mathrm{A}}=80\,\Omega
+\end{equation}
+
+Con todos estos par\'ametros es posible hallar el circuito equivalente del transformador,
+si se conoce la relaci\'on de transformaci\'on. 
+
+
+
+
+
+
 

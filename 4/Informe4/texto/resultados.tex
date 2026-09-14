@@ -173,6 +173,107 @@ $11 \pm 1$ & $4 \pm 0,1$ & $8 \pm 1$ \\
 \end{tabular}
 \end{table}
 
+Al realizar este ensayo se obtuvo una corriente de $4 A$ pero esto fue debido a que se utiliz\'o un transformador de corriente con relaci\'on $2:1$, por lo tanto,
+la corriente es el doble de lo obtenido y en cuanto ala potencia debido a la conexi\'on, el valor obtenido se debe multiplicar por 10 para obtener el valor de potencia real, por lo que los resultados obtenidos fueron:
+
+\begin{table}[H]
+\centering
+\caption{Resultados de los ensayos de cortocircuito, valores reales.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Tensión ($V$)} & \textbf{Corriente ($I$)} & \textbf{Potencia ($P$)} \\
+\midrule
+$11 \pm 1$ & $8 \pm 0,1$ & $80 \pm 1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Adem\'as tambi\'en se corrigieron los valores de tensi\'on y de potencia usando el factor de corriente:
+
+\begin{equation}
+f_{cc}=\frac{I_{cc}}{I_n}
+\tag{7.4}
+\end{equation}
+
+Donde $I_{cc}$ es la corriente medida en el ensayo de cortocircuito y $I_n$ es la corriente nominal del transformador, la cual se calcula mediante:
+
+\begin{equation}
+I_n=\frac{2000\,\mathrm{VA}}{240\,\mathrm{V}}\approx 8,333\,\mathrm{A}
+\tag{7.5}
+\end{equation}
+
+Se tiene que $f_{cc} = 0,96$ y por lo tanto los valores corregidos de tensi\'on y potencia son:
+
+\begin{table}[H]
+\centering
+\caption{Resultados corregidos del ensayo de cortocircuito a corriente nominal.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ccc}
+\toprule
+\textbf{Corriente nominal} & \textbf{$V_{cc}$ corregida} & \textbf{$P_{cc}$ corregida} \\
+\textbf{$(I_n)$ [A]} & \textbf{[V]} & \textbf{[W]} \\
+\midrule
+8,333 & $ 11,46 \pm 1,60$ & $86,81 \pm 22,62$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Con estos valores es posible calcular la impedancia, resistencia y reactancia de cortocircuito del transformador, las cuales son parámetros fundamentales para caracterizar su comportamiento eléctrico bajo condiciones de carga.
+\subsubsection*{Impedancia de Cortocircuito ($Z_{cc}$)}
+
+La impedancia de cortocircuito se calcula mediante:
+
+\begin{equation}
+Z_{cc}=\frac{V_{cc\,\text{corregida}}}{I_n}
+\tag{7.6}
+\end{equation}
+
+Al sustituir los valores se tiene que: 
+
+\begin{equation}
+Z_{cc}=1,38\,\Omega
+\end{equation}
+
+\subsubsection*{Resistencia de Cortocircuito ($R_{cc}$)}
+
+La resistencia de cortocircuito se obtiene mediante:
+
+\begin{equation}
+R_{cc}=\frac{P_{cc\,\text{corregida}}}{I_n^2}
+\tag{7.7}
+\end{equation}
+
+Al sustituir los valores se tiene que:
+
+\begin{equation}
+R_{cc}=1,25\,\Omega
+\end{equation}
+
+\subsubsection*{Reactancia de Cortocircuito ($X_{cc}$)}
+
+La reactancia de cortocircuito se calcula a partir de la impedancia y la resistencia:
+
+\begin{equation}
+Z_{cc}^{2}=R_{cc}^{2}+X_{cc}^{2}
+\tag{7.8}
+\end{equation}
+
+Despejando $X_{cc}$:
+
+\begin{equation}
+X_{cc}=\sqrt{Z_{cc}^{2}-R_{cc}^{2}}
+\tag{7.9}
+\end{equation}
+
+Con $Z_{cc}=1,38\,\Omega$ y $R_{cc}=1,25\,\Omega$, se obtiene:
+
+\begin{equation}
+X_{cc}=0,58\,\Omega
+\end{equation}
+
+
+
 \subsection{Ensayo de la medición de las pérdidas y la corriente de vacío}
 
 \begin{table}[H]

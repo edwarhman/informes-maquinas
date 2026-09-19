@@ -331,8 +331,68 @@ R_c=\frac{V_{\text{vacío}}}{I_c}=\frac{120\,\mathrm{V}}{0,5\,\mathrm{A}}=240\,\
 X_m=\frac{V_{\text{vacío}}}{I_m}=\frac{120\,\mathrm{V}}{1,5\,\mathrm{A}}=80\,\Omega
 \end{equation}
 
-Con todos estos par\'ametros es posible hallar el circuito equivalente del transformador,
-usando la relaci\'on de transformaci\'on que ya fue determinada. 
+Con todos estos parámetros y la relación de transformación nominal ($a = \frac{V_1}{V_2} = \frac{240\,\mathrm{V}}{120\,\mathrm{V}} = 2$), es posible construir el circuito equivalente del transformador monofásico.
+
+\subsection{Circuito Equivalente del Transformador}
+
+A partir de los ensayos de cortocircuito y circuito abierto (vacío), se han obtenido los parámetros característicos del modelo circuital:
+
+\subsubsection*{1. Parámetros Serie (Ensayo de Cortocircuito en Alta Tensión):}
+\begin{itemize}
+    \item Resistencia equivalente referida a AT: $R_{eq1} = R_{cc} = 1,25\,\Omega$
+    \item Reactancia equivalente referida a AT: $X_{eq1} = X_{cc} = 0,58\,\Omega$
+    \item Impedancia equivalente de cortocircuito: $Z_{cc} = R_{cc} + jX_{cc} = (1,25 + j0,58)\,\Omega$ ($|Z_{cc}| = 1,38\,\Omega$)
+\end{itemize}
+
+\subsubsection*{2. Parámetros de la Rama de Excitación (Ensayo de Vacío en Baja Tensión):}
+\begin{itemize}
+    \item Resistencia de pérdidas en el núcleo (en BT): $R_c = 240\,\Omega$
+    \item Reactancia de magnetización (en BT): $X_m = 80\,\Omega$
+\end{itemize}
+
+Para referir los parámetros de excitación al devanado de Alta Tensión (lado primario), se utiliza el factor $a^2 = 2^2 = 4$:
+\begin{equation}
+R'_c = a^2 \cdot R_c = 4 \times 240\,\Omega = 960\,\Omega
+\end{equation}
+\begin{equation}
+X'_m = a^2 \cdot X_m = 4 \times 80\,\Omega = 320\,\Omega
+\end{equation}
+
+De forma recíproca, los parámetros serie referidos al devanado de Baja Tensión (lado secundario) son:
+\begin{equation}
+R_{eq2} = \frac{R_{cc}}{a^2} = \frac{1,25\,\Omega}{4} = 0,313\,\Omega
+\end{equation}
+\begin{equation}
+X_{eq2} = \frac{X_{cc}}{a^2} = \frac{0,58\,\Omega}{4} = 0,145\,\Omega
+\end{equation}
+
+En la figura~\ref{fig:circuito_equivalente} se presenta el circuito equivalente del transformador monofásico referido al devanado primario:
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[scale=1.05, transform shape]
+        \draw (0,0)
+            to[open, v=$V_1$] (0,3)
+            to[short, i=$I_1$] (2.5,3)
+            -- (2.5,2.5)
+            (2.5,2.5) -- (1.2,2.5)
+            to[R, l=$R_c{=}960\,\Omega$] (1.2,0.5)
+            -- (2.5,0.5)
+            (2.5,2.5) -- (3.8,2.5)
+            to[L, l=$X_m{=}320\,\Omega$] (3.8,0.5)
+            -- (2.5,0.5)
+            -- (2.5,0)
+            (2.5,3) -- (4,3)
+            to[L, l_=$X_{cc}{=}0{,}58\,\Omega$, mirror] (6,3)
+            to[R=$R_{cc}{=}1{,}25\,\Omega$, mirror] (8,3)
+            to[short, i=$I_2'$] (9.5,3);
+        \draw (0,0) to[short] (9.5,0);
+        \draw (9.5,0) to[open, v^=$V_2'$] (9.5,3);
+    \end{circuitikz}
+    \caption{Circuito equivalente de un transformador monofásico referido al primario con parámetros calculados.}
+    \label{fig:circuito_equivalente}
+\end{figure}
+
 
 
 

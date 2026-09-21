@@ -3,6 +3,8 @@ A continuación se presentaran los resultados otenidos en la práctica de las di
 
 \subsection{Ejecución del Ensayo con Carga Lineal}
 
+Se energizó el circuito ajustando el VARIAC hasta obtener la tensión nominal y se varió la carga resistiva en distintos niveles (desde 1 kW hasta 200 W), registrando para cada uno los valores de tensión ($V$), corriente ($I$) y potencia activa ($P$) tanto en el lado de baja como de alta tensión. Las formas de onda de tensión y corriente fueron capturadas con el osciloscopio mediante resistencias shunt ($R_s$), evidenciando su comportamiento senoidal. Los resultados se muestran en la Tabla~\ref{tab:resultados_transformador}. En la Figura~\ref{fig:curva} se presenta la curva de voltaje vs corriente con carga lineal, mientras que en las Figuras~\ref{fig:onda_primario} y \ref{fig:onda_resistiva} se muestran las formas de onda en el primario y en la carga resistiva, respectivamente.
+
 \begin{table}[H]
     \centering
     \caption{Mediciones con carga lineal}
@@ -22,7 +24,37 @@ A continuación se presentaran los resultados otenidos en la práctica de las di
     \end{tabular}
 \end{table}
 
+\begin{center}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{imagenes/curva-voltaje-vs-corriente.png}
+        \caption{Curva de Voltaje vs Corriente con carga lineal}
+        \label{fig:curva}
+        \end{figure}
+    \end{center}
+
+\begin{center}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imagenes/forma-de-onda-primario.png}
+        \caption{Forma de onda en el primario con carga lineal}
+        \label{fig:onda_primario}
+        \end{figure}
+    \end{center}
+
+\begin{center}
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imagenes/forma-de-onda-resistencia.png}
+        \caption{Forma de onda en la carga resistiva}
+        \label{fig:onda_resistiva}
+        \end{figure}
+    \end{center}
+
 \subsection{Ejecución del Ensayo con Carga Capacitiva}
+
+Para este ensayo se conectó el puente rectificador en el lado secundario del transformador para alimentar la carga no lineal conformada por un arreglo capacitivo-resistivo. Se tomaron las mediciones de los parámetros eléctricos con el osciloscopio y se observaron las variaciones en el factor de potencia y el contenido armónico inducido por la distorsión de la señal. La Tabla~\ref{tab:carga_capacitiva} y la Figura~\ref{fig:capacitiva} (forma de onda de corriente vs voltaje en la carga capacitiva) presentan los resultados obtenidos.
+
 \begin{table}[H]
     \centering
     \caption{Medición con carga capacitiva}
@@ -45,10 +77,13 @@ A continuación se presentaran los resultados otenidos en la práctica de las di
         \includegraphics[scale=0.9]{imagenes/capacitiva.png}
         \caption{Forma de onda de Corriente vs Voltaje en una carga capacitiva 1000W lado de baja
 tensión}
+        \label{fig:capacitiva}
         \end{figure}
     \end{center}
 
 \subsection{Ejecución del Ensayo con Carga Inductiva }
+
+Al igual que en el caso capacitivo, se mantuvo el puente rectificador en el secundario, pero esta vez alimentando la carga inductiva. Se repitieron las mediciones de tensión, corriente y potencia, registrando la distorsión de la corriente debida a los armónicos generados por el rectificador. Los valores obtenidos se resumen en la Tabla~\ref{tab:carga_inductiva} y la forma de onda de corriente vs voltaje en la carga inductiva se muestra en la Figura~\ref{fig:inductiva}.
 
 \begin{table}[H]
     \centering
@@ -72,5 +107,6 @@ tensión}
         \includegraphics[scale=0.9]{imagenes/inductiva.png}
         \caption{Forma de onda de Corriente vs Voltaje en una carga inductiva 1000W lado de baja
 tensión}
+        \label{fig:inductiva}
         \end{figure}
     \end{center}

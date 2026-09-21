@@ -1,1 +1,13 @@
-\section{Conlusiones}
+\section{Conclusiones}
+
+A partir de los resultados obtenidos y del análisis realizado, se puede concluir lo siguiente:
+
+\begin{itemize}
+    \item \textbf{Carga lineal:} El transformador mantiene la relación de transformación próxima a su valor nominal (≈ 2) y presenta una regulación de tensión leve al variar la carga (la tensión del secundario pasó de 220 V a 215 V al aumentar la carga), tal como se espera de un transformador real bajo carga. Las formas de onda capturadas confirmaron el comportamiento senoidal y lineal de la carga, con un factor de potencia muy próximo a la unidad (0,98) y un desfase entre voltaje y corriente despreciable, siendo las discrepancias observadas atribuibles a errores de medición e incertidumbre de los instrumentos.
+
+    \item \textbf{Carga capacitiva:} La elevación relativa de la tensión del secundario (relación $V_2/V_1 \approx 1,84$, inferior a la nominal) evidencia la regulación negativa característica de las cargas capacitivas, fenómeno que además se ve influenciado por el aumento de las pérdidas en el núcleo provocado por la distorsión no lineal de la corriente. En este ensayo el balance de potencias resultó coherente ($P_1 > P_2$), indicando pérdidas internas razonables.
+
+    \item \textbf{Carga inductiva:} La fuerte distorsión armónica introducida por el rectificador provoca que las mediciones de potencia con vatímetros convencionales resulten poco confiables (factores de potencia aparentemente superiores a la unidad), por lo que dichos valores deben interpretarse como aproximados. Esto resalta la importancia de emplear métodos de medición adecuados para señales no senoidales, como la integración del producto instantáneo $v \cdot i$ mediante el osciloscopio o el uso de instrumentos de banda ancha.
+
+    \item \textbf{Conclusión general:} Las cargas no lineales degradan el comportamiento del transformador al introducir armónicos, aumentar las pérdidas en el núcleo y distorsionar las formas de onda, mientras que las cargas lineales permiten verificar el modelo teórico y la regulación de tensión del dispositivo. Asimismo, se concluye que la calidad del sistema de medición es determinante: ante señales distorsionadas, las metodologías de medida convencionales pierden validez, por lo que se requieren métodos de medición acordes con la señal distorsionada.
+\end{itemize}

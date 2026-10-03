@@ -70,6 +70,40 @@ Para este ensayo se conectó el puente rectificador en el lado secundario del tr
     \end{tabular}
 \end{table}
 
+Con el propósito de evaluar el comportamiento del transformador ante una carga capacitiva, se determina la potencia aparente ($S_{\text{alta}}$) en el devanado de alta tensión. Esta magnitud representa la potencia total que fluye a través del equipo y se calcula mediante el producto de la tensión y la corriente medidas:
+
+\begin{align}
+    S_{\text{alta}} = V_{\text{alta}} \cdot I_{\text{alta}} \label{eq:s_alta}
+\end{align}
+
+\begin{align}
+    \Delta S_{\text{alta}} = S_{\text{alta}} \cdot \left( \frac{\Delta V_{\text{alta}}}{V_{\text{alta}}} + \frac{\Delta I_{\text{alta}}}{I_{\text{alta}}} \right) \label{eq:delta_s_alta}
+\end{align}
+
+Seguidamente, se calcula el factor de potencia ($FP$), un indicador adimensional que expresa la relación entre la potencia activa ($P_{\text{alta}}$) que genera trabajo útil y la potencia aparente obtenida en el paso anterior:
+
+\begin{align}
+    FP = \frac{P_{\text{alta}}}{S_{\text{alta}}} \label{eq:fp}
+\end{align}
+
+\begin{align}
+    \Delta FP = FP \cdot \left( \frac{\Delta P_{\text{alta}}}{P_{\text{alta}}} + \frac{\Delta S_{\text{alta}}}{S_{\text{alta}}} \right) \label{eq:delta_fp}
+\end{align}
+
+\begin{table}[H]
+\centering
+\caption{Resultados calculados para la potencia aparente y el factor de potencia en el lado de alta tensión con sus respectivas incertidumbres (Carga Capacitiva).}
+\label{tab:resultados_alta_tension}
+\vspace{0.2cm}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Magnitud} & \textbf{Valor Calculado} & \textbf{Incertidumbre} & \textbf{Resultado Final} \\
+\midrule
+Potencia Aparente ($S_{\text{alta}}$) & $535,94 \text{ VA}$ & $\pm 1,3 \text{ VA}$ & $\mathbf{535,9 \pm 1,3 \text{ VA}}$ \\
+Factor de Potencia ($FP$)             & $0,8397$              & $\pm 0,0039$         & $\mathbf{0,840 \pm 0,004}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{center}
         \begin{figure}[H]
@@ -100,6 +134,22 @@ Al igual que en el caso capacitivo, se mantuvo el puente rectificador en el secu
     \end{tabular}
 \end{table}
 
+A fin de calcular la potencia aparente y el factor de potencia con sus respectivas incertidumbres, se procede de igual forma que en el análisis con carga capacitiva, utilizando las relaciones definidas en las ecuaciones \eqref{eq:s_alta}, \eqref{eq:delta_s_alta}, \eqref{eq:fp} y \eqref{eq:delta_fp}:
+
+\begin{table}[H]
+\centering
+\caption{Resultados calculados para la potencia aparente y el factor de potencia en el lado de alta tensión (Carga Inductiva).}
+\label{tab:resultados_inductiva}
+\vspace{0.2cm}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Magnitud} & \textbf{Valor Calculado} & \textbf{Incertidumbre} & \textbf{Resultado Final} \\
+\midrule
+Potencia Aparente ($S_{\text{alta}}$) & $540 \text{ VA}$ & $\pm 120 \text{ VA}$ & $\mathbf{540 \pm 120 \text{ VA}}$ \\
+Factor de Potencia ($FP$)             & $1,155$            & $\pm 0,259$          & $\mathbf{1,16 \pm 0,26}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{center}
         \begin{figure}[H]

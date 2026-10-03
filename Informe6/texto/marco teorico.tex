@@ -1,0 +1,179 @@
+\section{Marco Teórico}
+
+\subsection{Definición y Expresión General del Rendimiento}
+
+El rendimiento ($\eta$) de un transformador representa la fracción de la potencia activa absorbida de la red que es efectivamente transferida y aprovechada por la carga conectada en el devanado secundario~\cite{covenin536, chapman}. Matemáticamente, se expresa como:
+
+\begin{equation}
+    \eta = \frac{P_{\text{salida}}}{P_{\text{entrada}}} = \frac{P_{\text{salida}}}{P_{\text{salida}} + P_{\text{perd}}}
+    \label{eq:rendimiento_def}
+\end{equation}
+
+donde $P_{\text{salida}}$ es la potencia activa útil entregada en bornes secundarios, $P_{\text{entrada}}$ es la potencia activa suministrada por la fuente en bornes primarios, y $P_{\text{perd}}$ representa la suma total de las potencias disipadas internamente en el transformador.
+
+En el régimen de funcionamiento convencional, las pérdidas totales se descomponen en dos contribuciones fundamentales:
+\begin{equation}
+    P_{\text{perd}} = P_{\text{perd,sin}} + P_{\text{perd,con}} = P_{\text{Fe}} + P_{\text{Cu}}
+\end{equation}
+
+Esta partición responde a la naturaleza fenomenológica de la disipación: las pérdidas en el núcleo o de vacío ($P_{\text{Fe}}$) dependen esencialmente de la amplitud de la tensión de alimentación y de la frecuencia, manteniéndose prácticamente constantes ante variaciones de la carga, mientras que las pérdidas en los devanados ($P_{\text{Cu}}$) varían con el cuadrado de la corriente de carga~\cite{mit, ras}.
+
+\subsection{Pérdidas Sin Carga o en el Hierro (\texorpdfstring{$P_{\text{Fe}}$}{P\_Fe})}
+
+Las pérdidas en vacío corresponden a la energía disipada en el núcleo ferromagnético y materiales aislantes cuando se excita el transformador a tensión nominal manteniendo el secundario en circuito abierto ($I_2 = 0$)~\cite{chapman}. Están conformadas por:
+
+\begin{itemize}
+    \item \textbf{Pérdidas por corrientes de Foucault (parásitas):} Se originan debido a las fuerzas electromotrices inducidas en la propia masa conductora del núcleo por la variación del flujo magnético alterno. Dichas fem generan corrientes circulantes que disipan energía por efecto Joule. Para minimizarlas, los núcleos se fabrican apilando láminas delgadas de acero eléctrico aisladas entre sí por capas de barniz o recubrimientos inorgánicos. Su potencia disipada es proporcional a $B_{\text{max}}^2 f^2 d^2$, donde $d$ es el espesor de la chapa.
+    \item \textbf{Pérdidas por histéresis magnética:} Representan la energía térmica disipada por ciclo debido a la fricción microscópica en la reorientación de los dominios magnéticos del material frente a un campo magnético alterno. La energía perdida por unidad de volumen y por ciclo es proporcional al área del lazo de histéresis del material ferromagnético, aproximada por la fórmula empírica de Steinmetz ($P_h \propto f B_{\text{max}}^n$, con $1{,}6 \le n \le 2$). Se reducen empleando aleaciones ferromagnéticas de grano orientado con adición de silicio.
+    \item \textbf{Pérdidas Joule en vacío en el devanado de excitación ($I_0^2 R_1$):} Pérdidas debidas a la pequeña corriente de magnetización y excitación $I_0$ circulando por la resistencia del devanado primario; su magnitud resulta prácticamente despreciable frente a las pérdidas volumétricas del hierro.
+    \item \textbf{Pérdidas dieléctricas:} Pérdidas por conducción y relajación dipolar en los aislamientos sólidos y líquidos (barnices, papel prespán, aceite dieléctrico), las cuales son cuantitativamente marginales en transformadores de baja y media tensión.
+\end{itemize}
+
+Experimentalmente, las pérdidas sin carga se obtienen de manera directa mediante el ensayo de vacío (determinado en la Práctica Nº 4), donde la lectura del vatímetro conectado a tensión nominal refleja:
+\begin{equation}
+    P_0 \big|_{V_1 = V_{1n}} \approx P_{\text{Fe}}
+\end{equation}
+
+\subsection{Pérdidas con Carga o en el Cobre (\texorpdfstring{$P_{\text{Cu}}$}{P\_Cu})}
+
+Las pérdidas con carga se manifiestan cuando circula corriente por los arrollamientos del transformador para alimentar la impedancia de carga~\cite{chapman}. Comprenden:
+
+\begin{itemize}
+    \item \textbf{Pérdidas óhmicas por efecto Joule en los conductores:} Disipación resistiva en los conductores de cobre o aluminio de ambos devanados:
+    \begin{equation}
+        P_{\text{Cu}} = I_1^2 R_1 + I_2^2 R_2
+    \end{equation}
+    Refiriendo las resistencias al devanado secundario mediante la relación de transformación $a = V_{1n}/V_{2n}$:
+    \begin{equation}
+        P_{\text{Cu}} = I_2^2 \left( R_2 + \frac{R_1}{a^2} \right) = I_2^2 R_{\text{eq2}}
+    \end{equation}
+    donde $R_{\text{eq2}}$ es la resistencia equivalente de los devanados referida al secundario.
+    \item \textbf{Pérdidas adicionales o de dispersión:} Corrientes parásitas inducidas por los flujos de dispersión en los propios conductores de los devanados (efecto piel y efecto proximidad) y en las partes metálicas estructurales (cuba, prensaculatas). En el modelo circuital simplificado se agrupan dentro de la resistencia equivalente efectiva de cortocircuito.
+\end{itemize}
+
+El valor de $R_{\text{eq2}}$ y las pérdidas en el cobre a corriente nominal se obtienen a partir del ensayo de cortocircuito (Práctica Nº 4):
+\begin{equation}
+    R_{\text{cc}} = \frac{P_{\text{cc}}}{I_{\text{cc}}^2} = R_1 + a^2 R_2 = a^2 R_{\text{eq2}} \quad \Longrightarrow \quad R_{\text{eq2}} = \frac{R_{\text{cc}}}{a^2}
+\end{equation}
+
+\subsection{Circuito Equivalente y Formulación Analítica del Rendimiento}
+
+A partir del circuito equivalente aproximado del transformador referido al secundario (Figura~\ref{fig:circuito_equiv_rendimiento}), en el cual la rama paralelo de magnetización ($R_c, X_m$) se ubica en los bornes de entrada y la impedancia serie equivalente ($R_{\text{eq2}} + jX_{\text{eq2}}$) se sitúa en serie con la carga:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{circuitikz}[scale=0.9, transform shape]
+        % Tensión de entrada referida al secundario
+        \draw (0,0) to[open, v=$V_1/a$] (0,3)
+              to[short, o-*] (1.5,3);
+        \draw (0,0) to[short, o-*] (1.5,0);
+        
+        % Rama de excitación en paralelo (en la entrada)
+        \draw (1.5,3) to[R=$R_c$] (1.5,0);
+        \draw (1.5,3) to[short, *-*] (2.8,3)
+              to[L, l_=$X_m$] (2.8,0)
+              to[short, *-*] (1.5,0);
+        
+        % Impedancia equivalente serie referida al secundario
+        \draw (2.8,3) to[short, i=$I_2$] (4.0,3)
+              to[R=$R_{\text{eq2}}$] (5.8,3)
+              to[L=$X_{\text{eq2}}$] (7.6,3)
+              to[short, -*] (8.8,3);
+              
+        % Carga Z_L
+        \draw (8.8,3) to[generic, l=$Z_L$] (8.8,0)
+              to[short, *-*] (2.8,0);
+              
+        % Tensión en bornes de la carga V_2
+        \draw (8.8,3) to[short, -o] (9.8,3);
+        \draw (8.8,0) to[short, -o] (9.8,0);
+        \draw (9.8,3) to[open, v^=$V_2$] (9.8,0);
+    \end{circuitikz}
+    \caption{Circuito equivalente aproximado referido al secundario.}
+    \label{fig:circuito_equiv_rendimiento}
+\end{figure}
+
+La potencia activa suministrada a la carga es $P_{\text{salida}} = V_2 I_2 \cos\varphi$, donde $\cos\varphi$ es el factor de potencia de la carga. La expresión rigurosa del rendimiento en función de las variables operativas es~\cite{mit, ras}:
+
+\begin{equation}
+    \eta = \frac{V_2 I_2 \cos\varphi}{V_2 I_2 \cos\varphi + P_{\text{Fe}} + I_2^2 R_{\text{eq2}}}
+    \label{eq:rendimiento_exacta}
+\end{equation}
+
+Alternativamente, en la guía de laboratorio se presenta la formulación analítica aproximada:
+\begin{equation}
+    \eta = 1 - \frac{P_{\text{Fe}} + R_{\text{eq2}} I_2^2}{V_2 I_2 \cos\varphi}
+    \label{eq:rendimiento_guia}
+\end{equation}
+la cual se obtiene al aproximar la potencia de entrada del denominador por la potencia de salida en el término disipativo.
+
+\subsection{Condición y Punto de Rendimiento Máximo}
+
+Si se asume que la tensión en bornes de la carga $V_2$ y el factor de potencia $\cos\varphi$ se mantienen sustancialmente constantes (hipótesis justificada por la reducida caída de tensión interna en transformadores comerciales bien diseñados), es posible derivar el rendimiento respecto a la corriente de carga $I_2$:
+
+\begin{equation}
+    \frac{d\eta}{dI_2} = \frac{d}{dI_2} \left[ 1 - \frac{P_{\text{Fe}}}{V_2 \cos\varphi \, I_2} - \frac{R_{\text{eq2}} I_2}{V_2 \cos\varphi} \right] = \frac{P_{\text{Fe}}}{V_2 \cos\varphi \, I_2^2} - \frac{R_{\text{eq2}}}{V_2 \cos\varphi} = 0
+\end{equation}
+
+Cancelando los términos comunes no nulos en el denominador:
+\begin{equation}
+    \frac{P_{\text{Fe}}}{I_2^2} - R_{\text{eq2}} = 0 \quad \Longleftrightarrow \quad P_{\text{Fe}} = I_2^2 R_{\text{eq2}} = P_{\text{Cu}}
+    \label{eq:condicion_maximo}
+\end{equation}
+
+Por ende, \textbf{el rendimiento es máximo cuando las pérdidas constantes en el hierro son exactamente iguales a las pérdidas variables en el cobre}. Despejando la corriente correspondiente a esta condición:
+
+\begin{equation}
+    I_2^* = \sqrt{\frac{P_{\text{Fe}}}{R_{\text{eq2}}}}
+    \label{eq:corriente_optima}
+\end{equation}
+
+Esta corriente óptima $I_2^*$ define la potencia aparente de máxima eficiencia del transformador:
+\begin{equation}
+    S^* = V_2^* I_2^*
+    \label{eq:potencia_optima}
+\end{equation}
+En transformadores de distribución que operan con ciclos de carga variables a lo largo del día, el diseño se optimiza para situar $I_2^*$ típicamente entre el 60\,\% y el 80\,\% de la corriente nominal $I_{2n}$, maximizando el rendimiento energético integral diario (eficiencia ponderada en todas las horas). En transformadores de central o de potencia continua, el punto suele ubicarse muy próximo al 100\,\% de la carga nominal.
+
+\subsection{Influencia del Factor de Potencia}
+
+Para una misma magnitud de corriente de carga $I_2$ y tensión $V_2$, las pérdidas internas ($P_{\text{Fe}} + I_2^2 R_{\text{eq2}}$) son idénticas, pero la potencia activa transformada ($P_{\text{salida}} = V_2 I_2 \cos\varphi$) disminuye conforme se reduce el factor de potencia. Como consecuencia directa de la ecuación~\eqref{eq:rendimiento_exacta}, la eficiencia disminuye notablemente cuando $\cos\varphi$ decae:
+\begin{equation}
+    \eta(\cos\varphi_1) > \eta(\cos\varphi_2) \quad \text{para} \quad \cos\varphi_1 > \cos\varphi_2
+\end{equation}
+Por tanto, la curva de rendimiento para carga inductiva ($\cos\varphi < 1$) se desplaza hacia abajo respecto a la curva correspondiente a carga puramente resistiva ($\cos\varphi = 1$).
+
+\subsection{Determinación de la Temperatura por el Método de la Resistencia}
+
+Durante la operación bajo carga prolongada, la circulación de corriente ocasiona un calentamiento progresivo de los devanados. Dado que la resistividad del cobre aumenta linealmente con la temperatura en el rango usual de trabajo, la resistencia de los arrollamientos se incrementa, elevando consecuentemente las pérdidas por efecto Joule.
+
+De acuerdo con la norma venezolana COVENIN 3172-95 (específicamente en su punto 5.7, dedicado a los \textit{Aumentos de Temperatura}) y el estándar internacional ANSI/IEEE C57.12.91-2001~\cite{covenin3172, ieee5712}, la temperatura media alcanzada por un arrollamiento de cobre al final de una prueba de carga se determina a partir del incremento de su resistencia eléctrica medida en corriente continua, empleando la ley de inferencia de cero absoluto para el cobre recocido ($T_0 = -234{,}5~^{\circ}\mathrm{C}$):
+
+\begin{equation}
+    T_2 = \frac{R_c - R_f}{R_f}\,(234{,}5 + T_1) + T_1
+    \label{eq:metodo_resistencia}
+\end{equation}
+
+donde:
+\begin{itemize}
+    \item $R_f$: Resistencia del devanado en frío, medida en corriente continua a la temperatura ambiente inicial $T_1$ ($^{\circ}\mathrm{C}$).
+    \item $R_c$: Resistencia del devanado en caliente, medida inmediatamente después de desenergizar el transformador tras el régimen de plena carga.
+    \item $T_1$: Temperatura ambiente de referencia ($^{\circ}\mathrm{C}$).
+    \item $T_2$: Temperatura media del arrollamiento alcanzada en la prueba ($^{\circ}\mathrm{C}$).
+\end{itemize}
+
+Conocida la temperatura $T_2$, la resistencia equivalente referida al secundario se corrige térmicamente mediante:
+\begin{equation}
+    R_{\text{eq2}}(T_2) = R_{\text{eq2}}(T_1)\,\frac{234{,}5 + T_2}{234{,}5 + T_1}
+    \label{eq:correccion_resistencia}
+\end{equation}
+lo que permite reevaluar las pérdidas en el cobre y el rendimiento real a la temperatura operativa de régimen.
+
+\subsection{Marco Normativo Aplicable}
+
+Los procedimientos y criterios de evaluación descritos en este informe se fundamentan en las siguientes normas técnicas:
+\begin{itemize}
+    \item \textbf{COVENIN 3172-95 (Transformadores de Potencia. Métodos de Ensayo):} Regula en su punto 5.7 el método de ensayo de aumentos de temperatura de los arrollamientos a través de la medición de resistencia en frío y caliente~\cite{covenin3172}.
+    \item \textbf{COVENIN 536-94 (Transformadores de Potencia. Generalidades):} Define la nomenclatura, rangos de potencia nominal, condiciones de servicio y los límites de aumento de temperatura según la clase de aislamiento térmico~\cite{covenin536}.
+    \item \textbf{ANSI/IEEE C57.12.91-2001 (Standard Test Code for Dry-Type Distribution and Power Transformers):} Código estándar de pruebas eléctricas de transformadores de distribución y potencia, incluyendo la metodología para la separación analítica de pérdidas y la medición de temperatura~\cite{ieee5712}.
+\end{itemize}

@@ -1,0 +1,319 @@
+\section{Resultados}
+
+En esta sección se presentan de forma rigurosa los datos experimentales obtenidos durante la sesión de laboratorio, estructurados en tablas técnicas con sus respectivas incertidumbres absolutas de medición. Asimismo, se exponen detalladamente los cálculos efectuados para la determinación de las resistencias óhmicas en frío y en caliente (con su propagación formal de errores), la elevación y estimación de la temperatura media del bobinado mediante el método de la resistencia normalizado, y la cuantificación del rendimiento y balances de potencia para los regímenes de carga resistiva y carga inductiva.
+
+\subsection{Parámetros Nominales de Placa del Transformador}
+
+En el Cuadro~\ref{tab:placa_tx} se detallan los parámetros nominales de placa del transformador monofásico ensayado en el Laboratorio de Máquinas Eléctricas I.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Datos nominales de placa del transformador monofásico bajo ensayo.}
+    \label{tab:placa_tx}
+    \begin{tabular}{l c c c}
+        \toprule
+        \textbf{Parámetro} & \textbf{Símbolo} & \textbf{Valor Nominal} & \textbf{Unidad} \\
+        \midrule
+        Potencia aparente nominal & $S_n$ & $1000$ & VA \\
+        Tensión nominal de Baja Tensión (BT) & $V_{\text{BT},n}$ & $110 - 120$ & V \\
+        Tensión nominal de Alta Tensión (AT) & $V_{\text{AT},n}$ & $220 - 240$ & V \\
+        Corriente nominal en devanado de 120~V & $I_{n,\text{BT}}$ & $5{,}0$ & A \\
+        Corriente nominal en devanado de 240~V & $I_{n,\text{AT}}$ & $5{,}0$ & A \\
+        Frecuencia nominal de operación & $f$ & $60$ & Hz \\
+        Temperatura ambiente de referencia & $T_{\text{amb}} = T_1$ & $27{,}0 \pm 0{,}5$ & $^{\circ}\mathrm{C}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Medición de Resistencia de los Devanados en Frío}
+
+Las lecturas de caída de tensión continua ($V$) y corriente continua ($I$) se registraron con los arrollamientos a temperatura ambiente ($T_1 = 27~^{\circ}\mathrm{C}$). 
+La resistencia puntual para cada medición se obtiene mediante la ley de Ohm:
+\begin{equation}
+    R_k = \frac{V_k}{I_k}
+    \label{eq:ley_ohm}
+\end{equation}
+La propagación de la incertidumbre instrumental combinada se calcula analíticamente a través de derivadas parciales:
+\begin{equation}
+    \Delta R_k = \sqrt{\left(\frac{\partial R_k}{\partial V_k}\Delta V_k\right)^2 + \left(\frac{\partial R_k}{\partial I_k}\Delta I_k\right)^2} = R_k \sqrt{\left(\frac{\Delta V_k}{V_k}\right)^2 + \left(\frac{\Delta I_k}{I_k}\right)^2}
+    \label{eq:prop_error_r}
+\end{equation}
+
+El valor promedio de la resistencia del arrollamiento se calcula como:
+\begin{equation}
+    \overline{R} = \frac{1}{N}\sum_{k=1}^N R_k
+    \label{eq:r_promedio}
+\end{equation}
+cuya incertidumbre combinada incorpora la dispersión experimental (desviación estándar de la media) y la propagación de incertidumbres instrumentales:
+\begin{equation}
+    \Delta \overline{R} = \sqrt{\left(\frac{1}{N}\sqrt{\sum_{k=1}^N \Delta R_k^2}\right)^2 + s_{\overline{R}}^2}
+\end{equation}
+donde $s_{\overline{R}} = \sqrt{\frac{\sum (R_k - \overline{R})^2}{N(N-1)}}$.
+
+En el Cuadro~\ref{tab:res_frio_bt} y Cuadro~\ref{tab:res_frio_at} se reportan las mediciones y cálculos para los devanados de baja tensión y alta tensión, respectivamente.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mediciones de tensión, corriente y resistencia en frío para el devanado de Baja Tensión (BT) ($T_1 = 27~^{\circ}\mathrm{C}$).}
+    \label{tab:res_frio_bt}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Punto $k$} & \textbf{$V_{\text{cc}}$ [V]} & \textbf{$I_{\text{cc}}$ [A]} & \textbf{$R_{\text{BT},f}$ [$\Omega$]} \\
+        \midrule
+        1 & $0{,}16 \pm 0{,}02$ & $1{,}0 \pm 0{,}1$ & $0{,}160 \pm 0{,}026$ \\
+        2 & $0{,}14 \pm 0{,}02$ & $0{,}8 \pm 0{,}1$ & $0{,}175 \pm 0{,}033$ \\
+        3 & $0{,}10 \pm 0{,}02$ & $0{,}6 \pm 0{,}1$ & $0{,}167 \pm 0{,}043$ \\
+        4 & $0{,}08 \pm 0{,}02$ & $0{,}3 \pm 0{,}1$ & $0{,}267 \pm 0{,}111$ \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Resistencia media en frío ($\overline{R}_{\text{BT},f}$)}} & $\mathbf{0{,}192 \pm 0{,}032\,\Omega}$ \\
+        \multicolumn{3}{l}{\textbf{Resistencia por pendiente en zona nominal ($I \ge 0{,}6\text{ A}$)}} & $\mathbf{0{,}167 \pm 0{,}020\,\Omega}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mediciones de tensión, corriente y resistencia en frío para el devanado de Alta Tensión (AT) ($T_1 = 27~^{\circ}\mathrm{C}$).}
+    \label{tab:res_frio_at}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Punto $k$} & \textbf{$V_{\text{cc}}$ [V]} & \textbf{$I_{\text{cc}}$ [A]} & \textbf{$R_{\text{AT},f}$ [$\Omega$]} \\
+        \midrule
+        1 & $0{,}64 \pm 0{,}02$ & $1{,}0 \pm 0{,}1$ & $0{,}640 \pm 0{,}067$ \\
+        2 & $0{,}50 \pm 0{,}02$ & $0{,}8 \pm 0{,}1$ & $0{,}625 \pm 0{,}082$ \\
+        3 & $0{,}40 \pm 0{,}02$ & $0{,}6 \pm 0{,}1$ & $0{,}667 \pm 0{,}116$ \\
+        4 & $0{,}30 \pm 0{,}02$ & $0{,}4 \pm 0{,}1$ & $0{,}750 \pm 0{,}194$ \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Resistencia media en frío ($\overline{R}_{\text{AT},f}$)}} & $\mathbf{0{,}670 \pm 0{,}062\,\Omega}$ \\
+        \multicolumn{3}{l}{\textbf{Resistencia por pendiente en zona nominal ($I \ge 0{,}6\text{ A}$)}} & $\mathbf{0{,}644 \pm 0{,}050\,\Omega}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Medición de Resistencia de Devanados en Caliente y Elevación de Temperatura}
+
+Tras someter el transformador al ciclo de carga continua y régimen inductivo, se desenergizó de inmediato el circuito CA y se midieron las caídas de tensión y corriente continua en ambos devanados. Los datos registrados y las resistencias calculadas se exponen en el Cuadro~\ref{tab:res_cal_bt} y Cuadro~\ref{tab:res_cal_at}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mediciones de tensión, corriente y resistencia en caliente para el devanado de Baja Tensión (BT).}
+    \label{tab:res_cal_bt}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Punto $k$} & \textbf{$V_{\text{cc}}$ [mV]} & \textbf{$I_{\text{cc}}$ [A]} & \textbf{$R_{\text{BT},c}$ [$\Omega$]} \\
+        \midrule
+        1 & $190{,}5 \pm 0{,}1$ & $1{,}0 \pm 0{,}1$ & $0{,}1905 \pm 0{,}0191$ \\
+        2 & $153{,}5 \pm 0{,}1$ & $0{,}8 \pm 0{,}1$ & $0{,}1919 \pm 0{,}0240$ \\
+        3 & $130{,}5 \pm 0{,}1$ & $0{,}6 \pm 0{,}1$ & $0{,}2175 \pm 0{,}0363$ \\
+        4 & $101{,}4 \pm 0{,}1$ & $0{,}3 \pm 0{,}1$ & $0{,}3380 \pm 0{,}1127$ \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Resistencia media en caliente ($\overline{R}_{\text{BT},c}$)}} & $\mathbf{0{,}235 \pm 0{,}035\,\Omega}$ \\
+        \multicolumn{3}{l}{\textbf{Resistencia en caliente de alta corriente ($I = 1{,}0\text{ A}$)}} & $\mathbf{0{,}1905 \pm 0{,}0191\,\Omega}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mediciones de tensión, corriente y resistencia en caliente para el devanado de Alta Tensión (AT).}
+    \label{tab:res_cal_at}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Punto $k$} & \textbf{$V_{\text{cc}}$ [V]} & \textbf{$I_{\text{cc}}$ [A]} & \textbf{$R_{\text{AT},c}$ [$\Omega$]} \\
+        \midrule
+        1 & $0{,}64 \pm 0{,}10$ & $1{,}0 \pm 0{,}1$ & $0{,}640 \pm 0{,}119$ \\
+        2 & $0{,}54 \pm 0{,}10$ & $0{,}8 \pm 0{,}1$ & $0{,}675 \pm 0{,}151$ \\
+        3 & $0{,}44 \pm 0{,}10$ & $0{,}6 \pm 0{,}1$ & $0{,}733 \pm 0{,}207$ \\
+        4 & $0{,}38 \pm 0{,}10$ & $0{,}4 \pm 0{,}1$ & $0{,}950 \pm 0{,}345$ \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Resistencia media en caliente ($\overline{R}_{\text{AT},c}$)}} & $\mathbf{0{,}750 \pm 0{,}088\,\Omega}$ \\
+        \multicolumn{3}{l}{\textbf{Resistencia en caliente ($I \ge 0{,}8\text{ A}$)}} & $\mathbf{0{,}658 \pm 0{,}095\,\Omega}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+La elevación de temperatura del conductor de cobre ($\Delta T$) y la temperatura media final alcanzada en los arrollamientos ($T_2$) se determinan mediante el método de la resistencia normalizado en el punto 5.7 de COVENIN 3172-95 y ANSI/IEEE C57.12.91-2001:
+\begin{equation}
+    \Delta T = T_2 - T_1 = \frac{R_c - R_f}{R_f}\,(234{,}5 + T_1)
+    \label{eq:delta_t_calculo}
+\end{equation}
+\begin{equation}
+    T_2 = \Delta T + T_1
+    \label{eq:t2_calculo}
+\end{equation}
+donde $T_1 = 27{,}0 \pm 0{,}5~^{\circ}\mathrm{C}$. 
+
+La incertidumbre asociada a la elevación de temperatura por propagación de errores es:
+\begin{equation}
+    \Delta(\Delta T) = \sqrt{\left(\frac{234{,}5 + T_1}{R_f}\,\Delta R_c\right)^2 + \left(\frac{R_c(234{,}5 + T_1)}{R_f^2}\,\Delta R_f\right)^2 + \left(\frac{R_c - R_f}{R_f}\,\Delta T_1\right)^2}
+    \label{eq:prop_error_dt}
+\end{equation}
+
+En el Cuadro~\ref{tab:elevacion_temperatura} se presentan los resultados térmicos calculados tanto para el devanado de baja tensión como para el de alta tensión, evaluando la resistencia promedio y las lecturas más precisas a corriente nominal de prueba ($1{,}0\text{ A}$).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Elevación térmica y temperatura final de devanados por el método de la resistencia.}
+    \label{tab:elevacion_temperatura}
+    \begin{tabular}{l c c c c c}
+        \toprule
+        \textbf{Devanado / Criterio} & \textbf{$R_f$ [$\Omega$]} & \textbf{$R_c$ [$\Omega$]} & \textbf{$\Delta T$ [$^{\circ}\mathrm{C}$]} & \textbf{$T_2$ [$^{\circ}\mathrm{C}$]} & \textbf{Estado} \\
+        \midrule
+        BT: Promedio global & $0{,}192$ & $0{,}235$ & $57{,}7 \pm 12{,}4$ & $84{,}7 \pm 12{,}4$ & Aceptable \\
+        BT: Punto nominal ($1{,}0\text{ A}$) & $0{,}160$ & $0{,}191$ & $49{,}9 \pm 11{,}2$ & $76{,}9 \pm 11{,}2$ & Muy Confiable \\
+        BT: Pendiente nominal & $0{,}167$ & $0{,}202$ & $48{,}5 \pm 10{,}8$ & $75{,}5 \pm 10{,}8$ & Muy Confiable \\
+        \midrule
+        AT: Promedio global & $0{,}670$ & $0{,}750$ & $30{,}9 \pm 14{,}6$ & $57{,}9 \pm 14{,}6$ & Aceptable \\
+        AT: Pendiente lineal & $0{,}648$ & $0{,}689$ & $16{,}5 \pm 12{,}0$ & $43{,}5 \pm 12{,}0$ & Moderado \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Mediciones Experimentales con Carga Resistiva y Carga Inductiva}
+
+Durante el ensayo en corriente alterna, el transformador fue conectado en configuración elevadora (Primario: devanado de 110~V; Secundario: devanado de 220~V alimentando la carga). Se conectaron voltímetros, amperímetros y vatímetros en primario y secundario. 
+
+Para obtener la potencia activa real a partir de las lecturas en divisiones de los vatímetros, se consideraron las especificaciones de placa de los instrumentos y la conexión empleada:
+\begin{itemize}
+    \item \textbf{Lado Primario ($W_1$):} El vatímetro se conectó en sus terminales de $5\text{ A}$ y $120\text{ V}$. De acuerdo con la tabla de constantes de placa del instrumento, para dicha combinación corresponde multiplicar la lectura de la aguja por un factor de $5$. Además, debido a que en el primario se intercaló un transformador de corriente con relación de reducción $2:1$ ($k_{\text{TC}} = 2$), la lectura debe afectarse por este factor de escala, resultando en un factor multiplicador total de:
+    \begin{equation}
+        K_{w1} = 5 \times 2 = 10\text{ W/div}
+        \label{eq:kw1}
+    \end{equation}
+    
+    \item \textbf{Lado Secundario ($W_2$):} El vatímetro se conectó directamente a los terminales de $5\text{ A}$ y $240\text{ V}$. Según la placa del vatímetro, a estos terminales les corresponde de manera directa un factor de multiplicación de:
+    \begin{equation}
+        K_{w2} = 10\text{ W/div}
+        \label{eq:kw2}
+    \end{equation}
+\end{itemize}
+
+De esta manera, en ambos lados la potencia activa real en vatios se obtiene multiplicando directamente la lectura en divisiones por una constante común $K_w = 10\text{ W/div}$ ($P = P_{\text{div}} \times 10$).
+
+A partir de las mediciones se calcularon las siguientes magnitudes:
+\begin{enumerate}
+    \item \textbf{Potencia aparente de entrada y salida:}
+    \begin{equation}
+        S_1 = V_1 \cdot I_1, \qquad S_2 = V_2 \cdot I_2
+        \label{eq:potencia_aparente}
+    \end{equation}
+    con incertidumbre:
+    \begin{equation}
+        \Delta S = S \sqrt{\left(\frac{\Delta V}{V}\right)^2 + \left(\frac{\Delta I}{I}\right)^2}
+    \end{equation}
+    
+    \item \textbf{Factor de potencia secundario (en la carga):}
+    \begin{equation}
+        \cos\varphi_2 = \frac{P_2}{S_2} = \frac{P_2}{V_2 \cdot I_2}
+        \label{eq:fp_calc}
+    \end{equation}
+    
+    \item \textbf{Rendimiento experimental del transformador:}
+    \begin{equation}
+        \eta_{\text{med}} = \frac{P_2}{P_1} = \frac{P_{2,\text{div}} \cdot K_{w2}}{P_{1,\text{div}} \cdot K_{w1}} = \frac{P_{2,\text{div}}}{P_{1,\text{div}}}
+        \label{eq:eta_med}
+    \end{equation}
+    Dado que $K_{w1} = K_{w2} = 10\text{ W/div}$, el rendimiento resulta directamente del cociente de divisiones leídas en la escala, independizándose de cualquier eventual incertidumbre sistemática en el factor multiplicador común. La incertidumbre de la eficiencia experimental es:
+    \begin{equation}
+        \Delta \eta_{\text{med}} = \eta_{\text{med}} \sqrt{\left(\frac{\Delta P_{2,\text{div}}}{P_{2,\text{div}}}\right)^2 + \left(\frac{\Delta P_{1,\text{div}}}{P_{1,\text{div}}}\right)^2}
+        \label{eq:prop_error_eta}
+    \end{equation}
+\end{enumerate}
+
+En el Cuadro~\ref{tab:mediciones_carga} se consolidan las mediciones brutas de laboratorio con sus incertidumbres, y en el Cuadro~\ref{tab:potencias_rendimiento} se presentan las potencias calculadas, el factor de potencia secundario y el rendimiento experimental resultante.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mediciones experimentales brutas en primario y secundario bajo distintos regímenes de carga.}
+    \label{tab:mediciones_carga}
+    \begin{tabular}{l c c c c c c}
+        \toprule
+        \textbf{Carga Ensayada} & \textbf{$V_1$ [V]} & \textbf{$I_1$ [A]} & \textbf{$P_{1,\text{div}}$ [div]} & \textbf{$V_2$ [V]} & \textbf{$I_2$ [A]} & \textbf{$P_{2,\text{div}}$ [div]} \\
+        \midrule
+        Resistiva 1~kW & $109 \pm 1$ & $4{,}5 \pm 0{,}5$ & $44 \pm 1$ & $220 \pm 5$ & $2{,}0 \pm 0{,}1$ & $42 \pm 1$ \\
+        Resistiva 800~W & $118 \pm 1$ & $4{,}0 \pm 0{,}1$ & $40 \pm 1$ & $220 \pm 5$ & $1{,}7 \pm 0{,}1$ & $38 \pm 1$ \\
+        Resistiva 600~W & $106 \pm 1$ & $2{,}48 \pm 0{,}02$ & $38 \pm 1$ & $220 \pm 5$ & $1{,}2 \pm 0{,}1$ & $38 \pm 1$ \\
+        Resistiva 400~W & $108 \pm 1$ & $2{,}0 \pm 0{,}5$ & $18 \pm 1$ & $215 \pm 5$ & $0{,}8 \pm 0{,}1$ & $18 \pm 1$ \\
+        Resistiva 200~W & $108 \pm 1$ & $2{,}5 \pm 0{,}5$ & $9 \pm 1$ & $215 \pm 5$ & $0{,}3 \pm 0{,}1$ & $9 \pm 1$ \\
+        \midrule
+        Carga Inductiva (L1-2) & $118 \pm 1$ & $6{,}0 \pm 0{,}5$ & $5 \pm 1$ & $220 \pm 5$ & $2{,}4 \pm 0{,}1$ & $5 \pm 1$ \\
+        \bottomrule
+    \end{tabular}
+    \par\smallskip
+    \footnotesize\textit{Nota: Las lecturas vatimétricas corresponden a divisiones directas de la aguja con constante $K_w = 10\text{ W/div}$.}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Potencias aparentes, potencias activas, factor de potencia y rendimiento experimental.}
+    \label{tab:potencias_rendimiento}
+    \begin{tabular}{l c c c c c c}
+        \toprule
+        \textbf{Carga Ensayada} & \textbf{$S_1$ [VA]} & \textbf{$P_1$ [W]} & \textbf{$S_2$ [VA]} & \textbf{$P_2$ [W]} & \textbf{$\cos\varphi_2$} & \textbf{$\eta_{\text{med}}$ [\%]} \\
+        \midrule
+        Resistiva 1~kW & $490{,}5 \pm 54{,}8$ & $440 \pm 10$ & $440{,}0 \pm 24{,}1$ & $420 \pm 10$ & $0{,}955$ & $95{,}45 \pm 3{,}14$ \\
+        Resistiva 800~W & $472{,}0 \pm 12{,}5$ & $400 \pm 10$ & $374{,}0 \pm 23{,}6$ & $380 \pm 10$ & $1{,}016$ & $95{,}00 \pm 3{,}45$ \\
+        Resistiva 600~W & $262{,}9 \pm 3{,}3$ & $380 \pm 10$ & $264{,}0 \pm 22{,}8$ & $380 \pm 10$ & $1{,}439$ & $100{,}00 \pm 3{,}72$ \\
+        Resistiva 400~W & $216{,}0 \pm 54{,}1$ & $180 \pm 10$ & $172{,}0 \pm 21{,}9$ & $180 \pm 10$ & $1{,}047$ & $100{,}00 \pm 7{,}86$ \\
+        Resistiva 200~W & $270{,}0 \pm 54{,}1$ & $90 \pm 10$ & $64{,}5 \pm 21{,}6$ & $90 \pm 10$ & $1{,}395$ & $100{,}00 \pm 15{,}71$ \\
+        \midrule
+        Carga Inductiva (L1-2) & $708{,}0 \pm 59{,}3$ & $50 \pm 10$ & $528{,}0 \pm 25{,}0$ & $50 \pm 10$ & $\mathbf{0{,}095}$ & $100{,}00 \pm 28{,}28$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Determinación de Pérdidas en el Hierro y en el Cobre a partir del Modelo del Transformador}
+
+En las sesiones de laboratorio previas (correspondientes a la caracterización del modelo circuital del transformador monofásico en el Informe N°~4), se determinaron mediante los ensayos normalizados de circuito abierto (vacío) y cortocircuito los parámetros concentrados del circuito equivalente. Al exportar dichos parámetros al presente ensayo, se dispone de las bases físicas para segregar analíticamente las pérdidas totales en pérdidas en el hierro ($P_{\text{Fe}}$) y pérdidas en el cobre ($P_{\text{Cu}}$):
+\begin{itemize}
+    \item \textbf{Rama de excitación (Ensayo de vacío en Baja Tensión, $120\text{ V}$):}
+    \begin{equation}
+        R_c = 240\,\Omega, \qquad X_m = 80\,\Omega \quad (\text{referidos al devanado de BT})
+    \end{equation}
+    Las pérdidas en el núcleo ferromagnético por histéresis y corrientes de Foucault dependen directamente del cuadrado de la tensión aplicada al devanado primario ($V_1$), evaluándose mediante:
+    \begin{equation}
+        P_{\text{Fe}} = \frac{V_1^2}{R_c} = \frac{V_1^2}{240\,\Omega}
+        \label{eq:pfe_modelo}
+    \end{equation}
+    Para la tensión de referencia de $120\text{ V}$, estas pérdidas se sitúan en $P_{\text{Fe},n} = 120^2 / 240 = 60\text{ W}$, ajustándose para cada punto de carga en función de la tensión de entrada $V_1$ suministrada por el VARIAC.
+    
+    \item \textbf{Rama serie equivalente (Ensayo de cortocircuito en Alta Tensión, $240\text{ V}$):}
+    \begin{equation}
+        R_{cc} = R_{\text{eq,AT}} = 1{,}25\,\Omega, \qquad X_{cc} = X_{\text{eq,AT}} = 0{,}58\,\Omega, \qquad Z_{cc} = 1{,}38\,\Omega
+    \end{equation}
+    Dado que en el ensayo de rendimiento el devanado de Alta Tensión opera como secundario alimentando la carga ($I_2$), la resistencia equivalente referida a este lado es directamente $R_{\text{eq2}} = R_{cc} = 1{,}25\,\Omega$. Por tanto, las pérdidas por efecto Joule en los arrollamientos se calculan como:
+    \begin{equation}
+        P_{\text{Cu}} = I_2^2 \cdot R_{\text{eq2}} = I_2^2 \cdot 1{,}25\,\Omega
+        \label{eq:pcu_modelo}
+    \end{equation}
+\end{itemize}
+
+A partir de la segregación de pérdidas en el hierro y en el cobre, el rendimiento del transformador se evalúa analíticamente mediante la formulación establecida en la guía de laboratorio:
+\begin{equation}
+    \eta = 1 - \frac{P_{\text{Fe}} + R_{\text{Cu}} I_2^2}{U_2 I_2 \cos\varphi_2}
+    \label{eq:eta_formula_guia}
+\end{equation}
+donde $U_2$ es la tensión secundaria aplicada a la carga, $I_2$ la corriente secundaria, $\cos\varphi_2$ el factor de potencia de la carga (con lo cual el producto del denominador corresponde a la potencia activa útil de salida $P_2 = U_2 I_2 \cos\varphi_2$), $P_{\text{Fe}} = V_1^2 / R_c$ son las pérdidas en el núcleo ferromagnético y $R_{\text{Cu}} I_2^2 = R_{\text{eq2}} I_2^2$ representa las pérdidas por efecto Joule en los arrollamientos.
+
+En el Cuadro~\ref{tab:perdidas_modelo} se consolidan las pérdidas en el hierro, pérdidas en el cobre, la potencia de pérdidas total ($P_{\text{perd}} = P_{\text{Fe}} + P_{\text{Cu}}$) y los rendimientos resultantes calculados a partir de dicha formulación analítica ($\eta_{\text{ind}}$), contrastándolos con las mediciones directas de los vatímetros ($\eta_{\text{med}}$).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Pérdidas en el hierro, pérdidas en el cobre y rendimiento evaluado según $\eta = 1 - \frac{P_{\text{Fe}} + R_{\text{Cu}} I_2^2}{U_2 I_2 \cos\varphi_2}$.}
+    \label{tab:perdidas_modelo}
+    \begin{tabular}{l c c c c c c}
+        \toprule
+        \textbf{Carga Ensayada} & \textbf{$P_2$ [W]} & \textbf{$P_{\text{Fe}}$ [W]} & \textbf{$P_{\text{Cu}}$ [W]} & \textbf{$P_{\text{perd}}$ [W]} & \textbf{$\eta_{\text{ind}}$ [\%]} & \textbf{$\eta_{\text{med}}$ [\%]} \\
+        \midrule
+        Resistiva 1~kW & $420 \pm 10$ & $49{,}5$ & $5{,}00$ & $54{,}5$ & $87{,}02$ & $95{,}45 \pm 3{,}14$ \\
+        Resistiva 800~W & $380 \pm 10$ & $58{,}0$ & $3{,}61$ & $61{,}6$ & $83{,}79$ & $95{,}00 \pm 3{,}45$ \\
+        Resistiva 600~W & $380 \pm 10$ & $46{,}8$ & $1{,}80$ & $48{,}6$ & $87{,}21$ & $100{,}00 \pm 3{,}72$ \\
+        Resistiva 400~W & $180 \pm 10$ & $48{,}6$ & $0{,}80$ & $49{,}4$ & $72{,}56$ & $100{,}00 \pm 7{,}86$ \\
+        Resistiva 200~W & $90 \pm 10$ & $48{,}6$ & $0{,}11$ & $48{,}7$ & $45{,}88$ & $100{,}00 \pm 15{,}71$ \\
+        \midrule
+        Carga Inductiva (L1-2) & $50 \pm 10$ & $58{,}0$ & $7{,}20$ & $65{,}2$ & $\mathbf{-30{,}40^*}$ & $100{,}00 \pm 28{,}28$ \\
+        \bottomrule
+    \end{tabular}
+    \par\smallskip
+    \footnotesize\textit{(*) Para la carga inductiva, las pérdidas internas ($65{,}2\text{ W}$) superan a la potencia activa útil transferida ($50\text{ W}$), lo que hace que el término sustractivo exceda la unidad en esta formulación aproximada; evaluado con la expresión exacta $P_2/(P_2+P_{\text{perd}})$ el rendimiento físico real es $43{,}40\%$, tal como se analiza en la sección siguiente.}
+\end{table}

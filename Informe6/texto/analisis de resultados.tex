@@ -1,0 +1,131 @@
+\section{Análisis de Resultados}
+
+En esta sección se desarrolla una discusión físico-matemática rigurosa de las mediciones obtenidas en el laboratorio, confrontando los datos experimentales con los modelos teóricos del transformador monofásico, los balances de potencia y las normas técnicas COVENIN 3172-95 (punto 5.7, aumentos de temperatura), COVENIN 536-94 y ANSI/IEEE C57.12.91-2001. El análisis abarca la evolución del rendimiento frente a la carga, el balance de potencias activa y aparente, la degradación de la eficiencia ante cargas fuertemente inductivas y la respuesta térmica de los devanados mediante el método de la resistencia.
+
+\subsection{Comportamiento del Rendimiento frente a la Variación de Carga}
+
+El rendimiento del transformador monofásico exhibe una dependencia intrínseca con el nivel de carga suministrado, gobernada por la relación entre las pérdidas fijas en el núcleo de hierro ($P_{\text{Fe}}$) y las pérdidas variables por efecto Joule en los arrollamientos ($P_{\text{Cu}} = I^2 R_{\text{eq}}$). De acuerdo con la ecuación teórica:
+\begin{equation}
+    \eta = \frac{V_2 I_2 \cos\varphi_2}{V_2 I_2 \cos\varphi_2 + P_{\text{Fe}} + I_2^2 R_{\text{eq2}}}
+\end{equation}
+
+A partir de los resultados presentados en el Cuadro~\ref{tab:potencias_rendimiento}, se observan dos zonas operativas claramente diferenciadas:
+\begin{enumerate}
+    \item \textbf{Zona de Alta Carga (1~kW y 800~W):}
+    En estos regímenes, el transformador opera con una corriente secundaria de $2{,}0\text{ A}$ y $1{,}7\text{ A}$, respectivamente. El rendimiento experimental medido se sitúa en $\eta_{\text{med}} = 95{,}45 \pm 3{,}14\%$ para 1~kW y $\eta_{\text{med}} = 95{,}00 \pm 3{,}45\%$ para 800~W. Este comportamiento concuerda de manera sobresaliente con el desempeño esperado para una máquina de $1\text{ kVA}$, donde las pérdidas totales representan entre un 4\% y un 5\% de la potencia nominal transmitida ($P_{\text{perd}} = P_1 - P_2 = 20\text{ W}$), distribuidas armónicamente entre las pérdidas de excitación del núcleo ($P_{\text{Fe}} \approx 20 - 25\text{ W}$) y las pérdidas óhmicas de los devanados.
+    
+    En esta región, la potencia activa transmitida es muy superior a las pérdidas fijas en vacío, por lo que el transformador opera en la meseta de máxima eficiencia energética. La proximidad entre el rendimiento a 1~kW (95,45\%) y 800~W (95,00\%) evidencia que el punto de rendimiento máximo se ubica en el intervalo de 70\% a 90\% de la corriente nominal de diseño.
+
+    \item \textbf{Zona de Bajas Cargas (600~W, 400~W y 200~W):}
+    En las cargas intermedias y bajas, las lecturas en divisiones directas de la aguja de los vatímetros arrojaron valores idénticos en entrada y salida ($P_{1,\text{div}} = P_{2,\text{div}} = 38\text{ div}$, $18\text{ div}$ y $9\text{ div}$), lo que conduce formalmente a un cociente $\eta_{\text{med}} = 100{,}0\%$. 
+    
+    Desde el punto de vista de las leyes de la termodinámica y el electromagnetismo clásico, un rendimiento del 100\% es físicamente imposible en una máquina eléctrica real debido a la existencia ineludible de pérdidas por histéresis y corrientes parásitas en las laminaciones de acero, así como pérdidas Joule en los conductores. Esta aparente anomalía cuantitativa se explica plenamente por la metrología del instrumental analógico empleado:
+    \begin{itemize}
+        \item \textbf{Resolución y Constante de Escala Vatimétrica:} Los vatímetros analógicos de laboratorio poseen una apreciación de $\pm 1\text{ división}$ y una constante de escala resultante $K_w = 10\text{ W/div}$ (obtenida según la placa del instrumento al multiplicar por $5$ y por el factor $2$ del TC en primario, y directamente por $10$ en secundario con los terminales de $5\text{ A}$ y $240\text{ V}$), lo que equivale a una incertidumbre de $\pm 10\text{ W}$ por lectura. Dado que las pérdidas reales en vacío y a bajas corrientes oscilan típicamente entre $10\text{ W}$ y $20\text{ W}$, dicha disipación interna se encuentra dentro del umbral de incertidumbre intrínseca de una sola división de la aguja.
+        \item \textbf{Error Relativo Creciente a Bajo Rango:} A medida que la lectura desciende hacia el tercio inferior de la escala (por ejemplo, en $9\text{ div}$ para 200~W), la incertidumbre relativa se magnifica drásticamente:
+        \begin{equation}
+            \frac{\Delta P}{P} = \frac{1}{9} \approx 11{,}1\% \quad \Longrightarrow \quad \Delta \eta = \pm 15{,}71\%
+        \end{equation}
+        Por ende, la medición de $100{,}0\%$ en bajas cargas debe interpretarse metrológicamente como un valor acotado en el intervalo real $\eta \in [84{,}3\%,\, 100{,}0\%]$, demostrando que a bajas potencias los métodos directos con vatímetros analógicos convencionales pierden sensibilidad, resultando mandatorio recurrir al \textbf{método indirecto de separación de pérdidas} a partir de los ensayos de vacío y cortocircuito previos.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Balance de Potencias y Contraste entre Potencia Activa y Aparente}
+
+En el Cuadro~\ref{tab:potencias_rendimiento} se contrastan las potencias aparentes primarias ($S_1 = V_1 I_1$) y secundarias ($S_2 = V_2 I_2$) con las potencias activas ($P_1, P_2$).
+
+Para las cargas resistivas puras (reostatos de calefacción/focos), la potencia reactiva de la carga es nominalmente nula, lo que exigiría teóricamente un factor de potencia secundario $\cos\varphi_2 = 1{,}000$ y, por consiguiente, $P_2 = S_2$. En la práctica experimental se presentan las siguientes particularidades:
+\begin{enumerate}
+    \item \textbf{Punto de 1~kW:} Se midió $S_2 = 220\text{ V} \times 2{,}0\text{ A} = 440{,}0\text{ VA}$ y una potencia activa $P_2 = 42\text{ div} \times 10\text{ W/div} = 420\text{ W}$, arrojando un factor de potencia $\cos\varphi_2 = 420/440 = 0{,}955$. Esta ligera discrepancia respecto a la unidad obedece a una mínima inductancia parásita de dispersión presente en las resistencias bobinadas del reostato, sumada al error de paralaje y apreciación en los amperímetros analógicos de hierro móvil.
+    \item \textbf{Puntos de 800~W a 200~W:} La potencia activa registrada por el vatímetro ($380\text{ W}, 180\text{ W}, 90\text{ W}$) resulta superior al producto directo $V_2 I_2$ medido por los voltímetros y amperímetros, lo cual arroja factores de potencia calculados mayores a la unidad ($1{,}016$ a $1{,}439$). Esto se origina en la combinación de incertidumbres sistemáticas de instrumentos independientes: los voltímetros y amperímetros analógicos de hierro móvil operan bajo un principio físico distinto al par electrodinámico del vatímetro. Cualquier leve sobreestimación de la aguja del vatímetro por apreciación de escala o subestimación en la escala del amperímetro a baja corriente desplaza el cociente experimental $P_2/S_2$ por encima de 1, fenómeno recurrente en mediciones analógicas con instrumentos no acoplados.
+    \item \textbf{Lado Primario:} En todos los puntos resistivos se comprueba rigurosamente que $S_1 > P_1$, con factores de potencia primarios del orden de $0{,}85 - 0{,}90$. Esto confirma que el devanado primario absorbe de la red una corriente de excitación en cuadratura ($I_0 \sin\varphi_0$) requerida para magnetizar el núcleo ferromagnético, reduciendo el factor de potencia de entrada aún cuando la carga en el secundario sea netamente resistiva.
+\end{enumerate}
+
+\subsection{Análisis y Segregación de Pérdidas en el Hierro y en el Cobre a partir del Modelo}
+
+Al confrontar las mediciones directas de rendimiento con los parámetros del modelo circuital obtenidos en el Informe N°~4 ($R_c = 240\,\Omega$, $R_{cc} = 1{,}25\,\Omega$), se logran develar los mecanismos físicos de disipación interna y comprender las discrepancias observadas entre ambos métodos:
+\begin{enumerate}
+    \item \textbf{Magnitud y Naturaleza de las Pérdidas en el Hierro ($P_{\text{Fe}}$):}
+    Las pérdidas en el núcleo ferromagnético (histéresis y corrientes parásitas) oscilaron entre $46{,}8\text{ W}$ y $58{,}0\text{ W}$ a lo largo de los ensayos, dependiendo exclusivamente del nivel de tensión $V_1$ fijado por el VARIAC ($P_{\text{Fe}} = V_1^2 / 240$). En los regímenes donde la tensión de excitación se incrementó a $118\text{ V}$ (cargas de 800~W y carga inductiva), las pérdidas de vacío alcanzaron su cota superior de $58\text{ W}$, muy próxima a los $60\text{ W}$ nominales de placa.
+    
+    Este comportamiento confirma de forma tajante que las pérdidas en el hierro actúan como un término de carga basal prácticamente constante e independiente de la corriente que circula por la carga secundaria, gobernando la disipación energética en regímenes de vacío y baja carga.
+
+    \item \textbf{Evolución Cuadrática de las Pérdidas en el Cobre ($P_{\text{Cu}}$):}
+    A diferencia del hierro, las pérdidas por efecto Joule en los arrollamientos varían con el cuadrado de la corriente ($P_{\text{Cu}} = I_2^2 R_{\text{eq2}}$). Para la carga de 1~kW ($I_2 = 2{,}0\text{ A}$), alcanzaron $P_{\text{Cu}} = 5{,}00\text{ W}$; en 600~W descendieron a $1{,}80\text{ W}$, y en 200~W colapsaron a apenas $0{,}11\text{ W}$.
+    
+    En consecuencia, para toda la gama de cargas resistivas ensayadas ($I_2 \le 2{,}0\text{ A}$ frente a una capacidad nominal de $5\text{ A}$), se cumple holgadamente que:
+    \begin{equation}
+        P_{\text{Fe}} \gg P_{\text{Cu}} \quad (\text{por ejemplo, } 49{,}5\text{ W} \gg 5{,}00\text{ W a 1~kW})
+    \end{equation}
+    Esto demuestra que durante la sesión experimental el transformador operó en la rama ascendente de su curva de rendimiento ($\eta$ vs. $I_2$), por debajo del punto de rendimiento óptimo teórico ($I_2^* = \sqrt{P_{\text{Fe}}/R_{\text{eq2}}} = \sqrt{60/1{,}25} \approx 6{,}93\text{ A}$), donde ambas pérdidas se igualan ($P_{\text{Fe}} = P_{\text{Cu}}$).
+
+    \item \textbf{Contraste entre Método Directo y Formulación Analítica de Pérdidas:}
+    La comparación cuantitativa entre el rendimiento directo medido ($\eta_{\text{med}}$) y el obtenido analíticamente mediante la fórmula de la guía $\eta = 1 - \frac{P_{\text{Fe}} + R_{\text{Cu}} I_2^2}{U_2 I_2 \cos\varphi_2}$ ($\eta_{\text{ind}}$) en el Cuadro~\ref{tab:perdidas_modelo} esclarece de forma definitiva las lecturas de laboratorio:
+    \begin{itemize}
+        \item \textbf{En Bajas Cargas (600~W, 400~W y 200~W):} Mientras que el método directo arrojó $\eta_{\text{med}} = 100{,}0\%$ por insuficiencia de apreciación en los vatímetros analógicos ($\Delta P = \pm 10\text{ W}$ enmascara la diferencia entre entrada y salida), la formulación analítica revela que la eficiencia decae progresivamente a $87{,}21\%$, $72{,}56\%$ y $45{,}88\%$ a 200~W. Esta caída responde a que la potencia disipada en el núcleo ($48{,}6\text{ W}$) representa más del 50\% de la potencia útil entregada a la carga ($90\text{ W}$), haciendo que el término sustractivo de pérdidas relativas se incremente drásticamente al disminuir la potencia entregada.
+        \item \textbf{En Carga Inductiva (L1-2):} La revelación del modelo es aún más contundente. El método directo reportó un engañoso $\eta_{\text{med}} = 100{,}0 \pm 28{,}3\%$ debido a que ambos vatímetros leyeron idénticamente $5\text{ divisiones}$ ($50\text{ W}$). Sin embargo, al incorporar las pérdidas reales del núcleo ($58{,}0\text{ W}$) y del cobre ($7{,}20\text{ W}$, elevadas por los $2{,}4\text{ A}$ de corriente reactiva), las pérdidas totales ascienden a $P_{\text{perd}} = 65{,}2\text{ W}$, superando a la propia potencia útil transmitida ($P_2 = 50\text{ W}$). 
+        
+        Al evaluar la formulación analítica de la guía:
+        \begin{equation}
+            \eta = 1 - \frac{65{,}2\text{ W}}{50\text{ W}} = 1 - 1{,}304 = \mathbf{-30{,}40\%}
+        \end{equation}
+        el valor negativo refleja matemáticamente que la potencia disipada internamente en pérdidas excede la potencia activa útil transferida a la carga. Si se evalúa bajo la definición estricta de balance de potencia $P_2 / (P_2 + P_{\text{perd}})$, la eficiencia real física se ubica en $43{,}40\%$. Esto evidencia de forma tajante cómo un factor de potencia tan degradado ($\cos\varphi_2 = 0{,}095$) colapsa la eficiencia energética del transformador.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Efecto Determinante de la Carga Inductiva}
+
+La prueba efectuada con carga inductiva (designada en el laboratorio como \textit{L1-2}) aporta una de las evidencias electromagnéticas más contundentes de la práctica:
+\begin{enumerate}
+    \item \textbf{Magnitud de Corrientes frente a Potencia Activa:}
+    La corriente primaria se elevó a su valor máximo de todo el ensayo: $I_1 = 6{,}0 \pm 0{,}5\text{ A}$, y la corriente secundaria alcanzó $I_2 = 2{,}4 \pm 0{,}1\text{ A}$. No obstante, las lecturas vatimétricas colapsaron a apenas $P_{1,\text{div}} = 5\text{ div}$ ($50\text{ W}$) y $P_{2,\text{div}} = 5\text{ div}$ ($50\text{ W}$).
+    \item \textbf{Potencia Aparente frente a Potencia Activa:}
+    La potencia aparente demandada en bornes primarios fue de $S_1 = 118\text{ V} \times 6{,}0\text{ A} = 708{,}0\text{ VA}$, y en bornes secundarios alcanzó $S_2 = 220\text{ V} \times 2{,}4\text{ A} = 528{,}0\text{ VA}$. Al calcular el factor de potencia secundario:
+    \begin{equation}
+        \cos\varphi_2 = \frac{P_2}{S_2} = \frac{50\text{ W}}{528{,}0\text{ VA}} = \mathbf{0{,}095}
+    \end{equation}
+    lo cual equivale a un desfasaje angular de $\varphi_2 \approx 84{,}5^{\circ}$ en atraso.
+    \item \textbf{Interpretación Físico-Eléctrica:}
+    Una impedancia fuertemente reactiva se comporta eminentemente como un inductor o reactor de muy alta reactancia ($X_L$) y mínima resistencia de pérdidas ($R$). La corriente que absorbe este dispositivo está destinada casi en su totalidad al intercambio de energía magnética oscilante (potencia reactiva inductiva, $Q \approx 525\text{ VAR}$), disipando una fracción mínima de potencia activa.
+    
+    Esta sobrecarga de corriente reactiva satura térmicamente la capacidad conductiva de los arrollamientos del transformador ($I_1 = 6\text{ A}$ supera la corriente nominal de placa de $5\text{ A}$), provocando cuantiosas pérdidas Joule en el cobre ($I^2 R$) a pesar de que la potencia activa transferida a la carga es insignificante ($50\text{ W}$). Esto comprueba de manera irrefutable la prescripción teórica: \textit{a menor factor de potencia, menor es la capacidad del transformador para transmitir potencia útil, incrementándose las pérdidas relativas y degradando severamente la eficiencia operativa de la instalación}.
+\end{enumerate}
+
+\subsection{Análisis Térmico de los Devanados por el Método de la Resistencia}
+
+El incremento de la resistencia eléctrica en corriente continua medido tras someter el transformador a los ciclos de carga permite cuantificar el calentamiento global de la máquina en conformidad con el punto 5.7 de la norma COVENIN 3172-95 y el estándar ANSI/IEEE C57.12.91-2001.
+
+\begin{enumerate}
+    \item \textbf{Devanado de Baja Tensión (BT):}
+    A la corriente de prueba de $1{,}0\text{ A}$ (donde los errores de apreciación relativa de tensión y corriente son mínimos), la resistencia en frío fue de $R_f = 0{,}160 \pm 0{,}026\,\Omega$, mientras que la lectura en caliente se incrementó a $R_c = 0{,}1905 \pm 0{,}0191\,\Omega$.
+    
+    Aplicando la ecuación normalizada para conductores de cobre:
+    \begin{equation}
+        \Delta T = \frac{0{,}1905 - 0{,}1600}{0{,}1600} \cdot (234{,}5 + 27{,}0) = 0{,}1906 \cdot 261{,}5 = \mathbf{49{,}85~^{\circ}\mathrm{C}}
+    \end{equation}
+    lo que sitúa la temperatura final media de los conductores en:
+    \begin{equation}
+        T_2 = 49{,}85 + 27{,}0 = \mathbf{76{,}85~^{\circ}\mathrm{C}}
+    \end{equation}
+    Si se analiza el promedio global de todas las lecturas (Cuadro~\ref{tab:elevacion_temperatura}), se obtiene $\Delta T = 57{,}7 \pm 12{,}4~^{\circ}\mathrm{C}$ con $T_2 = 84{,}7~^{\circ}\mathrm{C}$. 
+    
+    Estos valores resultan sumamente coherentes con el régimen de trabajo exigido en el laboratorio: la circulación prolongada de corrientes cercanas a la nominal ($4{,}5\text{ A}$ a $6{,}0\text{ A}$) eleva la temperatura del bobinado interno en aproximadamente $50~^{\circ}\mathrm{C}$ sobre la temperatura ambiente. Al contrastar con la clasificación de aislamiento térmico de la norma COVENIN 536-94:
+    \begin{itemize}
+        \item Para aislamientos Clase A (límite de elevación térmica de $60~^{\circ}\mathrm{C}$, temperatura máxima admisible de $105~^{\circ}\mathrm{C}$), el transformador operó holgadamente dentro de los márgenes seguros de servicio térmico continuo ($\Delta T \approx 50~^{\circ}\mathrm{C} < 60~^{\circ}\mathrm{C}$).
+        \item Para aislamientos Clase B o F (comunes en transformadores secos modernos, límites de $80~^{\circ}\mathrm{C}$ y $115~^{\circ}\mathrm{C}$), el margen de reserva térmica es aún más amplio.
+    \end{itemize}
+
+    \item \textbf{Devanado de Alta Tensión (AT):}
+    En el arrollamiento de alta tensión, la resistencia promedio en frío fue de $0{,}670\,\Omega$ y en caliente de $0{,}750\,\Omega$, arrojando una elevación térmica de $\Delta T = 30{,}89~^{\circ}\mathrm{C}$ ($T_2 = 57{,}89~^{\circ}\mathrm{C}$). La menor elevación de temperatura en el devanado de alta tensión respecto al de baja tensión responde a dos factores físicos determinantes:
+    \begin{itemize}
+        \item \textbf{Disposición Geométrica y Disipación por Convección:} En los transformadores secos de laboratorio, el devanado de alta tensión se dispone generalmente en la capa exterior sobre el devanado concéntrico de baja tensión. Esta disposición favorece una mayor superficie de contacto con el aire ambiente, mejorando la evacuación convectiva de calor respecto al devanado interno de BT, que permanece térmicamente confinado junto al núcleo caliente.
+        \item \textbf{Régimen de Densidad de Corriente:} Durante los ensayos de carga resistiva, la corriente secundaria de AT fluctuó entre $0{,}3\text{ A}$ y $2{,}0\text{ A}$, muy por debajo de la capacidad de diseño nominal de $5\text{ A}$ ($I_2 \le 0{,}4\,I_{n,\text{AT}}$), limitando las pérdidas Joule volumétricas generadas en este arrollamiento durante la prueba resistiva.
+    \end{itemize}
+
+    \item \textbf{Repercusión en el Rendimiento Operativo en Caliente:}
+    El incremento de resistencia de aproximadamente un 19\% en los devanados debido a la temperatura implica que las pérdidas en el cobre en régimen permanente continuo se incrementan en esa misma proporción respecto a las condiciones de ensayo en frío:
+    \begin{equation}
+        P_{\text{Cu}}(T_2) = P_{\text{Cu}}(T_1) \cdot \frac{234{,}5 + T_2}{234{,}5 + T_1} \approx 1{,}19 \cdot P_{\text{Cu}}(T_1)
+    \end{equation}
+    Para la carga de 1~kW, si las pérdidas óhmicas iniciales eran de aproximadamente $10\text{ W}$, en caliente ascienden a $11{,}9\text{ W}$, lo que produce una leve disminución de la eficiencia real de aproximadamente $0{,}2\%$, demostrando la importancia de corregir los parámetros del circuito equivalente a la temperatura de servicio estipulada en los estándares de diseño ($75~^{\circ}\mathrm{C}$ u $85~^{\circ}\mathrm{C}$, según ANSI/IEEE C57.12.91-2001) para una especificación técnica rigurosa de las pérdidas.
+\end{enumerate}

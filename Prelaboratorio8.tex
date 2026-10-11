@@ -1,0 +1,367 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\setlength{\belowcaptionskip}{6pt}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+    \textsc{Universidad Central de Venezuela}\\[0.35cm]
+    \textsc{Facultad de Ingenier\'ia}\\[0.35cm]
+    \textsc{Escuela de Ingenier\'ia El\'ectrica}\\[0.35cm]
+    \textsc{Departamento de Potencia}\\[0.35cm]
+    \textsc{Laboratorio de M\'aquinas El\'ectricas I}
+\end{center}
+
+\vspace{6.8cm}
+
+\begin{center}
+    \textbf{PRE-LABORATORIO N\textsuperscript{o} 8}\\[0.35cm]
+    \textbf{Transformador monof\'asico en Paralelo}
+\end{center}
+
+\vfill
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    Docente:\\[0.25cm]
+    Jes\'us Blondel
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \raggedleft
+    Autor:\\[0.25cm]
+    Br. Carla Fajardo\\[0.25cm]
+    V-27.571.576
+\end{minipage}
+
+\vspace{1.1cm}
+
+\begin{center}
+    Caracas, \today
+\end{center}
+
+\newpage
+
+\section{Introducci\'on}
+Este prelaboratorio estudia el comportamiento de un banco trif\'asico de transformadores monof\'asicos en conexi\'on estrella--estrella (Y--Y). Se analiza la influencia del neutro y del devanado terciario en delta sobre las corrientes de excitaci\'on, los arm\'onicos y las tensiones del sistema, tanto en vac\'io como ante cargas lineales y no lineales, por lo que se comparan las condiciones de neutro conectado y aislado, junto con la funci\'on del devanado terciario como trayectoria para las corrientes arm\'onicas. El registro de tensiones de fase y de l\'inea, y de corrientes de excitaci\'on y del neutro, permite relacionar las formas de onda observadas con el tipo de carga y con la alimentaci\'on a tres o cuatro hilos. As\'i, se busca interpretar las distorsiones y variaciones de tensi\'on que aparecen en cada condici\'on de operaci\'on.
+\newpage
+
+\section{Objetivos}
+
+\subsection*{Objetivo general}
+Estudiar el comportamiento de un banco de transformaci\'on trif\'asico conformado por unidades monof\'asicas, en conexi\'on Estrella-Estrella (Y--Y), analizando la influencia de la conexi\'on de neutro y del delta terciario sobre las formas de onda de tensi\'on y corriente, tanto en vac\'io como con cargas lineales y no lineales.
+
+\subsection*{Objetivos espec\'ificos}
+\begin{enumerate}
+    \item Observar las formas de onda de tensi\'on y corriente de un banco de transformaci\'on trif\'asico en conexi\'on Estrella-Estrella (Y--Y).
+    \item Comparar el comportamiento del banco Y--Y alimentado con un sistema de cuatro hilos y con un sistema de tres hilos.
+    \item Registrar y analizar las formas de onda de tensi\'on fase-neutro y fase-fase, as\'i como la corriente de excitaci\'on, en condiciones de vac\'io con y sin neutro conectado.
+    \item Analizar la caracter\'istica de tensi\'on terminal del secundario en funci\'on de la corriente de carga, $U=f(I)$, para distintas condiciones de carga:
+    \begin{itemize}
+        \item Carga trif\'asica lineal balanceada con sistema de cuatro hilos.
+        \item Carga trif\'asica lineal balanceada con sistema de tres hilos.
+    \end{itemize}
+    \item Analizar el comportamiento del banco trif\'asico alimentando cargas no lineales:
+    \begin{itemize}
+        \item Carga trif\'asica no lineal balanceada mediante rectificador trif\'asico.
+        \item Carga monof\'asica no lineal mediante rectificador monof\'asico de onda completa.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+\section{Marco te\'orico}
+\subsection{Conexiones de transformadores trif\'asicos: generalidades}
+
+La transformaci\'on de tensiones y corrientes en los sistemas trif\'asicos puede llevarse a cabo mediante dos arquitecturas constructivas:
+\begin{itemize}
+    \item \textbf{Banco trif\'asico formado por tres transformadores monof\'asicos independientes:} ofrece mayor facilidad de transporte y mantenimiento (un transformador de reserva puede respaldar al banco).
+    \item \textbf{Transformador trif\'asico de n\'ucleo com\'un:} incorpora los tres conjuntos de devanados sobre una misma estructura magn\'etica (generalmente de tres columnas). Es m\'as compacto, ligero, econ\'omico y ligeramente m\'as eficiente.
+\end{itemize}
+
+Los devanados primarios y secundarios de estos equipos pueden interconectarse de forma independiente en diversas configuraciones:
+\begin{itemize}
+    \item \textbf{Estrella--Estrella ($Y$--$Y$ o $Yy$):} ambos lados conectados en estrella.
+    \item \textbf{Estrella--Delta ($Y$--$\Delta$ o $Yd$):} primario en estrella y secundario en tri\'angulo o delta.
+    \item \textbf{Delta--Estrella ($\Delta$--$Y$ o $Dy$):} primario en tri\'angulo y secundario en estrella.
+    \item \textbf{Delta--Delta ($\Delta$--$\Delta$ o $Dd$):} ambos lados conectados en tri\'angulo.
+    \item \textbf{Zig-zag ($Y$--$z$ o $Yz$):} subdivide las bobinas secundarias en dos partes iguales conectadas en serie-oposici\'on con fases adyacentes para equilibrar cargas monof\'asicas.
+\end{itemize}
+
+Existen tambi\'en esquemas especiales con dos transformadores, como la conexi\'on delta abierta ($V$--$V$) y la conexi\'on Scott--T.
+
+\subsection{Conexi\'on Estrella--Estrella ($Y$--$Y$)}
+
+En una conexi\'on Estrella--Estrella, las relaciones entre las magnitudes de fase y de l\'inea son:
+\begin{itemize}
+    \item Tensi\'on de l\'inea: $V_L=\sqrt{3}\,V_f$.
+    \item Corriente de l\'inea: $I_L=I_f$.
+\end{itemize}
+
+\subsubsection*{Ventajas}
+\begin{itemize}
+    \item \textbf{Menor exigencia de aislamiento:} la tensi\'on aplicada a cada bobina es $V_L/\sqrt{3}$ (un 58\% de la tensi\'on entre l\'ineas). Esto reduce los esfuerzos diel\'ectricos sobre el aislamiento, haci\'endola muy ventajosa en alta y muy alta tensi\'on.
+    \item \textbf{Mayor robustez mec\'anica:} requiere conductores de mayor secci\'on transversal frente a un devanado en delta equivalente, resultando en bobinas mec\'anicamente m\'as resistentes a los esfuerzos de cortocircuito.
+    \item \textbf{Sin desplazamiento angular:} no introduce desfase entre las tensiones del primario y del secundario ($0^\circ$ o $180^\circ$, \'indice horario 0 o 6).
+\end{itemize}
+
+\subsubsection*{Inconvenientes principales}
+\begin{enumerate}
+    \item \textbf{Sensibilidad a cargas desequilibradas:} si las cargas conectadas entre fase y neutro no est\'an balanceadas, se generan desplazamientos en el potencial del neutro.
+    \item \textbf{Generaci\'on de tensiones arm\'onicas de tercer orden:} presencia de componentes significativos del tercer arm\'onico por la saturaci\'on del n\'ucleo magn\'etico.
+\end{enumerate}
+
+\subsection{Influencia del neutro en la conexi\'on Estrella--Estrella}
+
+El comportamiento del transformador $Y$--$Y$ cambia de manera radical seg\'un se disponga o no de la conexi\'on del neutro.
+
+\subsubsection*{A) Con neutro aislado o sin conductor neutro (sistema a 3 hilos)}
+\begin{itemize}
+    \item \textbf{Condici\'on el\'ectrica:} al no existir un camino de retorno, la suma instant\'anea de las tres corrientes de excitaci\'on debe ser nula en el punto neutro: $i_a+i_b+i_c=0$.
+    \item \textbf{Comportamiento arm\'onico:} como los terceros arm\'onicos de la corriente de excitaci\'on est\'an en fase en las tres ramas (componentes homopolares), no pueden circular. Esto obliga a que la corriente de excitaci\'on sea puramente senoidal.
+    \item \textbf{Deformaci\'on del flujo:} al ser la corriente de excitaci\'on senoidal en un n\'ucleo saturado, el flujo magn\'etico se deforma y pasa a contener una fuerte componente de tercer arm\'onico ($\Phi_3$).
+    \item \textbf{Efecto sobre las tensiones y oscilaci\'on del neutro:} este flujo distorsionado induce fuerzas electromotrices con un gran contenido de tercer arm\'onico ($E_3$) en cada fase.
+    \begin{itemize}
+        \item En las tensiones compuestas (de l\'inea a l\'inea), el tercer arm\'onico se anula: $E_{a3}-E_{b3}=0$.
+        \item En las tensiones simples (fase a neutro), los terceros arm\'onicos de cada fase se suman al fundamental. Esto produce sobretensiones en las fases y hace que el punto neutro del secundario oscile en una trayectoria circular a la frecuencia del tercer arm\'onico, fen\'omeno conocido como ``neutro inquieto'' u oscilaci\'on del neutro.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{B) Con neutro primario r\'igidamente conectado a tierra (sistema a 4 hilos)}
+\begin{itemize}
+    \item El conductor neutro proporciona un camino de retorno para la suma de las componentes de tercer arm\'onico de la corriente de excitaci\'on ($i_{N,3}=3i_{o,3}$).
+    \item Al permitir que la corriente de excitaci\'on contenga la componente acampanada de tercer arm\'onico que requiere el n\'ucleo, el flujo magn\'etico se mantiene sinusoidal y las tensiones de fase permanecen equilibradas y sin distorsi\'on.
+    \item \textit{Desventaja:} la circulaci\'on de corrientes arm\'onicas por el hilo neutro y las l\'ineas a\'ereas puede provocar ca\'idas de tensi\'on distorsionantes e interferencias inductivas en l\'ineas de comunicaci\'on o telef\'onicas cercanas.
+\end{itemize}
+
+\subsection{Devanado delta terciario (terciario en $\Delta$)}
+
+Para resolver los problemas de distorsi\'on y desequilibrio en la conexi\'on $Y$--$Y$ sin necesidad de conectar el neutro primario a la red de alimentaci\'on, se a\~nade un tercer devanado independiente conectado en tri\'angulo ($\Delta$).
+
+\subsubsection*{Principio de funcionamiento}
+\begin{enumerate}
+    \item Las componentes de fuerza electromotriz de tercer arm\'onico ($E_3$) inducidas en cada una de las tres fases del devanado terciario est\'an en fase.
+    \item En la conexi\'on en tri\'angulo, estas fuerzas electromotrices no quedan bloqueadas, sino que se suman y producen una fuerza electromotriz resultante nula hacia el exterior, pero con un valor neto de $3E_3$ dentro del lazo delta.
+    \item Esta fuerza electromotriz hace circular una corriente de tercer arm\'onico atrapada dentro del delta.
+    \item Dicha corriente crea una fuerza magnetomotriz en oposici\'on que anula o ``borra'' el flujo de tercer arm\'onico en el n\'ucleo ($\Phi_3\approx 0$).
+\end{enumerate}
+
+\subsubsection*{Beneficios}
+\begin{itemize}
+    \item Restablece una forma de onda senoidal en los flujos del n\'ucleo y en las tensiones inducidas.
+    \item Proporciona un camino de baja impedancia para equilibrar cargas desbalanceadas en el secundario, atenuando la traslaci\'on del neutro.
+    \item \textbf{Capacidad y aplicaciones adicionales:} por lo general, se dise\~na para soportar alrededor de un tercio (33\%) de la potencia nominal del transformador. A menudo se sacan sus bornes al exterior para alimentar servicios auxiliares de la subestaci\'on o para conectar capacitores o condensadores s\'incronos de regulaci\'on de tensi\'on y factor de potencia.
+\end{itemize}
+
+\subsection{Cargas lineales y no lineales}
+\begin{itemize}
+    \item \textbf{Cargas lineales:} elementos en los que la impedancia es constante e independiente de la tensi\'on aplicada (resistencias puras, inductancias y capacitancias). Si la tensi\'on de alimentaci\'on es senoidal, la corriente absorbida ser\'a de la misma frecuencia y con una forma de onda puramente senoidal.
+    \item \textbf{Cargas no lineales:} dispositivos cuya impedancia var\'ia durante el ciclo el\'ectrico o que presentan comportamientos no lineales (convertidores est\'aticos, rectificadores de diodos o tiristores, variadores de frecuencia, balastos y transformadores operados en la zona de saturaci\'on).
+    \begin{itemize}
+        \item Estas cargas absorben impulsos de corriente distorsionados.
+        \item Mediante el desarrollo en series de Fourier, estas corrientes se descomponen en una componente fundamental m\'as un espectro de corrientes arm\'onicas que se inyectan hacia la red el\'ectrica.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Corriente de excitaci\'on y arm\'onicos}
+
+La corriente que absorbe un transformador en vac\'io se denomina corriente de excitaci\'on ($i_{\mathrm{exc}}$), y consta de dos componentes principales:
+\begin{enumerate}
+    \item \textbf{Corriente de p\'erdidas en el n\'ucleo ($i_{h+e}$):} est\'a en fase con la tensi\'on y cubre las p\'erdidas por hist\'eresis y por corrientes par\'asitas o de Foucault.
+    \item \textbf{Corriente magnetizante ($i_m$):} est\'a desfasada $90^\circ$ con respecto a la tensi\'on y se encarga de establecer el flujo magn\'etico en el hierro.
+\end{enumerate}
+
+\subsubsection{Origen de los arm\'onicos por la curva de imanaci\'on}
+
+Debido a la naturaleza no lineal y al fen\'omeno de saturaci\'on de la curva $B$--$H$ de los materiales ferromagn\'eticos, para mantener un flujo magn\'etico senoidal en el n\'ucleo, la corriente magnetizante necesaria no puede ser senoidal, sino que adopta una forma acampanada con picos pronunciados.
+
+Al descomponer esta onda acampanada mediante series de Fourier, aparecen arm\'onicos impares ($1.\textsuperscript{er}$, $3.\textsuperscript{er}$, $5.\textsuperscript{o}$, $7.\textsuperscript{o}$, \ldots):
+\begin{itemize}
+    \item \textbf{Primer arm\'onico (fundamental):} frecuencia industrial (50 Hz o 60 Hz).
+    \item \textbf{Tercer arm\'onico:} es la componente arm\'onica m\'as prominente y representa habitualmente entre el 40\% y el 45\% del total de la corriente de excitaci\'on en transformadores t\'ipicos.
+    \item \textbf{Quinto y s\'eptimo arm\'onicos:} representan t\'ipicamente alrededor del 15\% y el 3\%, respectivamente.
+\end{itemize}
+
+\subsubsection{Distribuci\'on de arm\'onicos en sistemas trif\'asicos}
+\begin{itemize}
+    \item \textbf{Arm\'onicos triplen ($3.\textsuperscript{o}$, $9.\textsuperscript{o}$, $15.\textsuperscript{o}$, \ldots):} est\'an en fase en las tres ramas de un sistema trif\'asico equilibrado (homopolares). En conexiones $\Delta$ circulan en el bucle cerrado sin salir a las l\'ineas; en conexiones $Y$ sin neutro quedan bloqueados en corriente, distorsionando la forma del flujo.
+    \item \textbf{Arm\'onicos del grupo ($5.\textsuperscript{o}$, $7.\textsuperscript{o}$, $11.\textsuperscript{o}$, $13.\textsuperscript{o}$, \ldots):} tienen secuencias de fase positiva y negativa, transmiti\'endose libremente entre las l\'ineas del sistema trif\'asico.
+\end{itemize}
+
+\newpage
+\section{Equipos e instrumentos}
+\begin{itemize}
+    \item 3 transformadores monof\'asicos.
+    \item Variac
+    \item Osciloscopio
+    \item Volt\'imetro de hierro m\'ovil.
+    \item Amper\'imetro de hierro m\'ovil.
+    \item Re\'ostato.
+    \item Diodos.
+    \item Resistencia shunt ($R_s$).
+    \item Fuente de alimentaci\'on AC.
+    \item Carga lineal.
+    \item Carga no lineal.
+    \item Cables de conexi\'on.
+    \item Interruptores de prueba.
+\end{itemize}
+
+\newpage
+
+\section{Diagramas de conexi\'on}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{\detokenize{imagenes/conexion Y-Y.JPG}}
+    \caption{Conexi\'on Y--Y.}
+    \label{fig:conexion-yy}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/carga\space no\space lineal\space monofásica.JPG}
+    \caption{Carga no lineal monof\'asica.}
+    \label{fig:carga-no-lineal-monofasica}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/carga\space no\space lineal\space trifásica.JPG}
+    \caption{Carga no lineal trif\'asica.}
+    \label{fig:carga-no-lineal-trifasica}
+\end{figure}
+
+\section{Metodolog\'ia}
+
+Antes de dar inicio a las mediciones, es imprescindible recopilar los datos t\'ecnicos y de placa de cada una de las unidades monof\'asicas que conformar\'an el banco trif\'asico. Esta informaci\'on resulta determinante para dise\~nar los diagramas de conexi\'on, definir la secuencia de operaciones y fijar las condiciones bajo las cuales se realizar\'an las pruebas.
+
+Toda conexi\'on del circuito a la red de alimentaci\'on el\'ectrica deber\'a efectuarse a trav\'es de un dispositivo de protecci\'on (breaker). La energizaci\'on de cualquier arreglo experimental quedar\'a supeditada a la autorizaci\'on previa del profesor responsable.
+
+\subsection{Parte: Importancia de la conexi\'on del neutro}
+
+En este apartado se examinar\'a la conexi\'on Y--Y y se tomar\'an las formas de onda correspondientes a la corriente de excitaci\'on y a las tensiones fase-neutro y fase-fase. 
+
+\begin{enumerate}
+    \item \textbf{Condici\'on de vac\'io:}
+    \begin{itemize}
+        \item Se obtendr\'an las formas de onda de las tensiones y corrientes de inter\'es con el banco trif\'asico conectado en vac\'io y con el neutro interconectado entre la fuente y el primario.
+        \item Posteriormente, se repetir\'an el paso anterior pero suprimiendo la conexi\'on del neutro entre la fuente y el primario.
+        \item Se analizar\'an las formas de onda obtenidas y se explicar\'a la importancia de la conexi\'on del neutro en el primario.
+    \end{itemize}
+    \item \textbf{Con carga lineal trif\'asica balanceada:}
+    \begin{itemize}
+        \item Se determinar\'a la curva de tensi\'on terminal en el secundario en funci\'on de la corriente de carga, $U=f(I)$, para la conexi\'on Y--Y con carga trif\'asica lineal balanceada y alimentaci\'on a cuatro hilos.
+        \item Se determinar\'a igualmente la curva $U=f(I)$ para la conexi\'on Y--Y con carga trif\'asica lineal balanceada y alimentaci\'on a tres hilos. Adem\'as, en condici\'on de plena carga, se registrar\'an las formas de onda de las tensiones y corrientes de inter\'es.
+    \end{itemize}
+    \item \textbf{Con carga monof\'asica lineal:}
+    \begin{itemize}
+        \item Para las conexiones Y--Y con carga monof\'asica lineal, se obtendr\'a la curva de tensi\'on terminal del secundario en funci\'on de la corriente de carga, $U=f(I)$, en la fase que soportar\'a la carga, as\'i como las tensiones presentes en las fases restantes, considerando que:
+        \begin{itemize}
+            \item Con neutro conectado en el primario.
+            \item Sin neutro en el primario.
+            \item Con el delta terciario conectado.
+        \end{itemize}
+        \item En condici\'on de plena carga, se registrar\'an las formas de onda de las tensiones y corrientes de inter\'es.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Parte II: Corriente en el neutro y tensi\'on entre neutros}
+
+\begin{enumerate}
+    \item \textbf{Conexi\'on Y--Y alimentando una carga trif\'asica no lineal:}
+    \begin{itemize}
+        \item Se capturar\'a la forma de onda de las corrientes en el primario cuando se alimente una carga $R_L$ inductiva a trav\'es de un rectificador trif\'asico (carga no lineal trif\'asica balanceada).
+        \item Se registrar\'an la tensi\'on del neutro en ausencia de conexi\'on y la corriente que lo atravesar\'a cuando est\'e conectado.
+    \end{itemize}
+    \item \textbf{Conexi\'on Y--Y alimentando una carga monof\'asica no lineal:}
+    \begin{itemize}
+        \item Se capturar\'a la forma de onda de las corrientes en el primario cuando se alimente una carga $R_L$ inductiva mediante un rectificador monof\'asico de onda completa.
+    \end{itemize}
+\end{enumerate}
+\newpage
+
+\section{Tabla de Resultados}
+
+\renewcommand{\tablename}{Cuadro}
+\setcounter{table}{0}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Mediciones en sistema de alimentaci\'on a tres hilos en vac\'io}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{Voltaje de fase (V)} & \multicolumn{3}{c|}{Voltaje de l\'inea (V)} \\ \hline
+$V_a$ & $V_b$ & $V_c$ & $V_n$ & $V_{ab}$ & $V_{bc}$ & $V_{ac}$ \\ \hline
+ & & & & & & \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mediciones en sistema de alimentaci\'on a cuatro hilos en vac\'io}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Voltaje de fase (V)} & \multicolumn{3}{c|}{Voltaje de l\'inea (V)} & \multicolumn{3}{c|}{Corrientes de fase (A)} \\ \hline
+$V_a$ & $V_b$ & $V_c$ & $V_{ab}$ & $V_{bc}$ & $V_{ac}$ & $I_a$ & $I_b$ & $I_c$ \\ \hline
+ & & & & & & & & \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mediciones en la conexi\'on Y--Y con carga trif\'asica no lineal con neutro}
+\begin{tabular}{|c|c|c|}
+\hline
+$I_{\mathrm{neutro}}$ (A) & $I_{\mathrm{carga\ AC}}$ (A) & $I_{\mathrm{carga\ DC}}$ (A) \\ \hline
+ & & \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mediciones en la conexi\'on Y--Y con carga lineal trif\'asica balanceada en sistema de alimentaci\'on a cuatro hilos}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Carga (W) & $I_a$ (Alta) (A) & $I_b$ (Alta) (A) & $I_c$ (Alta) (A) & $V_a$ (Alta) (V) & $V_b$ (Alta) (V) & $V_c$ (Alta) (V) & $V_{L,a-b}$ (Alta) (V) & $V_{L,b-c}$ (Alta) (V) & $V_{L,a-c}$ (Alta) (V) \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+ & & & & & & & & & \\ \hline
+\end{tabular}%
+}
+\end{table}
+\newpage
+
+\section{Referencias}
+\begin{enumerate}
+    \item Nerio Ojeda, Juli\'an P\'erez. \textit{Pr\'actica 6. Transformador Monof\'asico. Rendimiento}. Universidad Central de Venezuela, Facultad de Ingenier\'ia, Escuela de Ingenier\'ia El\'ectrica, Departamento de Potencia, Laboratorio de M\'aquinas I, Revisi\'on 2012.
+    \item Fraile Mora, Jes\'us. \textit{M\'aquinas El\'ectricas} (6.\textsuperscript{a} ed.). McGraw-Hill, 2008.
+    \item Fitzgerald, A. E., Kingsley, C., Umans, S. D. \textit{M\'aquinas El\'ectricas}. McGraw-Hill, 6.\textsuperscript{a} ed., 2003.
+    \item Chapman, S. J. \textit{M\'aquinas El\'ectricas}. McGraw-Hill, 5.\textsuperscript{a} ed., 2012.
+\end{enumerate}
+
+\end{document}

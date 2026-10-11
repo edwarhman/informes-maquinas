@@ -1,0 +1,26 @@
+\section{Metodología}
+
+Para el desarrollo de la práctica, se llevo a cabo el siguiente procedimiento experimental:
+
+\begin{enumerate}
+    \item \textbf{Montaje y Verificación de Seguridad:}
+    \begin{itemize}
+        \item Verificar el correcto estado de los equipos e instrumentos de medición (VARIAC, vatímetro, osciloscopio, etc.).
+        \item Realizar el montaje del circuito siguiendo el esquema de conexión, manteniendo el interruptor de prueba (breaker) en posición abierta hasta finalizar la revisión del cableado.
+        \item Conectar el osciloscopio empleando resistencias shunt ($R_s$) para la visualización de las formas de onda, asegurando una correcta referencia a tierra.
+    \end{itemize}
+
+    \item \textbf{Ejecución del Ensayo con Carga Lineal:}
+    \begin{itemize}
+        \item Energizar el circuito ajustando el VARIAC hasta obtener la tensión nominal.
+        \item Variar la carga resistiva en distintos niveles, registrando los valores de tensión ($V_2$), corriente ($A_2$) y potencia activa ($W_2$).
+        \item Capturar las formas de onda de tensión y corriente mediante el osciloscopio para validar su comportamiento senoidal.
+    \end{itemize}
+
+    \item \textbf{Ejecución del Ensayo con Carga No Lineal:}
+    \begin{itemize}
+        \item Intercalar el puente rectificador en el lado secundario del transformador para alimentar la carga no lineal.
+        \item Repetir la toma de mediciones de parámetros eléctricos, observando la distorsión inducida en la señal.
+        \item Ajustar los elementos de la carga (inductor o arreglo capacitivo-resistivo) y documentar variaciones en el factor de potencia y el contenido armónico mediante instrumentos True RMS.
+    \end{itemize}
+\end{enumerate}

@@ -1,0 +1,92 @@
+\section{Diagramas de Conexiones}
+
+En esta sección se presentan los esquemas de conexión y la instrumentación eléctrica empleada para el ensayo de determinación del rendimiento del transformador monofásico. Los circuitos han sido diseñados para permitir el registro simultáneo de las magnitudes de entrada ($V_1, I_1, P_1$) y de salida ($V_2, I_2, P_2$), garantizando además el cumplimiento de las normas de seguridad del laboratorio.
+
+\subsection{Esquema General para el Ensayo con Carga Resistiva e Inductiva}
+
+En la Figura~\ref{fig:conexion_ensayo_carga} se ilustra el esquema circuital completo. La alimentación se toma del tablero de corriente alterna del puesto de trabajo, pasando a través de un interruptor termomagnético de protección (Breaker) y un autotransformador variable (VARIAC) que permite fijar y sostener la tensión nominal $V_{1n}$ en el devanado primario. Para la medición de potencia de entrada ($W_1$), el vatímetro se conectó en sus terminales de $5\text{ A}$ y $120\text{ V}$, intercalando un transformador de corriente (TC) con relación $2:1$ para alimentar su bobina amperimétrica. En el lado secundario, el vatímetro ($W_2$) se conectó directamente a sus terminales de $5\text{ A}$ y $240\text{ V}$ antes de la impedancia de carga variable $Z_L$. Para el ensayo con carga resistiva pura se conecta únicamente la resistencia variable $R_L$, mientras que para el ensayo con carga inductiva se añade en serie la inductancia calibrada $X_L$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{circuitikz}[scale=0.78, transform shape]
+        % --- LADO PRIMARIO ---
+        \draw (0,3) to[vsourcesin, l_=Tablero CA] (0,0);
+        \draw (0,3) to[nos, l=Breaker 1] (2.0,3)
+              to[variable american inductor, l_=VARIAC] (3.8,3)
+              to[nos, l=Breaker 2] (5.8,3);
+        \draw (0,0) -- (5.8,0);
+        
+        % Instrumentos primario
+        \draw (5.8,3) to[rmeter, t=$A_1$, i=$I_1$] (7.4,3)
+              to[rmeter, t=$W_1$] (8.8,3)
+              to[short, -*] (9.4,3);
+        
+        % Voltímetro primario V1 en paralelo
+        \draw (5.8,3) to[short, *-] (5.8,2.2)
+              to[rmeter, t=$V_1$] (5.8,0.8)
+              to[short, -*] (5.8,0);
+              
+        % Devanado primario
+        \draw (9.4,3) -- (9.4,2.5) to[L, l_=$N_1$] (9.4,0.5) -- (9.4,0);
+        \draw (5.8,0) -- (9.4,0);
+        
+        % Núcleo de hierro
+        \draw[thick] (9.8,2.7) -- (9.8,0.3);
+        \draw[thick] (10.0,2.7) -- (10.0,0.3);
+        
+        % --- LADO SECUNDARIO ---
+        % Devanado secundario
+        \draw (10.4,3) -- (10.4,2.5) to[L, l=$N_2$] (10.4,0.5) -- (10.4,0);
+        
+        % Instrumentos secundario
+        \draw (10.4,3) to[rmeter, t=$A_2$, i=$I_2$] (12.0,3)
+              to[rmeter, t=$W_2$] (13.4,3)
+              to[short, -*] (14.0,3);
+              
+        % Voltímetro secundario V2 en bornes de la carga
+        \draw (14.0,3) to[short] (14.0,2.2)
+              to[rmeter, t=$V_2$] (14.0,0.8)
+              to[short, -*] (14.0,0);
+              
+        % Carga variable (R_L + X_L)
+        \draw (14.0,3) to[short] (14.8,3)
+              to[vR, l=$R_L$] (16.2,3)
+              to[L, l=$X_L$] (17.6,3)
+              to[short] (17.6,0)
+              -- (10.4,0);
+    \end{circuitikz}
+    \caption{Diagrama de conexiones circuitales para la medición del rendimiento del transformador monofásico bajo carga.}
+    \label{fig:conexion_ensayo_carga}
+\end{figure}
+
+\subsection{Esquema para la Medición de Resistencia en CC (Método de la Resistencia)}
+
+Para la determinación del aumento de temperatura de los devanados según el punto 5.7 de la norma COVENIN 3172-95 y ANSI/IEEE C57.12.91-2001, se utiliza una configuración en corriente continua conectada a los bornes del devanado secundario mediante método de cuatro terminales (voltímetro-amperímetro o micro-óhmetro), tal como se esquematiza en la Figura~\ref{fig:conexion_medicion_resistencia}. Esta conexión se realiza con el transformador completamente desconectado de la red de corriente alterna tanto en frío (al inicio de la sesión) como en caliente (inmediatamente después del ensayo a plena carga).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{circuitikz}[scale=0.85, transform shape]
+        % Fuente CC y ajuste
+        \draw (0,2.5) to[battery2, l=Fuente CC] (0,0);
+        \draw (0,2.5) to[vR, l=$R_{\text{adj}}$] (2.5,2.5)
+              to[rmeter, t=$A_{\text{cc}}$, i=$I_{\text{cc}}$] (4.5,2.5)
+              to[short, -o] (5.5,2.5);
+              
+        % Bornes del devanado bajo prueba
+        \draw (5.5,2.5) node[right] {$X_1$};
+        \draw (5.5,0) node[right] {$X_2$};
+        
+        \draw (5.5,2.5) to[short, *-] (6.5,2.5)
+              to[L, l=Devanado Secundario ($R_2$)] (6.5,0)
+              to[short, -*] (5.5,0);
+              
+        % Voltímetro CC directo a bornes
+        \draw (5.5,2.5) to[short] (5.5,1.8)
+              to[rmeter, t=$V_{\text{cc}}$] (5.5,0.7)
+              to[short] (5.5,0);
+              
+        \draw (0,0) to[short, -o] (5.5,0);
+    \end{circuitikz}
+    \caption{Diagrama de conexiones para la medición de la resistencia óhmica de los devanados en corriente continua.}
+    \label{fig:conexion_medicion_resistencia}
+\end{figure}

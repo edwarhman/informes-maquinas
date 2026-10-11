@@ -1,0 +1,42 @@
+\section{Metodología}
+
+El desarrollo experimental de la práctica se estructuró en cuatro etapas secuenciales, cumpliendo estrictamente con las normas de seguridad del laboratorio y las pautas técnicas recomendadas.
+
+\subsection{Montaje Inicial y Medición en Frío}
+\begin{enumerate}
+    \item Inspeccionar física y eléctricamente los bornes y aislamientos del transformador monofásico de prueba, verificando los datos de placa y las conexiones de tierra de seguridad.
+    \item Registrar la temperatura ambiente inicial $T_1$ con el termómetro de precisión ubicado en las inmediaciones del puesto de trabajo.
+    \item Con el equipo totalmente desenergizado y habiendo permanecido en reposo térmico suficiente para que la masa conductora se encuentre a la temperatura ambiente, conectar el instrumento de medición de resistencia en corriente continua a los bornes secundarios ($X_1 - X_2$). Medir y registrar la resistencia en frío $R_2(T_1)$ (o $R_f$).
+    \item Realizar el alambrado del montaje principal según el esquema de la Figura~\ref{fig:conexion_ensayo_carga}, verificando que los breakers de protección permanezcan abiertos y el VARIAC esté posicionado en su punto de tensión cero.
+    \item Solicitar la inspección y el visto bueno del profesor o técnico de laboratorio antes de proceder a la energización del circuito.
+\end{enumerate}
+
+\subsection{Parte A: Ensayo de Rendimiento con Carga Resistiva Pura (\texorpdfstring{$\cos\varphi = 1$}{cos phi = 1})}
+\begin{enumerate}
+    \item Cerrar los interruptores de protección y alimentar el transformador por su devanado de baja tensión (primario en configuración elevadora) mediante el VARIAC hasta alcanzar de manera precisa la tensión nominal $V_1 = V_{1n} = 110\text{ V}$.
+    \item Con la carga en circuito abierto ($I_2 = 0\text{ A}$), registrar los valores de vacío: $V_1, I_1, P_1, V_2, I_2, P_2$. Este punto permite validar las pérdidas en el núcleo $P_{\text{Fe}}$ determinadas previamente en el ensayo de vacío de la Práctica Nº 4.
+    \item Conectar los instrumentos de medición de potencia: para el primario, conectar el vatímetro electrodinámico a sus terminales de $5\text{ A}$ y $120\text{ V}$, incorporando un transformador de corriente de relación $2:1$ para la bobina amperimétrica (protegiendo el instrumento y adaptando el rango de corriente hasta $10\text{ A}$); en el secundario, conectar el vatímetro a sus terminales de $5\text{ A}$ y $240\text{ V}$.
+    \item Conectar el banco de cargas resistivas en el lado de alta tensión (secundario) y variar gradualmente la resistencia en pasos sucesivos correspondientes a los diferentes niveles de potencia ensayados.
+    \item En cada paso de carga, reajustar con el VARIAC la tensión primaria de entrada para garantizar que se mantenga en el entorno de los $110\text{ V}$, compensando las caídas de tensión en las líneas de alimentación.
+    \item Esperar la estabilización de los instrumentos y registrar simultáneamente las lecturas de los seis instrumentos: tensión primaria ($V_1$), corriente primaria ($I_1$), potencia activa de entrada ($P_1$), tensión secundaria ($V_2$), corriente de carga ($I_2$) y potencia activa de salida ($P_2$).
+\end{enumerate}
+
+\subsection{Parte B: Medición de Temperatura por el Método de la Resistencia}
+\begin{enumerate}
+    \item Mantener el transformador operando a plena carga durante el tiempo estipulado para propiciar el calentamiento representativo de los devanados.
+    \item Cumplido el régimen de plena carga, desenergizar de inmediato el circuito abriendo el interruptor termomagnético de alimentación y desconectar rápidamente el banco de cargas secundario.
+    \item Conectar sin demora el instrumento de corriente continua a los bornes del secundario y registrar el valor de la resistencia en caliente $R_c = R_{2c}$, minimizando el tiempo transcurrido para evitar el enfriamiento térmico del arrollamiento (siguiendo las recomendaciones del punto 5.7 de la norma COVENIN 3172-95).
+    \item Registrar nuevamente la temperatura ambiente del recinto para obtener el promedio de la prueba.
+    \item Calcular la elevación de temperatura y la temperatura final del bobinado $T_2$ mediante la ley de extrapolación lineal del cobre (ecuación~\eqref{eq:metodo_resistencia}).
+    \item Corregir la resistencia equivalente $R_{\text{eq2}}$ a la temperatura de régimen $T_2$ (ecuación~\eqref{eq:correccion_resistencia}) y reevaluar el rendimiento a plena carga.
+\end{enumerate}
+
+\subsection{Parte C: Ensayo de Rendimiento con Carga Inductiva (\texorpdfstring{$\cos\varphi < 1$}{cos phi < 1})}
+\begin{enumerate}
+    \item Conectar en serie con la resistencia variable la bobina de reactancia inductiva calibrada para fijar un factor de potencia atrasado ($\cos\varphi \approx 0{,}8$).
+    \item Reanudar la alimentación ajustando el VARIAC para mantener $V_1 = V_{1n}$.
+    \item Ajustar la impedancia de carga hasta situar la corriente secundaria en las proximidades del punto de rendimiento máximo calculado ($I_2 \approx I_2^* = \sqrt{P_{\text{Fe}}/R_{\text{eq2}}}$).
+    \item Registrar los valores medidos en los seis instrumentos de prueba ($V_1, I_1, P_1, V_2, I_2, P_2$).
+    \item Determinar experimentalmente el factor de potencia secundario mediante la relación $\cos\varphi = P_2 / (V_2 I_2)$.
+    \item Desenergizar el sistema y efectuar la medición de resistencia en corriente continua para corroborar la temperatura térmica en este régimen.
+\end{enumerate}

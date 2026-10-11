@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, mathptmx, amssymb, amsfonts, enumerate, float, graphicx, makeidx, caption, colortbl, xcolor, hhline, tabularx, array, tabularray, booktabs, arydshln, multirow}
+\usepackage[margin=25mm]{geometry}
+\usepackage[rflt]{floatflt}
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{circuitikz} % Para figuras eléctricas
+\usepackage{siunitx}
+\usepackage{indentfirst}
+\usepackage[export]{adjustbox}
+\usepackage[hidelinks,colorlinks=false,linkcolor=black,urlcolor=black]{hyperref}
+
+% Inicio del Preámbulo
+\renewcommand{\baselinestretch}{1.5}
+\numberwithin{figure}{section}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\ctikzset{%
+monopoles/vcc/arrow={Triangle[width=0.8*\scaledwidth, length=\scaledwidth]},
+monopoles/vee/arrow={Triangle[width=6pt, length=8pt]},
+resistors/thickness=1.5,
+}
+
+% Fin del Preámbulo
+
+\begin{document}
+    % Inicio del documento
+    \include{texto/portada}
+    \tableofcontents
+    \newpage
+    \include{texto/introduccion}
+    \include{texto/objetivos}
+    \include{texto/marco teorico}
+    \include{texto/equipos e instrumentos}
+    \include{texto/diagramas de conexiones}
+    \include{texto/metodologia}
+    \include{texto/resultados}
+    \include{texto/analisis de resultados}
+    \include{texto/conclusiones}
+    \include{texto/referencia}
+    \include{texto/anexos}
+\end{document}

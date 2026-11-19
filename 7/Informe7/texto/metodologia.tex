@@ -1,0 +1,73 @@
+\section{Metodología}
+
+\subsection{Cálculos Teóricos Previos}
+
+Para el desarrollo de este pre-laboratorio, se emplean los parámetros medidos del \textbf{Transformador A} (obtenidos en la Práctica 4) y se establecen hipótesis realistas para el \textbf{Transformador B}, simulando pequeñas desviaciones.
+
+
+\begin{itemize}
+    \item \textbf{Transformador A (Datos Medidos - Práctica 4):}
+        \begin{itemize}
+            \item Potencia nominal ($S_{nom,A}$): $2\text{ kVA}$
+            \item Tensiones nominales: $V_{LV,nom,A} = 120\text{ V}$, $V_{HV,nom,A} = 240\text{ V}$
+            \item Relación de transformación ($a_A = V_{HV} / V_{LV}$): $1,936$
+            \item Impedancia de cortocircuito referida a HV: $Z_{cc,A} = (1,25 + j0,58)\,\Omega \quad (|Z_{cc,A}| = 1,38\,\Omega)$
+        \end{itemize}
+    \item \textbf{Transformador B (Hipótesis Realistas para Pre-laboratorio):}
+        \begin{itemize}
+            \item Potencia nominal ($S_{nom,B}$): $2\text{ kVA}$
+            \item Tensiones nominales: $V_{LV,nom,B} = 120\text{ V}$, $V_{HV,nom,B} = 240\text{ V}$
+            \item Relación de transformación ($a_B$, asumiendo $+0,5\%$ de diferencia respecto a $a_A$):
+                $$a_B = a_A \times 1,005 = 1,936 \times 1,005 = 1,94568$$
+            \item Impedancia de cortocircuito referida a HV ($Z_{cc,B}$, asumiendo $+5\%$ en magnitud y conservando la relación $X/R$):
+                \begin{itemize}
+                    \item Magnitud: $|Z_{cc,B}| = 1,38\,\Omega \times 1,05 = 1,449\,\Omega$  $Z_{cc,B} = (1,25 \times 1,05) + j(0,58 \times 1,05) = (1,3125 + j0,609)\,\Omega$
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+2. Cálculo Teórico de la Corriente Circulatoria en Vacío
+
+Asumiendo una tensión de alimentación primaria $\bar{U}_1 = 120\angle 0^\circ\text{ V}$ aplicada al lado de baja tensión (LV):
+
+\begin{itemize}
+    \item \textbf{Tensiones inducidas en el secundario (lado HV):}
+        $$\bar{E}_{A2} = \bar{U}_1 \times a_A = 120\text{ V} \times 1,936 = 232,32\angle 0^\circ\text{ V}$$
+        $$\bar{E}_{B2} = \bar{U}_1 \times a_B = 120\text{ V} \times 1,94568 = 233,4816\angle 0^\circ\text{ V}$$
+    \item \textbf{Diferencia de tensión entre los secundarios:}
+        $$\Delta \bar{E}_2 = \bar{E}_{A2} - \bar{E}_{B2} = 232,32\angle 0^\circ - 233,4816\angle 0^\circ = 1,1616\angle 180^\circ\text{ V}$$
+    \item \textbf{Suma de las impedancias de cortocircuito (lazo de circulación):}
+        $$Z_{total,circ} = Z_{cc,A} + Z_{cc,B} = (1,25 + j0,58) + (1,3125 + j0,609) = (2,5625 + j1,189)\,\Omega$$
+        Expresada en forma polar ($2,825\angle 24,89^\circ\,\Omega$):
+    \item \textbf{Corriente circulatoria resultante ($I_{circ}$):}
+        $$I_{circ} = \frac{\Delta \bar{E}_2}{Z_{total,circ}} = \frac{1,1616\angle 180^\circ\text{ V}}{2,825\angle 24,89^\circ\,\Omega} = 0,411\angle 155,11^\circ\text{ A}$$
+\end{itemize}
+
+3. Predicción Teórica del Reparto de Carga en por unidad (p.u.)
+
+\begin{itemize}
+    \item \textbf{Impedancia base referida al lado HV:}
+        $$Z_{base} = \frac{V_{HV,nom}^2}{S_{nom}} = \frac{(240\text{ V})^2}{2000\text{ VA}} = 28,8\,\Omega$$
+    \item \textbf{Impedancias en por unidad (p.u.):}
+        $$Z_{cc,A,pu} = \frac{Z_{cc,A}}{Z_{base}} = \frac{1,25 + j0,58}{28,8} = 0,0434 + j0,0201 = 0,0478\angle 24,89^\circ\text{ p.u.}$$
+        $$Z_{cc,B,pu} = \frac{Z_{cc,B}}{Z_{base}} = \frac{1,3125 + j0,609}{28,8} = 0,0456 + j0,0211 = 0,0503\angle 24,89^\circ\text{ p.u.}$$
+    \item \textbf{Reparto de corriente para una carga total combinada del banco ($I_{carga,total} = 2 \times I_{nom,HV} = 16,666\text{ A}$):}
+        $$I_{carga,A} = I_{carga,total} \cdot \frac{|Z_{cc,B,pu}|}{|Z_{cc,A,pu}| + |Z_{cc,B,pu}|} = 16,666\text{ A} \cdot \frac{0,0503}{0,0478 + 0,0503} \approx 8,536\text{ A}$$
+        $$I_{carga,B} = I_{carga,total} \cdot \frac{|Z_{cc,A,pu}|}{|Z_{cc,A,pu}| + |Z_{cc,B,pu}|} = 16,666\text{ A} \cdot \frac{0,0478}{0,0478 + 0,0503} \approx 8,130\text{ A}$$
+\end{itemize}
+
+Mediante este calculo, se demuestra que una pequeña diferencia en las relaciones de transformación genera una corriente circulatoria interna entre los equipos, mientras que las discrepancias en sus impedancias de cortocircuito determinan un reparto desigual de la carga.
+
+\subsection{Fase Experimental en Laboratorio}
+
+
+
+\begin{itemize}
+    \item\textbf{Validación Previa al Acoplamiento:} Antes de efectuar la unión definitiva de los devanados secundarios, es fundamental realizar comprobaciones experimentales para garantizar la concordancia de polaridades, así como la igualdad en fase y magnitud de las tensiones secundarias. Dicha verificación suele llevarse a cabo midiendo el voltaje diferencial entre los terminales secundarios mientras estos se mantienen abiertos.
+    
+    \item\textbf{Ensamblaje del Banco en Paralelo:} Se vinculan los devanados primarios en paralelo a la fuente de alimentación regulada por el autotransformador variable (Variac). Posteriormente, se conectan los secundarios de forma rigurosa, uniendo exclusivamente los terminales de idéntica polaridad entre sí, y se acopla el conjunto resultante a un banco de carga variable.
+    
+    \item \textbf{Pruebas en Condición de Vacío:} Se energiza el circuito primario aplicando la tensión nominal de operación, conservando el lado secundario sin carga conectada. En este estado, se registran las lecturas de voltaje en ambos flancos y se miden las corrientes que fluyen a través de los lazos secundarios individuales, identificando la magnitud de la corriente circulatoria.
+    
+    \item \textbf{Ensayos con Carga Variable:} Se introduce progresivamente una impedancia de carga al banco, incrementando la exigencia desde el régimen de vacío hasta alcanzar o superar la capacidad nominal conjunta del sistema. Para cada etapa de carga, se recopilan los valores de tensión primaria y secundaria, la intensidad total demandada, las corrientes parciales de cada unidad y, de estar disponible la instrumentación adecuada, los registros de potencia activa y reactiva aportados por cada transformador.
+\end{itemize}

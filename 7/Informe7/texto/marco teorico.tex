@@ -1,0 +1,41 @@
+\section{Marco teórico}
+
+
+\subsection{Transformador Monofásico}
+Dispositivo electromagnético estático que transfiere energía eléctrica entre dos o más circuitos mediante inducción electromagnética, operando bajo el principio de la ley de Faraday y la ley de Lenz. En su configuración monofásica, está constituido por dos devanados (primario y secundario) acoplados magnéticamente a través de un núcleo ferromagnético laminado, diseñado para operar con una fuente de tensión alterna sinusoidal de una sola fase. La transferencia de energía se realiza sin partes móviles, con una eficiencia elevada, y permite modificar los niveles de tensión y corriente manteniendo constante la potencia aparente, despreciando las pérdidas.
+
+\subsection{Transformadores en Paralelo}
+La conexión de transformadores en paralelo consiste en asociar dos o más unidades transformadoras cuyos devanados primarios se alimentan de una misma red o fuente común y cuyos devanados secundarios se encuentran conectados de forma conjunta a una barra o impedancia de carga compartida. Esta configuración operativa es ampliamente implementada en los sistemas de potencia para distribuir la capacidad de transformación total entre múltiples equipos, lo que permite manejar grandes bloques de energía sin recurrir a unidades de dimensiones desproporcionadas, optimizar las labores de mantenimiento y disminuir la vulnerabilidad general del sistema ante posibles fallas. 
+\subsection{Propósito y Ventajas del Acoplamiento}
+La implementación de bancos de transformadores en paralelo responde a diversos criterios técnicos y económicos que optimizan la gestión de la red:
+\begin{itemize}
+    \item \textbf{Ampliación de la capacidad de suministro:} Permite atender demandas de potencia elevadas sin necesidad de recurrir al diseño, fabricación y transporte de unidades monofásicas gigantescas.
+    \item \textbf{Confiabilidad y continuidad operativa:} Ante fallas imprevistas o tareas de mantenimiento programado en un transformador, los equipos restantes pueden mantener parcialmente el servicio, mitigando el impacto sobre los usuarios.
+    \item \textbf{Flexibilidad de carga:} Facilita la conexión o desconexión de unidades conforme fluctúa la demanda energética, permitiendo operar los equipos cercanos a sus puntos de mayor eficiencia.
+    \item \textbf{Optimización de costos:} Resulta más económico y accesible adquirir múltiples transformadores de potencias estándar en lugar de encargar una unidad de potencia especial sobredimensionada.
+\end{itemize}
+
+\subsection{Requisitos para la Conexión en Paralelo}
+Para lograr una operación sincronizada y prevenir sobrecalentamientos o desequilibrios, deben cumplirse las siguientes condiciones obligatorias:
+\begin{enumerate}
+    \item \textbf{Idéntica relación de transformación ($a_{Ta} = a_{Tb}$):} Es el factor más crítico; si las tensiones secundarias inducidas difieren, se originarán corrientes de circulación internas incluso con los secundarios descargados.
+    \item \textbf{Coincidencia de polaridades:} Las terminales de polaridad equivalente deben enlazarse correctamente; una conexión invertida provocaría un cortocircuito franco y destructivo al cerrar el lazo.
+    \item \textbf{Equivalencia en las impedancias de cortocircuito porcentuales:} Las impedancias internas de los transformadores deben ser inversamente proporcionales a sus potencias nominales (o aproximadamente iguales en por unidad) para asegurar que la carga se reparta de forma equitativa.
+    \item \textbf{Relación similar entre resistencia y reactancia ($X/R$):} Esto evita desfases angulares entre las corrientes de los transformadores, optimizando el reparto conjunto de potencia activa y reactiva.
+\end{enumerate}
+
+\subsection{Corriente Circulatoria en Vacío}
+Cuando los transformadores presentan ligeras diferencias en sus relaciones de transformación, al cerrar el lazo secundario en vacío aparece una diferencia de potencial ($\Delta \overline{E}_2$) que da origen a una corriente interna de circulación ($I_{a2} = -I_{b2}$):
+
+$$\Delta \overline{E}_2 = \overline{E}_{a2} - \overline{E}_{b2} = U_1 \left( \frac{1}{a_{Ta}} - \frac{1}{a_{Tb}} \right)$$
+
+Esta corriente circula exclusivamente a través de las impedancias internas de cortocircuito de los equipos:
+
+$$I_{a2} = -I_{b2} = \frac{\Delta \overline{E}_2}{Z'_{cc,a} + Z'_{cc,b}} \approx U_2 \cdot \Delta a$$
+
+Al no aportar energía hacia la carga externa, dicha corriente se traduce puramente en pérdidas por efecto Joule, reduciendo la eficiencia general del banco.
+
+\subsection{Distribución de Carga}
+Al conectar una impedancia de carga externa, la corriente total entregada por el sistema se fracciona entre las unidades acopladas. Dicho reparto se gobierna mediante las impedancias equivalentes del circuito. Aquél transformador que posea la impedancia interna más baja asumirá una proporción mayor de la corriente total, lo que puede inducir condiciones de sobrecarga prematura si no se respetan los criterios de diseño y dimensionamiento.
+
+
